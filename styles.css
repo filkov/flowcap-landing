@@ -168,13 +168,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 9999px;
-  background: var(--glass-fill);
-  box-shadow: var(--shadow-edge);
+  width: 36px;
+  height: 36px;
 }
-.logo-mark img { width: 16px; height: 16px; }
+.logo-mark img { width: 36px; height: 36px; }
 .logo-text { font-size: 16px; font-weight: 500; color: var(--frost); white-space: nowrap; letter-spacing: 0; }
 
 .nav-and-cta { display: flex; align-items: center; gap: 32px; }
