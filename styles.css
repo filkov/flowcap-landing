@@ -37,6 +37,16 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 ul { margin: 0; padding: 0; list-style: none; }
 
+/* ---------- layout ---------- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 /* ---------- buttons ---------- */
 
 .btn {
@@ -69,11 +79,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- header ---------- */
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 24px 80px;
   border-bottom: 1px solid var(--line);
+}
+.header .container {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo-group { display: flex; align-items: center; gap: 12px; }
@@ -95,13 +107,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- hero ---------- */
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
-  padding: 120px var(--pad-x) 100px;
-}
+.hero { padding: 120px var(--pad-x) 100px; }
+.hero .container { align-items: center; gap: 48px; }
 
 .hero-text {
   display: flex;
@@ -216,14 +223,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- how it works ---------- */
 
 .how-it-works {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
   padding: var(--pad-x);
   background: var(--bg-how);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+
+.how-it-works .container { gap: 64px; }
 
 .steps-timeline { display: flex; gap: 32px; width: 100%; }
 
@@ -252,12 +258,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- capabilities ---------- */
 
-.capabilities {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding: var(--pad-x);
-}
+.capabilities { padding: var(--pad-x); }
+.capabilities .container { gap: 64px; }
 .cap-header { display: flex; flex-direction: column; gap: 16px; }
 
 .cap-grid {
@@ -284,15 +286,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- privacy ---------- */
 
 .privacy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
   padding: 100px var(--pad-x);
   background: var(--bg-privacy);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+
+.privacy .container { align-items: center; gap: 48px; }
 
 .privacy-heading {
   display: flex;
@@ -342,12 +342,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- audience ---------- */
 
-.audience {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding: var(--pad-x);
-}
+.audience { padding: var(--pad-x); }
+.audience .container { gap: 64px; }
 .audience-cards { display: flex; gap: 24px; width: 100%; }
 .aud {
   flex: 1 1 0;
@@ -367,10 +363,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .final-cta {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
   padding: 140px var(--pad-x);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -389,7 +381,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   background: rgba(3, 7, 18, 0.85);
 }
-.final-cta > *:not(.final-cta-bg) { position: relative; z-index: 1; }
+.final-cta .container { position: relative; z-index: 1; align-items: center; gap: 32px; }
 
 .final-eyebrow { font-size: 13px; font-weight: 700; color: var(--indigo-light); letter-spacing: .02em; }
 .final-cta h2 {
@@ -432,7 +424,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav-link { display: none; }
   .btn-sm span { display: none; }
   .btn-sm { padding: 10px 12px; }
-  .hero { gap: 40px; padding-top: 64px; }
+  .hero { padding-top: 64px; }
+  .hero .container { gap: 40px; }
   .headline { font-size: 42px; line-height: 46px; }
   .hero-sub { font-size: 16px; line-height: 24px; }
   .eyebrow { white-space: normal; text-align: center; }
@@ -440,9 +433,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   .btn-lg { width: 100%; justify-content: center; }
   .section-title, .final-cta h2 { font-size: 32px; }
   .privacy-heading h2 { font-size: 30px; }
-  .how-it-works, .capabilities, .audience { gap: 40px; padding-top: 72px; padding-bottom: 72px; }
-  .privacy { padding-top: 72px; padding-bottom: 72px; gap: 32px; }
-  .final-cta { padding-top: 96px; padding-bottom: 96px; gap: 24px; }
+  .how-it-works, .capabilities, .audience { padding-top: 72px; padding-bottom: 72px; }
+  .how-it-works .container, .capabilities .container, .audience .container { gap: 40px; }
+  .privacy { padding-top: 72px; padding-bottom: 72px; }
+  .privacy .container { gap: 32px; }
+  .final-cta { padding-top: 96px; padding-bottom: 96px; }
+  .final-cta .container { gap: 24px; }
   .feat { padding: 28px; }
   .step, .aud { padding: 28px; }
   .phone-frame { width: min(280px, 100%); height: auto; aspect-ratio: 280 / 520; }
