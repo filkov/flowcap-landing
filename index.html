@@ -91,10 +91,11 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-dots" aria-hidden="true"></div>
-      <img class="hero-obj hero-obj-a" src="assets/g-map.webp" alt="" width="520" height="499" aria-hidden="true">
-      <img class="hero-obj hero-obj-b" src="assets/g-stack.webp" alt="" width="520" height="501" aria-hidden="true">
+      <div class="hero-media" aria-hidden="true">
+        <img class="hero-img" src="assets/hero-landscape.webp" srcset="assets/hero-landscape-960.webp 960w, assets/hero-landscape.webp 1536w" sizes="100vw" alt="" width="1536" height="1024" fetchpriority="high">
+        <img class="hero-glow" src="assets/hero-glow.webp" alt="" width="1536" height="1024">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
 
       <div class="hero-left">
         <h1 class="hero-title">
@@ -104,28 +105,13 @@
         </h1>
       </div>
 
-      <div class="hero-right">
-        <!-- The two views people need to recognize first: saved apps and their screens. -->
-        <div class="hero-visual" aria-label="Flow Capture library and a flow with its ordered screenshots">
-          <figure class="phone hero-phone hero-phone-library">
-            <img src="assets/app-library.jpg" alt="Flow Capture library with multiple recorded app journeys displayed as icons" width="828" height="1800" fetchpriority="high">
-            <span class="pin pin-library" aria-hidden="true"><span>01 / Library</span><b>Every app journey, in one place.</b></span>
-          </figure>
-          <figure class="phone hero-phone hero-phone-flow">
-            <img src="assets/app-flow.jpg" alt="A recorded Prequel journey shown as a list of actual screenshots in Flow Capture" width="588" height="1280">
-            <span class="pin pin-flow" aria-hidden="true"><span>02 / Flow</span><b>The actual screens. Still in order.</b></span>
-            <span class="pin pin-link" aria-hidden="true"><b>Open a project</b><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </figure>
+      <div class="hero-aside">
+        <p>Turn an iPhone recording into ordered screens, contextual feedback, and a handoff your designer or coding agent can actually use.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#how-it-works">Explore the workflow <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+          <a class="btn btn-accent" href="#privacy">How privacy works</a>
         </div>
-
-        <div class="hero-aside">
-          <p>Turn an iPhone recording into ordered screens, contextual feedback, and a handoff your designer or coding agent can actually use.</p>
-          <div class="hero-actions">
-            <a class="btn btn-light" href="#how-it-works">Explore the workflow <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
-            <a class="btn btn-accent" href="#privacy">How privacy works</a>
-          </div>
-          <p class="hero-meta">Coming soon to iPhone · iOS 18+ · Local-first<br><span>Demo projects in Library · recorded Flow on iPhone</span></p>
-        </div>
+        <p class="hero-meta">Coming soon to iPhone · iOS 18+ · Local-first</p>
       </div>
     </section>
 
@@ -137,6 +123,20 @@
       </div>
 
       <div class="container bento reveal">
+        <!-- The two views people need to recognize first: saved apps and their screens. -->
+        <article class="bcard bcard-product" aria-label="Flow Capture library and a flow with its ordered screenshots">
+          <div class="product-col">
+            <p class="product-cap"><span>01 / Library</span><strong>Every app journey, in one place.</strong></p>
+            <figure class="phone product-phone"><img src="assets/app-library.jpg" alt="Flow Capture library with multiple recorded app journeys displayed as icons" width="828" height="1800" loading="lazy"></figure>
+          </div>
+          <div class="product-col product-col-b">
+            <p class="product-cap"><span>02 / Flow</span><strong>The actual screens. Still in order.</strong></p>
+            <figure class="phone product-phone"><img src="assets/app-flow.jpg" alt="A recorded Prequel journey shown as a list of actual screenshots in Flow Capture" width="588" height="1280" loading="lazy"></figure>
+          </div>
+          <span class="product-link" aria-hidden="true">Open a project <svg class="ico"><use href="#i-arrow"/></svg></span>
+          <p class="product-note">Demo projects in Library · recorded Flow on iPhone</p>
+        </article>
+
         <article class="bcard bcard-tiles">
           <div class="tiles" aria-hidden="true">
             <img class="t t1" src="assets/tile-atlas.webp" alt="" width="160" height="160">
@@ -157,11 +157,11 @@
           <p>Figma import package, AI review ZIP, PDF and images.</p>
         </article>
 
-        <article class="bcard bcard-plain">
-          <p>iPhone running iOS 18 or later, with a visual design tuned for iOS 26.</p>
-          <div class="bcard-foot bcard-foot-row">
-            <img src="assets/icon-56.png" srcset="assets/icon-56.png 1x, assets/icon-112.png 2x, assets/icon-224.png 4x" alt="" width="56" height="56">
-            <div><small>iOS</small><strong>18+</strong></div>
+        <article class="bcard bcard-ios">
+          <div class="ios-icon" aria-hidden="true"><img src="assets/icon-112.png" srcset="assets/icon-112.png 1x, assets/icon-224.png 2x, assets/icon-336.png 3x" alt="" width="112" height="112"></div>
+          <div class="bcard-foot">
+            <small>iPhone running iOS 18 or later, with a visual design tuned for iOS 26.</small>
+            <strong>iOS 18+</strong>
           </div>
         </article>
 
@@ -375,17 +375,22 @@
 
     <!-- ============ PRIVACY ============ -->
     <section class="section privacy" id="privacy">
-      <div class="container about reveal">
-        <span class="label">Local-first by design</span>
-        <div>
-          <p class="statement"><span>Your source stays yours.</span> Projects, original recordings, and screenshots remain on your iPhone. Screen selection runs locally. Voice transcription and direct Figma delivery use cloud services only for the actions you choose.</p>
+      <div class="container privacy-grid">
+        <div class="privacy-visual reveal">
+          <img src="assets/privacy-dome.webp" alt="" width="1024" height="1024" loading="lazy" aria-hidden="true">
+          <span class="label">Local-first by design</span>
+          <span class="privacy-badge" aria-hidden="true"><svg class="ico"><use href="#i-phone"/></svg>On this iPhone</span>
+        </div>
+        <div class="privacy-copy reveal">
+          <h2>Your source stays yours.</h2>
+          <p class="privacy-lead">Projects, original recordings, and screenshots remain on your iPhone. Screen selection runs locally. Voice transcription and direct Figma delivery use cloud services only for the actions you choose.</p>
+          <ul class="checks">
+            <li><span class="ptile"><svg class="ico"><use href="#i-phone"/></svg></span>Originals stay on your iPhone</li>
+            <li><span class="ptile"><svg class="ico"><use href="#i-shield"/></svg></span>Review and redact before sharing</li>
+            <li><span class="ptile"><svg class="ico"><use href="#i-link"/></svg></span>Optional cloud actions are explicit</li>
+          </ul>
           <a class="btn btn-light" href="#faq">How privacy works <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
         </div>
-      </div>
-      <div class="container pgrid reveal">
-        <div class="pcard"><span class="ptile"><svg class="ico"><use href="#i-phone"/></svg></span><p>Originals stay on your iPhone</p></div>
-        <div class="pcard"><span class="ptile"><svg class="ico"><use href="#i-shield"/></svg></span><p>Review and redact before sharing</p></div>
-        <div class="pcard"><span class="ptile"><svg class="ico"><use href="#i-link"/></svg></span><p>Optional cloud actions are explicit</p></div>
       </div>
     </section>
 
@@ -444,13 +449,8 @@
         </div>
       </div>
       <div class="horizon" aria-hidden="true">
-        <img class="h-obj h1" src="assets/g-film.webp" alt="" width="390" height="520" loading="lazy">
-        <img class="h-obj h2" src="assets/g-stack.webp" alt="" width="520" height="501" loading="lazy">
-        <img class="h-obj h3" src="assets/g-map.webp" alt="" width="520" height="499" loading="lazy">
-        <img class="h-obj h4" src="assets/g-reorder.webp" alt="" width="467" height="520" loading="lazy">
-        <img class="h-obj h5" src="assets/g-tag.webp" alt="" width="474" height="520" loading="lazy">
-        <img class="h-obj f1" src="assets/g-capture.webp" alt="" width="498" height="520" loading="lazy">
-        <img class="h-obj f2" src="assets/g-dedupe.webp" alt="" width="520" height="358" loading="lazy">
+        <img class="horizon-img" src="assets/hero-landscape.webp" alt="" width="1536" height="1024" loading="lazy">
+        <img class="horizon-glow" src="assets/hero-glow.webp" alt="" width="1536" height="1024" loading="lazy">
       </div>
     </section>
 
@@ -567,12 +567,16 @@
         }
         function activate(i) {
           active = i;
-          buttons.forEach(function (b, j) { b.classList.toggle('is-active', j === i); b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+          buttons.forEach(function (b, j) {
+            b.classList.toggle('is-active', j === i); b.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+            b.classList.remove('ring');
+          });
+          void buttons[i].offsetWidth; buttons[i].classList.add('ring');
           panels.forEach(function (p, j) { p.classList.toggle('is-active', j === i); });
           pins.forEach(function (p, j) { p.classList.toggle('is-active', j === i); });
           moveTo(targetY(i));
         }
-        buttons.forEach(function (b, i) { b.addEventListener('click', function () { userTook = true; clearInterval(timer); activate(i); }); });
+        buttons.forEach(function (b, i) { b.addEventListener('click', function () { userTook = true; clearInterval(timer); steps.classList.remove('is-auto'); activate(i); }); });
         window.addEventListener('resize', function () { curY = null; activate(active); });
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { curY = null; activate(active); });
         activate(0);
@@ -581,10 +585,23 @@
           new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
               clearInterval(timer);
-              if (e.isIntersecting && !userTook) timer = setInterval(function () { activate((active + 1) % buttons.length); }, 4200);
+              steps.classList.toggle('is-auto', e.isIntersecting && !userTook);
+              if (e.isIntersecting && !userTook) { activate(active); timer = setInterval(function () { activate((active + 1) % buttons.length); }, 4200); }
             });
           }, { threshold: 0.45 }).observe(steps);
         }
+      }
+
+      /* ---------- Hero: depth on pointer move ---------- */
+      var media = document.querySelector('.hero-media');
+      if (media && !reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        var raf = null, tx = 0, ty = 0;
+        hero.addEventListener('pointermove', function (e) {
+          var r = hero.getBoundingClientRect();
+          tx = ((e.clientX - r.left) / r.width - 0.5); ty = ((e.clientY - r.top) / r.height - 0.5);
+          if (!raf) raf = requestAnimationFrame(function () { raf = null; media.style.transform = 'translate3d(' + (-tx * 18) + 'px,' + (-ty * 12) + 'px,0) scale(1.05)'; });
+        });
+        hero.addEventListener('pointerleave', function () { media.style.transform = ''; });
       }
 
       /* ---------- Features carousel ---------- */
