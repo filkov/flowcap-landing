@@ -509,10 +509,10 @@ h2 { font-size: clamp(34px, 3.9vw, 56px); font-weight: 500; line-height: 1.04; l
 .footer-col a { font-size: 14.5px; color: rgba(243, 245, 251, 0.82); transition: color .15s ease; }
 .footer-col a:hover { color: #fff; }
 
-.wordmark { position: relative; margin: 48px -8px 0; text-align: center; }
+.wordmark { position: relative; margin: 44px 0 0; text-align: center; }
 .wordmark-text {
   display: block;
-  font-size: 14.6cqw; font-weight: 600; line-height: 0.92; letter-spacing: -0.055em; white-space: nowrap;
+  font-size: 18.4cqw; font-weight: 600; line-height: 0.92; letter-spacing: -0.055em; white-space: nowrap;
   color: transparent;
   background:
     radial-gradient(30% 70% at 18% 60%, #0fc2c9 0%, transparent 70%),
@@ -534,7 +534,6 @@ h2 { font-size: clamp(34px, 3.9vw, 56px); font-weight: 500; line-height: 1.04; l
   border-top: 1px solid var(--line);
   font-size: 12.5px; color: var(--dim);
 }
-.footer-bar-links { display: flex; gap: 18px; }
 .footer-bar a:hover { color: #fff; }
 
 /* ---------- Responsive ---------- */
@@ -622,7 +621,7 @@ h2 { font-size: clamp(34px, 3.9vw, 56px); font-weight: 500; line-height: 1.04; l
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .footer-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wordmark { margin-top: 40px; }
-  .wordmark-text { font-size: 15.5cqw; }
+  .wordmark-text { font-size: 18.6cqw; }
   .footer-bar { flex-wrap: wrap; justify-content: center; text-align: center; gap: 8px 16px; padding: 14px 0 18px; }
 }
 
