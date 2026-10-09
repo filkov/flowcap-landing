@@ -31,6 +31,8 @@
       <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
       <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
       <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></symbol>
+      <symbol id="i-stack" viewBox="0 0 24 24"><rect x="7" y="3.5" width="12" height="15" rx="2"/><path d="M5 8v10.5A2.5 2.5 0 0 0 7.5 21H15"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="4.5" cy="17.5" r="1.2" fill="currentColor" stroke="none"/></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
       <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
@@ -62,12 +64,12 @@
         <span>Flow Capture</span>
       </a>
       <div class="nav-links">
-        <a href="#voice">Voice to prompt</a>
-        <a href="#how-it-works">How it works</a>
+        <a href="#capture">Capture</a>
         <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="nav-cta" href="#voice">See voice to prompt</a>
+      <a class="nav-cta" href="#voice">See how it works</a>
       <button class="nav-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="ico"><use href="#i-menu"/></svg>
       </button>
@@ -80,13 +82,13 @@
       <button class="nav-menu" type="button" aria-label="Close menu" data-close><svg class="ico"><use href="#i-close"/></svg></button>
     </div>
     <div class="mobile-menu-links">
-      <a href="#voice">Voice to prompt</a>
-      <a href="#how-it-works">How it works</a>
+      <a href="#voice">How it works</a>
+      <a href="#capture">Capture</a>
       <a href="#features">Features</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="btn btn-accent" href="#voice">See voice to prompt</a>
+    <a class="btn btn-accent" href="#voice">See how it works</a>
   </div>
 
   <main id="main">
@@ -100,17 +102,15 @@
 
       <div class="hero-copy">
         <div class="app-icon app-icon-hero"><img src="assets/icon-112.png" srcset="assets/icon-112.png 1x, assets/icon-224.png 2x, assets/icon-336.png 3x" alt="Flow Capture app icon" width="112" height="112"></div>
-        <a class="voice-chip" href="#voice"><span class="voice-chip-mic"><svg class="ico"><use href="#i-mic"/></svg></span><span class="vc-long">Talk through any app · get a prompt for Claude or Codex</span><span class="vc-short">Voice → prompt for Claude &amp; Codex</span><svg class="ico voice-chip-arrow"><use href="#i-arrow"/></svg></a>
         <h1 class="hero-title">
-          <span class="ln">Capture</span>
-          <span class="ln">the journey.</span>
-          <span class="ln">Keep the context.</span>
+          <span class="ln">Talk through any app.</span>
+          <span class="ln accent">Get a prompt for Claude or Codex.</span>
         </h1>
         <div class="hero-aside">
-          <p>Record an iPhone app and say what you see. Flow Capture links your voice to the right screens and turns the recording into a ready-to-use prompt for Claude or Codex.</p>
+          <p>Record an iPhone app and say what you see. Flow Capture links your voice to the right screens and turns the recording into one ready-to-use prompt.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="#voice">See voice to prompt <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
-            <a class="btn btn-accent" href="#how-it-works">Explore the workflow</a>
+            <a class="btn btn-light" href="#voice">See how it works <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+            <a class="btn btn-ghost" href="#features">Explore features</a>
           </div>
           <p class="hero-meta">Coming soon to iPhone · iOS 18+ · Local-first</p>
         </div>
@@ -118,7 +118,7 @@
 
       <!-- Device slot: placeholder phone. Swap for the final mockup or a phone-in-hand image later. -->
       <div class="hero-device">
-        <figure class="phone fit hero-phone"><img src="assets/app-handoff.jpg" alt="Flow Capture handoff screen for Codex and Claude: one ZIP with a prompt, ordered screens, flow data, comments and audio" width="828" height="1800" fetchpriority="high"></figure>
+        <figure class="phone fit hero-phone"><img src="assets/app-handoff.webp" alt="Flow Capture handoff screen for Codex and Claude: one ZIP with a prompt, ordered screens, flow data, comments and audio" width="600" height="1304" fetchpriority="high"></figure>
       </div>
     </section>
 
@@ -126,8 +126,8 @@
     <section class="sheet-top">
       <div class="container voice" id="voice">
         <header class="voice-head reveal">
-          <span class="label label-accent"><svg class="ico"><use href="#i-mic"/></svg>The core feature</span>
-          <h2>Talk through the app.<br><span>Send it to Claude or Codex.</span></h2>
+          <span class="label label-accent"><svg class="ico"><use href="#i-mic"/></svg>How it works</span>
+          <h2>Say it while you see it.<br><span>Your agent gets the context.</span></h2>
           <p>Record any iPhone app and narrate as you go. Every comment is linked to the screen you were on, and the whole recording becomes one prompt with ordered screenshots, flow data and transcripts.</p>
         </header>
 
@@ -139,8 +139,12 @@
             <h3>Record and talk</h3>
             <p>Use the app as usual and say what works and what doesn’t.</p>
             <div class="vvis vvis-rec" aria-hidden="true">
-              <figure class="phone fit vphone"><img src="assets/app-flow.jpg" alt="" width="588" height="1280" loading="lazy"></figure>
-              <div class="recbar"><i class="dot-red"></i><span>REC 00:42</span><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+              <div class="live">
+                <div class="live-top"><span class="live-rec"><i class="dot-red"></i>REC</span><span class="live-time">00:42</span></div>
+                <div class="live-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="live-screens"><span></span><span></span><span></span><span></span><span class="on"></span><span class="next"></span></div>
+                <div class="live-caption"><svg class="ico"><use href="#i-mic"/></svg>Speaking on screen 6</div>
+              </div>
             </div>
           </article>
 
@@ -150,11 +154,11 @@
             <p>Comments stay attached to the moment they were spoken.</p>
             <div class="vvis vvis-notes" aria-hidden="true">
               <div class="vnote">
-                <span class="vnote-shot"><img src="assets/app-flow.jpg" alt="" width="588" height="1280" loading="lazy"></span>
+                <span class="vnote-shot"><i></i><i></i><i class="hl"></i></span>
                 <span class="vnote-body"><small><svg class="ico"><use href="#i-mic"/></svg>Screen 6 · 0:07</small>“The label on this button is unclear. People will expect it to save.”</span>
               </div>
               <div class="vnote">
-                <span class="vnote-shot"><img src="assets/app-library.jpg" alt="" width="828" height="1800" loading="lazy"></span>
+                <span class="vnote-shot"><i></i><i class="hl"></i><i></i></span>
                 <span class="vnote-body"><small><svg class="ico"><use href="#i-text"/></svg>Screen 6 · text</small>Move the primary action above the fold.</span>
               </div>
             </div>
@@ -178,11 +182,10 @@
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section about-wrap">
+    <!-- ============ AT A GLANCE ============ -->
+    <section class="section glance">
       <div class="container about reveal">
-        <span class="label">About Flow Capture</span>
-        <p class="statement"><span>Key screens. In the right order.</span> Feedback that stays in context. Originals stay on your iPhone.</p>
+        <span class="label">At a glance</span>
       </div>
 
       <div class="container bento reveal">
@@ -190,11 +193,11 @@
         <article class="bcard bcard-product" aria-label="Flow Capture library and a flow with its ordered screenshots">
           <div class="product-col">
             <p class="product-cap"><span>01 / Library</span><strong>Every app journey, in one place.</strong></p>
-            <figure class="phone product-phone"><img src="assets/app-library.jpg" alt="Flow Capture library with multiple recorded app journeys displayed as icons" width="828" height="1800" loading="lazy"></figure>
+            <figure class="phone product-phone"><img src="assets/app-library.webp" alt="Flow Capture library with multiple recorded app journeys displayed as icons" width="600" height="1304" loading="lazy"></figure>
           </div>
           <div class="product-col product-col-b">
             <p class="product-cap"><span>02 / Flow</span><strong>The actual screens. Still in order.</strong></p>
-            <figure class="phone product-phone"><img src="assets/app-flow.jpg" alt="A recorded Prequel journey shown as a list of actual screenshots in Flow Capture" width="588" height="1280" loading="lazy"></figure>
+            <figure class="phone product-phone"><img src="assets/app-flow.webp" alt="A recorded Prequel journey shown as a list of actual screenshots in Flow Capture" width="588" height="1280" loading="lazy"></figure>
           </div>
           <p class="product-note">Demo projects in Library · recorded Flow on iPhone</p>
         </article>
@@ -236,12 +239,12 @@
       </div>
     </section>
 
-    <!-- ============ HOW IT WORKS ============ -->
-    <section class="section how" id="how-it-works">
+    <!-- ============ CAPTURE ============ -->
+    <section class="section how" id="capture">
       <div class="container">
         <header class="sec-head reveal">
           <div>
-            <span class="label">How it works</span>
+            <span class="label">Capture</span>
             <h2>Use the app.<br>Keep the useful screens.</h2>
           </div>
           <p>Record a journey with the iOS screen recorder, or import a video or screenshots. Flow Capture finds stable screen states and lets you review what belongs in the flow.</p>
@@ -250,10 +253,7 @@
         <div class="steps reveal" data-steps>
           <div class="steps-visual">
             <div class="steps-glow" aria-hidden="true"></div>
-            <figure class="phone step-phone is-active" data-panel="0"><img src="assets/app-library.jpg" alt="Flow Capture library of recorded journeys" width="828" height="1800" loading="lazy"></figure>
-            <figure class="phone step-phone" data-panel="1"><img src="assets/app-processing.jpg" alt="Preparing Review in Flow Capture" width="828" height="1800" loading="lazy"></figure>
-            <figure class="phone step-phone" data-panel="2"><img src="assets/app-flow.jpg" alt="A flow with its screens in order" width="588" height="1280" loading="lazy"></figure>
-            <figure class="phone step-phone" data-panel="3"><img src="assets/app-handoff.jpg" alt="Flow Capture AI handoff screen" width="828" height="1800" loading="lazy"></figure>
+            <figure class="phone step-phone is-active"><img src="assets/app-processing.webp" alt="Flow Capture preparing review: finding key screens in an Airbnb screen recording" width="600" height="1304" loading="lazy"></figure>
           </div>
 
           <div class="steps-line" aria-hidden="true">
@@ -263,20 +263,16 @@
 
           <ol class="steps-list">
             <li><button class="step is-active" type="button" data-step="0" aria-pressed="true">
-              <span class="step-num">01</span>
+              <span class="step-num"><svg class="ico"><use href="#i-record"/></svg></span>
               <span class="step-body"><span class="step-title">Record or import</span><span class="step-text">Start a screen broadcast, import a recording, or assemble screenshots from Photos.</span></span>
             </button></li>
             <li><button class="step" type="button" data-step="1" aria-pressed="false">
-              <span class="step-num">02</span>
+              <span class="step-num"><svg class="ico"><use href="#i-stack"/></svg></span>
               <span class="step-body"><span class="step-title">Review the selection</span><span class="step-text">Skip duplicates, keep important states, and restore a missed frame from the source video.</span></span>
             </button></li>
             <li><button class="step" type="button" data-step="2" aria-pressed="false">
-              <span class="step-num">03</span>
+              <span class="step-num"><svg class="ico"><use href="#i-list"/></svg></span>
               <span class="step-body"><span class="step-title">Order preserved</span><span class="step-text">The captured sequence stays intact; you can rename and reorder screens later.</span></span>
-            </button></li>
-            <li><button class="step" type="button" data-step="3" aria-pressed="false">
-              <span class="step-num">04</span>
-              <span class="step-body"><span class="step-title">Go from evidence to the next tool</span><span class="step-text">Choose an AI-ready ZIP with an actual prompt and ordered screens, or an import package for the companion Figma plugin.</span></span>
             </button></li>
           </ol>
         </div>
@@ -294,8 +290,8 @@
               <p>Flow Map groups recorded screens into stages. Add separately captured branches and later versions without pretending one recording revealed paths you never took.</p>
             </div>
             <div class="ftext" data-ftext="1" aria-hidden="true">
-              <h2>Feedback stays with the moment.</h2>
-              <p>Speak while recording or write a note later. Choose comments linked to screens or one continuous prompt for your AI handoff.</p>
+              <h2>Open the flow in Figma.</h2>
+              <p>The companion plugin imports screenshots as image layers grouped by flow, with names and order you can edit in Figma.</p>
             </div>
             <div class="ftext" data-ftext="2" aria-hidden="true">
               <h2>Go from evidence to the next tool.</h2>
@@ -314,7 +310,7 @@
 
             <div class="slide" data-slide="0">
               <div class="scard scard-shot">
-                <figure class="phone shot-phone"><img src="assets/app-map.jpg" alt="Flow Map in Flow Capture with connected Discovery and Booking stages" width="828" height="1800" loading="lazy"></figure>
+                <figure class="phone shot-phone"><img src="assets/app-map.webp" alt="Flow Map in Flow Capture with connected Discovery and Booking stages" width="600" height="1304" loading="lazy"></figure>
               </div>
               <div class="scard scard-accent">
                 <div class="scard-top"><span class="scard-kicker">Observed route</span><span class="badge">Flow Map</span></div>
@@ -329,22 +325,38 @@
 
             <div class="slide" data-slide="1">
               <div class="scard scard-shot">
-                <figure class="phone shot-phone"><img src="assets/app-flow.jpg" alt="A recorded flow with its screenshots" width="588" height="1280" loading="lazy"></figure>
+                <div class="fboard" aria-hidden="true">
+                  <div class="fgroup">
+                    <span class="fgroup-name">Main Flow</span>
+                    <div class="fframes">
+                      <span class="fframe"><small>01</small><i></i></span>
+                      <span class="fframe"><small>02</small><i></i></span>
+                      <span class="fframe"><small>03</small><i></i></span>
+                      <span class="fframe"><small>04</small><i></i></span>
+                    </div>
+                  </div>
+                  <div class="flayers">
+                    <span class="fl fl-group">Main Flow</span>
+                    <span class="fl">Screen 01</span>
+                    <span class="fl fl-on">Screen 02</span>
+                    <span class="fl">Screen 03</span>
+                  </div>
+                </div>
               </div>
               <div class="scard scard-accent">
-                <div class="scard-top"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="badge">0:07</span></div>
-                <p class="scard-quote">“The label on this button is unclear. People will expect it to save.”</p>
-                <div class="scard-note">
-                  <span class="note-head"><svg class="ico"><use href="#i-text"/></svg>Text · screen 6</span>
-                  <p>Move the primary action above the fold.</p>
-                  <span class="note-tags"><span>screen 6</span><span>onboarding</span></span>
-                </div>
+                <div class="scard-top"><span class="scard-kicker">Figma import package</span><span class="badge">Plugin</span></div>
+                <p class="scard-quote">Screenshots arrive as image layers, grouped by flow.</p>
+                <ul class="scard-list">
+                  <li><svg class="ico"><use href="#i-reorder"/></svg><span><b>Names and order you can edit</b>Rename layers and change the sequence right in Figma.</span></li>
+                  <li><svg class="ico"><use href="#i-folder"/></svg><span><b>Offline folder import</b>Works without linking an account. Direct delivery requires a connected account.</span></li>
+                  <li><svg class="ico"><use href="#i-board"/></svg><span><b>Screens, not rebuilt UI</b>It does not rebuild an app as native Figma UI components.</span></li>
+                </ul>
               </div>
             </div>
 
             <div class="slide" data-slide="2">
               <div class="scard scard-shot">
-                <figure class="phone shot-phone"><img src="assets/app-handoff.jpg" alt="Flow Capture AI handoff screen" width="828" height="1800" loading="lazy"></figure>
+                <img class="shot-obj" src="assets/g-stack.webp" alt="" width="400" height="385" loading="lazy" aria-hidden="true">
               </div>
               <div class="scard scard-accent">
                 <div class="scard-top"><span class="scard-kicker">AI review package</span><span class="badge">ZIP</span></div>
@@ -426,7 +438,7 @@
             <li><span class="ptile"><svg class="ico"><use href="#i-shield"/></svg></span>Review and redact before sharing</li>
             <li><span class="ptile"><svg class="ico"><use href="#i-link"/></svg></span>Optional cloud actions are explicit</li>
           </ul>
-          <a class="btn btn-light" href="#faq">How privacy works <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+          <a class="btn btn-light" href="#faq">Read the FAQ <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -439,6 +451,10 @@
           <h2>Questions and answers</h2>
         </div>
         <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Can I comment with my voice?<span class="faq-plus"><svg class="ico"><use href="#i-plus"/></svg></span></summary>
+            <p>Yes. Speak while recording or write a note later. Each comment stays linked to the screen it belongs to, and you can export comments linked to screens or one continuous prompt for your AI handoff. Voice transcription is an optional cloud action you choose.</p>
+          </details>
           <details class="faq-item">
             <summary>What can I record or import?<span class="faq-plus"><svg class="ico"><use href="#i-plus"/></svg></span></summary>
             <p>Any app on your iPhone. Record it directly, or import an existing screen recording, a video, or a set of screenshots.</p>
@@ -475,15 +491,15 @@
 
   <!-- ============ FINALE: CTA + FOOTER ============ -->
   <div class="finale">
-    <section class="cta" aria-labelledby="cta-title">
+    <section class="cta" id="get" aria-labelledby="cta-title">
       <div class="cta-inner reveal">
         <div class="app-icon app-icon-cta" aria-hidden="true"><img src="assets/icon-112.png" srcset="assets/icon-112.png 1x, assets/icon-224.png 2x, assets/icon-336.png 3x" alt="" width="112" height="112"></div>
         <h2 id="cta-title">From recording to<br>product-ready flow</h2>
-        <!-- TODO: replace href with the App Store link when the app is published -->
-        <a class="appstore" href="#" aria-label="Download on the App Store">
+        <!-- When the app is live: turn this into <a class="appstore" href="APP_STORE_URL"> with "Download on the" -->
+        <div class="appstore is-soon" role="img" aria-label="Coming soon to the App Store">
           <svg class="appstore-logo" aria-hidden="true"><use href="#i-apple"/></svg>
-          <span class="appstore-text"><small>Download on the</small><b>App Store</b></span>
-        </a>
+          <span class="appstore-text"><small>Coming soon to the</small><b>App Store</b></span>
+        </div>
       </div>
       <div class="horizon" aria-hidden="true">
         <img class="horizon-img" src="assets/hero-landscape.webp" srcset="assets/hero-landscape-960.webp 960w, assets/hero-landscape.webp 1536w" sizes="100vw" alt="" width="1536" height="1024" loading="lazy">
@@ -500,20 +516,15 @@
         <nav class="footer-cols" aria-label="Footer">
           <div class="footer-col">
             <h4>Product</h4>
-            <a href="#how-it-works">How it works</a>
+            <a href="#voice">How it works</a>
+            <a href="#capture">Capture</a>
             <a href="#features">Features</a>
             <a href="#details">Details</a>
-            <a href="#features">Export</a>
           </div>
           <div class="footer-col">
             <h4>Trust</h4>
             <a href="#privacy">Privacy</a>
             <a href="#faq">FAQ</a>
-          </div>
-          <div class="footer-col">
-            <h4>Made for</h4>
-            <a href="#faq">iPhone · iOS 18+</a>
-            <a href="#features">Figma · AI tools</a>
           </div>
         </nav>
       </div>
@@ -567,7 +578,6 @@
       var steps = document.querySelector('[data-steps]');
       if (steps) {
         var buttons = steps.querySelectorAll('[data-step]');
-        var panels = steps.querySelectorAll('[data-panel]');
         var lineBox = steps.querySelector('.steps-line');
         var svg = steps.querySelector('.steps-svg');
         var path = steps.querySelector('.steps-path');
@@ -604,7 +614,6 @@
             b.classList.remove('ring');
           });
           void buttons[i].offsetWidth; buttons[i].classList.add('ring');
-          panels.forEach(function (p, j) { p.classList.toggle('is-active', j === i); });
           moveTo(targetY(i));
         }
         buttons.forEach(function (b, i) { b.addEventListener('click', function () { userTook = true; clearInterval(timer); steps.classList.remove('is-auto'); activate(i); }); });
