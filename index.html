@@ -62,12 +62,12 @@
         <span>Flow Capture</span>
       </a>
       <div class="nav-links">
+        <a href="#voice">Voice to prompt</a>
         <a href="#how-it-works">How it works</a>
         <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="nav-cta" href="#how-it-works">Explore the workflow</a>
+      <a class="nav-cta" href="#voice">See voice to prompt</a>
       <button class="nav-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="ico"><use href="#i-menu"/></svg>
       </button>
@@ -80,12 +80,13 @@
       <button class="nav-menu" type="button" aria-label="Close menu" data-close><svg class="ico"><use href="#i-close"/></svg></button>
     </div>
     <div class="mobile-menu-links">
+      <a href="#voice">Voice to prompt</a>
       <a href="#how-it-works">How it works</a>
       <a href="#features">Features</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="btn btn-accent" href="#how-it-works">Explore the workflow</a>
+    <a class="btn btn-accent" href="#voice">See voice to prompt</a>
   </div>
 
   <main id="main">
@@ -99,16 +100,17 @@
 
       <div class="hero-copy">
         <div class="app-icon app-icon-hero"><img src="assets/icon-112.png" srcset="assets/icon-112.png 1x, assets/icon-224.png 2x, assets/icon-336.png 3x" alt="Flow Capture app icon" width="112" height="112"></div>
+        <a class="voice-chip" href="#voice"><span class="voice-chip-mic"><svg class="ico"><use href="#i-mic"/></svg></span><span class="vc-long">Talk through any app · get a prompt for Claude or Codex</span><span class="vc-short">Voice → prompt for Claude &amp; Codex</span><svg class="ico voice-chip-arrow"><use href="#i-arrow"/></svg></a>
         <h1 class="hero-title">
           <span class="ln">Capture</span>
           <span class="ln">the journey.</span>
           <span class="ln">Keep the context.</span>
         </h1>
         <div class="hero-aside">
-          <p>Turn an iPhone recording into ordered screens, contextual feedback, and a handoff your designer or coding agent can actually use.</p>
+          <p>Record an iPhone app and say what you see. Flow Capture links your voice to the right screens and turns the recording into a ready-to-use prompt for Claude or Codex.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="#how-it-works">Explore the workflow <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
-            <a class="btn btn-accent" href="#privacy">How privacy works</a>
+            <a class="btn btn-light" href="#voice">See voice to prompt <span class="btn-dot"><svg class="ico"><use href="#i-arrow-ur"/></svg></span></a>
+            <a class="btn btn-accent" href="#how-it-works">Explore the workflow</a>
           </div>
           <p class="hero-meta">Coming soon to iPhone · iOS 18+ · Local-first</p>
         </div>
@@ -116,12 +118,68 @@
 
       <!-- Device slot: placeholder phone. Swap for the final mockup or a phone-in-hand image later. -->
       <div class="hero-device">
-        <figure class="phone fit hero-phone"><img src="assets/app-library.jpg" alt="Flow Capture library with multiple recorded app journeys displayed as icons" width="828" height="1800" fetchpriority="high"></figure>
+        <figure class="phone fit hero-phone"><img src="assets/app-handoff.jpg" alt="Flow Capture handoff screen for Codex and Claude: one ZIP with a prompt, ordered screens, flow data, comments and audio" width="828" height="1800" fetchpriority="high"></figure>
+      </div>
+    </section>
+
+    <!-- ============ CORE FEATURE: VOICE TO PROMPT ============ -->
+    <section class="sheet-top">
+      <div class="container voice" id="voice">
+        <header class="voice-head reveal">
+          <span class="label label-accent"><svg class="ico"><use href="#i-mic"/></svg>The core feature</span>
+          <h2>Talk through the app.<br><span>Send it to Claude or Codex.</span></h2>
+          <p>Record any iPhone app and narrate as you go. Every comment is linked to the screen you were on, and the whole recording becomes one prompt with ordered screenshots, flow data and transcripts.</p>
+        </header>
+
+        <div class="voice-board reveal">
+          <div class="voice-line" aria-hidden="true"><i></i></div>
+
+          <article class="vstep">
+            <span class="vnum">01</span>
+            <h3>Record and talk</h3>
+            <p>Use the app as usual and say what works and what doesn’t.</p>
+            <div class="vvis vvis-rec" aria-hidden="true">
+              <figure class="phone fit vphone"><img src="assets/app-flow.jpg" alt="" width="588" height="1280" loading="lazy"></figure>
+              <div class="recbar"><i class="dot-red"></i><span>REC 00:42</span><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+            </div>
+          </article>
+
+          <article class="vstep">
+            <span class="vnum">02</span>
+            <h3>Voice lands on the right screen</h3>
+            <p>Comments stay attached to the moment they were spoken.</p>
+            <div class="vvis vvis-notes" aria-hidden="true">
+              <div class="vnote">
+                <span class="vnote-shot"><img src="assets/app-flow.jpg" alt="" width="588" height="1280" loading="lazy"></span>
+                <span class="vnote-body"><small><svg class="ico"><use href="#i-mic"/></svg>Screen 6 · 0:07</small>“The label on this button is unclear. People will expect it to save.”</span>
+              </div>
+              <div class="vnote">
+                <span class="vnote-shot"><img src="assets/app-library.jpg" alt="" width="828" height="1800" loading="lazy"></span>
+                <span class="vnote-body"><small><svg class="ico"><use href="#i-text"/></svg>Screen 6 · text</small>Move the primary action above the fold.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="vstep vstep-out">
+            <span class="vnum">03</span>
+            <h3>Paste the prompt into Claude or Codex</h3>
+            <p>Copy the prompt, attach the ZIP, and let your coding agent work from what you saw.</p>
+            <div class="vvis vvis-prompt" aria-hidden="true">
+              <div class="prompt">
+                <div class="prompt-head"><span>Prompt.md</span><span class="prompt-tag">Ready for AI</span></div>
+                <div class="prompt-lines"><i></i><i></i><i class="short"></i><i></i><i class="short"></i></div>
+                <div class="prompt-files"><span>Screens/</span><span>flow.json</span><span>Comments</span></div>
+                <div class="prompt-actions"><span class="pa pa-light">Copy Prompt</span><span class="pa pa-accent">Share ZIP</span></div>
+              </div>
+              <div class="agents"><span>Claude</span><span>Codex</span></div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section class="sheet-top">
+    <section class="section about-wrap">
       <div class="container about reveal">
         <span class="label">About Flow Capture</span>
         <p class="statement"><span>Key screens. In the right order.</span> Feedback that stays in context. Originals stay on your iPhone.</p>
