@@ -44,3 +44,11 @@ To roll back this visual refresh, revert its Git commit. The MCP guide/download 
 Transparent edge-to-edge navigation replaces the boxed header and section anchors. Guides content is based on `RecordingGuideView`, `VoiceCommentaryGuideView` and `AIHandoffGuideView` in the current app, with MCP limits matching the existing setup guide. The website articles are separate from the in-app strings.
 
 Verified all six HTML routes for local references, one H1, article metadata/JSON-LD and sitemap XML. Browser review covered home, index, all three article routes and the MCP guide; 320/390 px layout stayed within the viewport. The original device export has an alpha channel; its image extends below the hero and is clipped by the banner.
+
+## Homepage design critique and refinement (2026-10-14)
+
+Preserved the approved voice-led copy, forest/lake artwork, transparent full-width navigation, gradient headings and authentic Figma screenshots. The review identified oversized vertical pauses, a gallery taller than a typical viewport, delayed product visibility on mobile, and an ambiguous first action.
+
+`homepage.css` scopes the refinement to the homepage: a shorter hero, compact numbered steps, four visible campaign boards on wide screens, a scrollable gallery on smaller screens, and balanced handoff/FAQ/closing spacing. The primary action leads directly to the recording guide. Gallery controls disappear when all four boards fit, and the mobile counter identifies the current board. Native dialog and details behavior is retained.
+
+Validated local links/assets, unique IDs, one H1, JavaScript syntax and clean diff. Browser checks covered 320, 390, 820 and 1280 px without document overflow; gallery navigation, native dialog/escape/focus restoration, FAQ expansion and the recording-guide link worked. No browser console errors or warnings on these paths. White primary-button text contrast is 5.46:1 normally and 5.00:1 on hover. This is a focused visual/interaction review, not a complete accessibility certification.
