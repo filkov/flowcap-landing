@@ -11,7 +11,7 @@
     const step = cards[1].offsetLeft - cards[0].offsetLeft;
     document.querySelector(".gallery-actions").hidden = max <= 2;
     gallery.tabIndex = max > 2 ? 0 : -1;
-    gallery.setAttribute("aria-label", max > 2 ? "Flow Capture screens. Scroll to explore four features." : "Flow Capture screens: map, comments, versions, and library.");
+    gallery.setAttribute("aria-label", max > 2 ? "Flow Capture screens. Scroll to explore four features." : "Flow Capture screens: library, map, comments, and versions.");
     index = Math.max(0, Math.min(cards.length - 1, Math.round(gallery.scrollLeft / step)));
     prev.disabled = gallery.scrollLeft < 2;
     next.disabled = gallery.scrollLeft >= max - 2;
