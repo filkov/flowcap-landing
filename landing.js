@@ -1,35 +1,5 @@
 (() => {
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const menu = document.querySelector('#mobile-menu');
-  const opener = document.querySelector('[aria-controls="mobile-menu"]');
-  const background = [...document.querySelectorAll('.nav-wrap,main,.closing,.footer')];
-  const closeMenu = () => {
-    background.forEach(el => { el.inert = false; });
-    menu.hidden = true;
-    opener.setAttribute('aria-expanded', 'false');
-    document.documentElement.classList.remove('menu-open');
-    opener.focus({preventScroll:true});
-  };
-  opener.addEventListener('click', () => {
-    menu.hidden = false;
-    background.forEach(el => { el.inert = true; });
-    opener.setAttribute('aria-expanded', 'true');
-    document.documentElement.classList.add('menu-open');
-    menu.querySelector('[data-close]').focus();
-  });
-  menu.querySelectorAll('a, [data-close]').forEach(el => el.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', e => {
-    if (menu.hidden) return;
-    if (e.key === 'Escape') { e.preventDefault(); closeMenu(); }
-    if (e.key === 'Tab') {
-      const links = [...menu.querySelectorAll('a,button')];
-      const first = links[0], last = links[links.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-  });
-  // Reset the mobile overlay when changing to a desktop viewport.
-  window.matchMedia('(min-width: 761px)').addEventListener('change', e => { if (e.matches && !menu.hidden) closeMenu(); });
   const gallery = document.querySelector('.gallery');
   const cards = [...gallery.children];
   const prev = document.querySelector('[data-prev]');
