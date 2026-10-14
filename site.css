@@ -1,0 +1,21 @@
+/* Shared typography and footer across the landing, setup and content pages. */
+body { letter-spacing: .005em; }
+p, li { font-weight: 400; }
+h1, h2 { font-weight: 400; }
+h3, h4, strong, .btn { font-weight: 500; }
+.nav-brand { font-weight: 500; letter-spacing: 0; }
+.app-store-link { display: inline-flex; flex: 0 0 auto; align-items: center; min-height: 60px; border-radius: 10px; }
+.app-store-link img { display: block; width: 180px; height: 60px; }
+.site-footer { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px 40px; padding-block: 40px; margin-top: 12px; }
+.site-footer nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 24px; }
+.site-footer p { grid-column: 1 / -1; font-size: 13px; padding-top: 0; }
+.legal-main { padding-top: 56px; padding-bottom: 56px; }
+.legal-main .article-body ul { padding-left: 24px; margin-bottom: 24px; }
+.legal-main .article-body li { margin-bottom: 12px; }
+.legal-main .article-body h2:first-child { margin-top: 0; }
+@media (max-width: 760px) {
+ .site-footer { grid-template-columns: 1fr; gap: 18px; padding-block: 32px; }
+ .site-footer nav { justify-content: flex-start; order: initial; gap: 4px 24px; }
+ .site-footer p { grid-column: 1; }
+ .legal-main { padding-top: 32px; padding-bottom: 32px; }
+}

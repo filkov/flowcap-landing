@@ -5,7 +5,7 @@ html { scroll-padding-top: 0; }
 .mcp-page .nav-links [aria-current="page"] { color: var(--violet); }
 .setup-main { max-width: 1184px; }
 .setup-hero { padding: 64px 0 72px; border-bottom: 1px solid var(--line); }
-.setup-hero h1 { max-width: 980px; font-size: clamp(44px, 5.6vw, 72px); line-height: 1.08; letter-spacing: -.045em; }
+.setup-hero h1 { max-width: 980px; font-size: clamp(44px, 5.6vw, 72px); line-height: 1.08; letter-spacing:-.015em; }
 .setup-hero .lead { max-width: 690px; margin-top: 26px; font-size: 20px; }
 .setup-hero .actions { margin-top: 30px; gap: 24px; }
 .mcp-page .btn-primary { background: #6257d5; }

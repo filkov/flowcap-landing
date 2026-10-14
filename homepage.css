@@ -1,6 +1,6 @@
 /* Homepage editorial refinement. Shared Guides and MCP layouts stay independent. */
 .landing-page .hero { min-height: 650px; padding-block: 52px 64px; }
-.landing-page .hero-phone { top: 100px; right: 16px; width: min(36vw, 430px); }
+.landing-page .hero-phone { top: 62px; right: 48px; width: min(29vw, 340px); }
 .landing-page .hero h1 { font-size: clamp(48px, 4.8vw, 68px); }
 .landing-page .hero .lead { max-width: 510px; }
 .landing-page .actions { gap: 24px; margin-top: 30px; }
@@ -50,7 +50,7 @@
 }
 @media (min-width: 761px) and (max-width: 1100px) {
   .landing-page .hero { min-height: 680px; }
-  .landing-page .hero-phone { top: 140px; right: 0; }
+  .landing-page .hero-phone { top: 130px; right: 0; width: 30vw; }
   .landing-page .hero h1 { font-size: 48px; }
   .landing-page .handoff, .landing-page .privacy, .landing-page .faq-grid { gap: 48px; }
 }
@@ -63,7 +63,7 @@
   .landing-page .actions .btn { gap: 12px; padding-inline: 18px; }
   .landing-page .actions .text-link { font-size: 15px; }
   .landing-page .availability { margin-top: 16px; }
-  .landing-page .hero-phone { top: auto; right: auto; margin-top: 32px; width: min(88%, 360px); height: 340px; }
+  .landing-page .hero-phone { top: auto; right: auto; margin-top: 32px; width: min(78%, 300px); height: 470px; }
   .landing-page .workflow { padding-block: 56px; gap: 32px; }
   .landing-page .workflow-heading h2 { font-size: clamp(32px, 8.3vw, 44px); }
   .landing-page .workflow-heading .lead { font-size: 17px; line-height: 1.6; margin-top: 20px; }
