@@ -1,13 +1,15 @@
 'use strict';
 for (const button of document.querySelectorAll('[data-copy]')) {
+  const original = button.textContent;
+  let resetLabel;
   button.addEventListener('click', async () => {
+    window.clearTimeout(resetLabel);
     const target = document.getElementById(button.dataset.copy);
-    const original = button.textContent;
     try {
       await navigator.clipboard.writeText(target.textContent);
       button.textContent = 'Copied';
       document.getElementById('copy-status').textContent = 'Copied to clipboard.';
-      window.setTimeout(() => { button.textContent = original; }, 2500);
+      resetLabel = window.setTimeout(() => { button.textContent = original; }, 2500);
     } catch {
       const selection = window.getSelection();
       const range = document.createRange(); range.selectNodeContents(target);

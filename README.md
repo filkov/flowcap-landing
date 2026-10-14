@@ -10,7 +10,7 @@ python3 -m http.server 8793
 
 - `/`: campaign landing (`index.html`, `landing.css`, `landing.js`).
 - `/guides/`: article index plus three static guides for recording, voice commentary and AI handoff. Each article has a canonical URL, description, Article/BreadcrumbList JSON-LD, and related links. `sitemap.xml` and `robots.txt` cover all public content routes.
-- `/mcp/`: MCP installation guide and versioned source download. Its existing shared `styles.css` is intentionally independent of the landing refresh.
+- `/mcp/`: MCP installation guide and versioned source download. It shares the landing typography, palette and navigation through `landing.css`, with isolated setup layouts in `mcp/mcp.css`.
 
 ## Product imagery
 
@@ -52,3 +52,10 @@ Preserved the approved voice-led copy, forest/lake artwork, transparent full-wid
 `homepage.css` scopes the refinement to the homepage: a shorter hero, compact numbered steps, four visible campaign boards on wide screens, a scrollable gallery on smaller screens, and balanced handoff/FAQ/closing spacing. The primary action leads directly to the recording guide. Gallery controls disappear when all four boards fit, and the mobile counter identifies the current board. Native dialog and details behavior is retained.
 
 Validated local links/assets, unique IDs, one H1, JavaScript syntax and clean diff. Browser checks covered 320, 390, 820 and 1280 px without document overflow; gallery navigation, native dialog/escape/focus restoration, FAQ expansion and the recording-guide link worked. No browser console errors or warnings on these paths. White primary-button text contrast is 5.46:1 normally and 5.00:1 on hover. This is a focused visual/interaction review, not a complete accessibility certification.
+
+
+## MCP design alignment and overflow fix (2026-10-14)
+
+Removed the legacy landing stylesheet from MCP Setup. Its `.steps` rule imposed a three-column grid with a 64 px middle column on the installation instructions. The page now uses the current site's shared base and namespaced `.setup-steps` lists. Installation is one panel with divided rows; pairing and delivery remain sequential lists. The page shares Urbanist, blue/violet headings, full-width transparent navigation, buttons and footer with the homepage. Long code wraps without changing copied commands.
+
+Browser checks at 320, 390, 820 and 1280 px found no document or card/code overflow. Section navigation, native FAQ disclosure and copy feedback worked; the copy handler's exact payload and repeated-click label reset were checked separately. Original command and pairing payloads match the previous version byte for byte. HTML nesting, local links/downloads, unique IDs and JavaScript syntax validated; no browser console warnings/errors on tested paths.

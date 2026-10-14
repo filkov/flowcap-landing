@@ -1,1 +1,79 @@
-.setup-nav,.setup-footer{max-width:1040px;margin:auto;padding:28px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}.setup-nav>a:last-child{color:#b7afff;font-weight:600;min-height:44px;display:flex;align-items:center}.setup-main{max-width:900px;margin:auto;padding:0 28px}.setup-hero{padding:72px 0 64px}.eyebrow{color:#b7afff;font-size:13px;font-weight:700;letter-spacing:.12em;margin-bottom:20px}.setup-hero h1{font-size:clamp(44px,7vw,76px);line-height:1.08;letter-spacing:-.045em}.lead{font-size:20px;color:#b9c0d2;max-width:650px;margin:26px 0}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 20px}.quiet{color:#afb7cb;font-size:14px;line-height:1.6;margin-top:18px}.quiet strong{color:var(--text)}.setup-section{padding:36px 0;scroll-margin-top:24px}.setup-section h2{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.025em;margin-bottom:20px}.section-intro{color:#b9c0d2;margin-bottom:24px;max-width:650px}.setup-card{padding:28px;margin:16px 0;border:1px solid var(--line-2);border-radius:24px;background:linear-gradient(140deg,#141621,#0d1019)}.setup-card h3{font-size:23px;margin-bottom:12px}.setup-card p{margin-bottom:14px;line-height:1.65}.setup-card p:last-child{margin-bottom:0}.setup-card a:not(.btn),.sources a{color:#b7afff;text-decoration:underline;text-underline-offset:4px}.client-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}.client-grid h4{font-size:18px;margin-bottom:8px}.client-grid p{color:#b9c0d2}.setup-card pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#070910;border:1px solid var(--line-2);padding:18px;border-radius:14px;margin:18px 0;font-size:14px;line-height:1.7}.setup-card code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.steps{counter-reset:step;display:grid;gap:32px}.steps>li{counter-increment:step;padding-left:40px;position:relative}.steps>li:before{content:counter(step);position:absolute;left:0;top:0;color:#b7afff;background:#282546;border-radius:9px;width:28px;height:28px;display:grid;place-items:center;font-weight:700}.steps strong{display:block;margin-bottom:8px;font-size:18px}.faq-list details{padding:16px 0;border-bottom:1px solid var(--line-2)}.faq-list details:last-child{border:0}.faq-list summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 0;font-weight:600}.faq-list details p{color:#b9c0d2;margin-top:12px}.setup-footer{margin-top:30px;border-top:1px solid var(--line-2);color:#b9c0d2;font-size:14px}.setup-main .btn{min-height:44px;height:auto;padding:12px 22px;text-align:center;white-space:normal}.setup-main button{font:inherit;cursor:pointer;border:none}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b7afff;outline-offset:5px}@media(max-width:600px){.setup-nav,.setup-footer{padding:20px}.setup-nav .nav-brand{font-size:16px}.setup-main{padding:0 20px}.setup-hero{padding:40px 0 24px}.client-grid{grid-template-columns:1fr;gap:20px}.setup-card{padding:22px}.setup-footer{align-items:flex-start;flex-direction:column;gap:12px}.steps>li{padding-left:36px}.setup-section{padding:28px 0}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none;transform:none}}
+/* Shared landing.css provides the site font, palette, navigation and controls.
+   Setup uses isolated class names so marketing layouts cannot reshape the steps. */
+html { scroll-padding-top: 0; }
+.mcp-page { background: radial-gradient(ellipse 100% 650px at 65% 0, #171c43 0, transparent 75%), var(--bg); }
+.mcp-page .nav-links [aria-current="page"] { color: var(--violet); }
+.setup-main { max-width: 1184px; }
+.setup-hero { padding: 64px 0 72px; border-bottom: 1px solid var(--line); }
+.setup-hero h1 { max-width: 980px; font-size: clamp(44px, 5.6vw, 72px); line-height: 1.08; letter-spacing: -.045em; }
+.setup-hero .lead { max-width: 690px; margin-top: 26px; font-size: 20px; }
+.setup-hero .actions { margin-top: 30px; gap: 24px; }
+.mcp-page .btn-primary { background: #6257d5; }
+.mcp-page .btn-primary:hover { background: #6b5cdd; }
+.mcp-page .btn { max-width: 100%; min-height: 48px; white-space: normal; text-align: center; }
+.mcp-page .btn-secondary { background: #242547; border-color: var(--line); color: var(--text); }
+.mcp-page .btn-secondary:hover { background: #30325b; }
+.quiet { color: var(--muted); font-size: 14px; line-height: 1.65; margin-top: 20px; }
+.quiet strong { color: var(--text); font-weight: 500; }
+.setup-section { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.65fr); gap: 64px; padding-top: 64px; scroll-margin-top: 0; }
+.setup-section-heading { min-width: 0; padding-top: 4px; }
+.setup-section-heading .eyebrow { margin-bottom: 18px; }
+.setup-section-heading h2 { font-size: clamp(32px, 3.5vw, 44px); }
+.section-intro { margin-top: 20px; color: var(--muted); font-size: 17px; line-height: 1.6; max-width: 340px; }
+.setup-content, .setup-panel, .setup-card, .client-grid > div, .setup-steps > li { min-width: 0; }
+.setup-panel { padding: 0 32px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, #15182f, #10142b); }
+.setup-card { padding-block: 30px; }
+.setup-card + .setup-card { border-top: 1px solid var(--line); }
+.setup-card h3 { font-size: 23px; line-height: 1.3; margin-bottom: 12px; }
+.setup-card p { color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 14px; }
+.setup-card p:last-child { margin-bottom: 0; }
+.setup-card strong { color: var(--text); font-weight: 600; }
+.setup-card a:not(.btn), .sources a { color: var(--violet); text-decoration: underline; text-underline-offset: 4px; }
+.setup-card .quiet { font-size: 14px; }
+.client-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 22px; }
+.client-grid h4 { font-size: 18px; font-weight: 600; line-height: 1.4; margin: 0 0 8px; }
+.client-grid p { font-size: 16px; margin: 0; }
+.setup-card pre { max-width: 100%; min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; background: #090c21; border: 1px solid var(--line); padding: 18px; border-radius: 14px; margin: 20px 0 14px; font-size: 13px; line-height: 1.75; color: #d5dcf5; tab-size: 2; }
+.setup-card code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+.setup-card p code { font-size: .85em; color: #d5dcf5; }
+.setup-steps { display: block; list-style: decimal; padding: 0 0 0 25px; margin: 0; }
+.setup-steps > li { padding-left: 10px; }
+.setup-steps > li + li { margin-top: 28px; padding-top: 26px; border-top: 1px solid var(--line); }
+.setup-steps > li::marker { color: var(--violet); font-size: 16px; font-weight: 600; }
+.setup-steps > li > strong { display: block; margin-bottom: 10px; font-size: 19px; line-height: 1.4; }
+.setup-help { padding-bottom: 64px; }
+.mcp-faq details { border-bottom: 1px solid var(--line); }
+.mcp-faq details:first-child { border-top: 1px solid var(--line); }
+.mcp-faq summary { margin-left: 18px; padding-left: 6px; cursor: pointer; min-height: 60px; padding: 20px 8px 20px 6px; font-size: 19px; font-weight: 500; line-height: 1.4; }
+.mcp-faq summary::marker { color: var(--violet); font-size: 13px; }
+.mcp-faq details p { color: var(--muted); font-size: 17px; line-height: 1.65; padding-bottom: 22px; overflow-wrap: anywhere; }
+.mcp-faq code { font-size: .85em; }
+.mcp-page .footer { border-top: 1px solid var(--line); padding-block: 36px; }
+@media (max-width: 1000px) {
+  .setup-section { grid-template-columns: minmax(0, .7fr) minmax(0, 1.5fr); gap: 36px; }
+  .setup-panel { padding-inline: 24px; }
+  .client-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
+@media (max-width: 760px) {
+  .setup-hero { padding: 36px 0 44px; }
+  .setup-hero h1 { font-size: clamp(38px, 8.5vw, 54px); }
+  .setup-hero .lead { font-size: 18px; margin-top: 22px; }
+  .setup-hero .actions { margin-top: 24px; gap: 12px; }
+  .setup-section { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-top: 44px; }
+  .setup-section-heading h2 { font-size: 34px; }
+  .setup-section-heading h2 br { display: none; }
+  .setup-section-heading h2 span::before { content: ' '; }
+  .section-intro { max-width: 560px; margin-top: 14px; font-size: 16px; }
+  .setup-panel { padding-inline: 22px; border-radius: 22px; }
+  .setup-card { padding-block: 24px; }
+  .setup-card h3 { font-size: 22px; }
+  .setup-card p { font-size: 16px; }
+  .setup-card pre { font-size: 13px; padding: 14px; }
+  .setup-card .copy { font-size: 14px; padding-inline: 16px; }
+  .setup-steps { padding-left: 18px; }
+  .setup-steps > li { padding-left: 6px; }
+  .setup-steps > li > strong { font-size: 18px; }
+  .mcp-faq summary { font-size: 18px; }
+  .mcp-faq details p { font-size: 16px; }
+  .setup-help { padding-bottom: 44px; }
+}
