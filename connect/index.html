@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://omhelpzpkowcncvqfnuw.supabase.co; base-uri 'none'; form-action 'none'">
 <title>Connect Flow Capture</title><link rel="icon" href="/assets/favicon-32.png"><link rel="stylesheet" href="connect.css">
 </head><body><header><a href="/" aria-label="Flow Capture home"><img src="/assets/icon-56.png" alt="" width="32" height="32">Flow Capture</a></header>
-<main><div class="card"><p class="eyebrow">CLAUDE &amp; CODEX</p><h1>Connect with your iPhone</h1>
-<p>Open Flow Capture on your iPhone, then go to <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.</p>
+<main><div class="card"><p class="eyebrow">CLAUDE &amp; CODEX</p><h1 id="heading">Connect with your iPhone</h1>
+<p id="instructions">Open Flow Capture on your iPhone, then go to <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.</p>
 <section id="pairing" hidden aria-label="Connection code"><p>Enter this code and confirm access:</p><div id="code" class="pairing-code"></div><button id="copy" class="secondary" type="button">Copy code</button><p class="hint">Only approve the app you just started connecting. It can read the exports you send, not your entire library.</p></section>
 <p id="status" role="status" aria-live="polite">Preparing your connection…</p><a id="restart" href="/mcp/" hidden>Back to MCP setup</a>
-</div><p class="footnote">Keep this page open. It will return you to your AI app after you approve access.</p></main>
+</div><p id="footnote" class="footnote">Keep this page open. It will return you to your AI app after you approve access.</p></main>
 <footer><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a></footer>
 <script src="connect.js" type="module"></script></body></html>

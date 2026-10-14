@@ -18,7 +18,7 @@ async function poll(){
   if(state.status==='approved'){
    const next=new URL(state.redirect_url);
    if(next.origin!==new URL(endpoint).origin||next.pathname!==new URL(endpoint).pathname+'/callback')throw Error('Invalid destination');
-   stopped=true;forget();el('status').textContent='Approved. Returning to your AI app…';location.replace(next.href);return;
+   stopped=true;forget();el('heading').textContent='Access approved';el('instructions').textContent='Return to Claude or Codex to finish connecting.';el('pairing').hidden=true;el('footnote').hidden=true;el('status').textContent='';location.replace(next.href);return;
   }
   if(['failed','expired'].includes(state.status)){fail('This request is no longer available. Start connecting again in your AI app.');return;}
   el('status').textContent=state.status==='processing'?'Finishing approval…':'Waiting for your iPhone…';
