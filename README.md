@@ -32,13 +32,14 @@ Exported on 2026-10-14 at their original 1320 × 2868 resolution. The complete a
 
 `assets/campaign/` contains the complete campaign compositions. `assets/product/` contains the isolated product layers used by the current homepage. The original `hero-calm` landscape is the composition reference for the detailed `hero-lake-*` background; other older product illustrations remain unused. The owner’s voice-led hero and How it works copy, plus blue-to-violet heading accents, were restored after the campaign refresh. `srcset`, intrinsic dimensions and lazy loading limit transfer and layout shift; the hero is eager/high priority. Total for all 18 WebP sizes is approximately 1.7 MB, not the per-page download.
 
-The hero uses `assets/hero-lake-natural-3k.mp4`, a silent 3072 × 2048, 12-second
+The hero uses `assets/hero-lake-air-3k.mp4`, a silent 3072 × 2560, 12-second
 loop with a fixed camera. It moves existing water texture and gently modulates selected real shoreline
 lamp cores and their reflections. Light colours stay neutral; land and hillside
 windows stay still. It paints no light bands, glow, or fog. The detailed still is the fallback for
 reduced motion, data saving, blocked autoplay, or media errors. There are no
 playback controls. Re-render the asset offline with
-`python3 scripts/render_hero_loop.py --write-fallbacks` (Pillow, numpy, and ffmpeg); the site
+`python3 scripts/render_hero_loop.py --write-fallbacks` then
+`python3 scripts/extend_hero_sky.py` (Pillow, numpy, and ffmpeg); the site
 itself still needs no build step. The image master and generation prompts are
 documented in `Docs/HERO_ARTWORK.md`.
 

@@ -9,10 +9,10 @@
 .landing-page .hero-phone { top: 62px; right: 0; width: min(29vw, 340px); transform: translateY(24px); }
 /* Extend the real landscape beneath the steps, with one continuous fade.
    Scroll depth moves this layer only; the video itself keeps a fixed camera. */
-.landing-page .hero-scene { padding-bottom: 200px; margin-bottom: -200px; background: var(--bg); }
-.landing-page .hero-landscape { position: absolute; inset: -40px 0 0; z-index: -2; transform: translate3d(0, var(--hero-parallax, 0px), 0); mask-image: linear-gradient(#000 calc(100% - 280px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 280px), transparent 100%); }
-.landing-page .hero-landscape .hero-backdrop, .landing-page .hero-landscape .hero-video { z-index: auto; object-position: 50% 30%; }
-.landing-page .hero-scene::after { background: linear-gradient(90deg, #04071880, #0407181f), linear-gradient(180deg, #090b2114 35%, #090b2159 62%, #090b21 100%); }
+.landing-page .hero-scene { padding-bottom: 0; margin-bottom: 0; background: #0e1025; }
+.landing-page .hero-landscape { position: absolute; inset: -40px 0 0; z-index: -2; transform: translate3d(0, var(--hero-parallax, 0px), 0); mask-image: linear-gradient(#000 calc(100% - 96px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 96px), transparent 100%); }
+.landing-page .hero-landscape .hero-backdrop, .landing-page .hero-landscape .hero-video { z-index: auto; object-position: 50% 25%; }
+.landing-page .hero-scene::after { background: linear-gradient(90deg, #04071880, #0407181f), linear-gradient(180deg, #090b2114 35%, #090b2129 68%, #090b2173 calc(100% - 96px), #0e1025 100%); }
 .landing-page .hero-phone { max-height: calc(100% - 86px); overflow: hidden; mask-image: linear-gradient(#000 calc(100% - 160px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 160px), transparent 100%); }
 .landing-page .workflow { position: relative; }
 .landing-page .hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; pointer-events: none; opacity: 0; }
@@ -242,10 +242,10 @@
 }
 @media (max-width: 760px) {
  .landing-page .hero { min-height: 0; padding-block: 26px 0; gap: 0; }
- .landing-page .hero-scene { padding-bottom: 160px; margin-bottom: -160px; }
- .landing-page .hero-landscape { inset-block-start: -24px; mask-image: linear-gradient(#000 calc(100% - 240px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 240px), transparent 100%); }
+ .landing-page .hero-scene { padding-bottom: 0; margin-bottom: 0; }
+ .landing-page .hero-landscape { inset-block-start: -24px; mask-image: linear-gradient(#000 calc(100% - 80px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 80px), transparent 100%); }
  .landing-page .hero-landscape .hero-backdrop, .landing-page .hero-landscape .hero-video { object-position: 50% 25%; }
- .landing-page .hero-scene::after { background: linear-gradient(180deg, #04071840, #090b214d 55%, #090b21 100%); }
+ .landing-page .hero-scene::after { background: linear-gradient(180deg, #04071840, #090b2159 55%, #090b2173 calc(100% - 80px), #0e1025 100%); }
  .landing-page .hero .eyebrow { margin-bottom: 16px; }
  .landing-page .hero h1 { font-size: clamp(36px, 9.8vw, 54px); line-height: 1.08; }
  .landing-page .hero .lead { margin-top: 20px; font-size: 17px; line-height: 1.55; }
