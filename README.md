@@ -171,3 +171,17 @@ Additional isolated Figma exports in `assets/product/`:
 
 These are isolated PNG exports converted to WebP; their product content is
 unchanged. CSS crops the map to the two connected flow cards.
+
+## Motion pass — 15 October 2026
+
+The homepage has one-time scroll entrances, a repeating route highlight on the
+existing map connection, a linked-comment entrance, gently offset library tiles
+and a fan-out entrance for the real handoff previews. Tabs and example requests
+use short transitions; they do not change layout height. The hero phone's final
+24 px downward offset is preserved and the lake camera remains fixed.
+
+`landing.js` runs illustrative loops only while visible, stops them when the
+document is hidden and respects reduced motion and save-data. Content is never
+pre-hidden for scroll entrances and remains readable without JavaScript. Reduced
+motion also cancels active entrance and tab animations. No animation library or
+additional media download is required.

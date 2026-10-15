@@ -37,9 +37,11 @@
   const motionItems = [...document.querySelectorAll('[data-motion]')];
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const visibleItems = new Set();
-  const syncMotion = () => motionItems.forEach(item => {
-    item.classList.toggle('motion-active', visibleItems.has(item) && !document.hidden && !motionPreference.matches && !navigator.connection?.saveData);
-  });
+  const syncMotion = () => {
+    const enabled = !motionPreference.matches && !navigator.connection?.saveData;
+    document.documentElement.classList.toggle('motion-enabled', enabled);
+    motionItems.forEach(item => item.classList.toggle('motion-active', visibleItems.has(item) && !document.hidden && enabled));
+  };
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => entry.isIntersecting ? visibleItems.add(entry.target) : visibleItems.delete(entry.target));
@@ -49,6 +51,45 @@
   }
   motionPreference.addEventListener('change', syncMotion);
   document.addEventListener('visibilitychange', syncMotion);
+  syncMotion();
+
+  // Scroll entrances are progressive enhancement: content is never pre-hidden.
+  // Once revealed, a section stays in place on every subsequent visit.
+  const canAnimate = () => !motionPreference.matches && !navigator.connection?.saveData;
+  const entranceItems = document.querySelectorAll('.workflow-steps li, .story-heading, .story-row, .detail-card, .handoff-heading, .export-board, .privacy-story header, .privacy-grid li, .faq-side, .closing');
+  const entrances = new Map();
+  const reveal = item => {
+    if (!canAnimate()) return;
+    const entrance = item.animate([
+      { opacity: 0.45, transform: 'translateY(28px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], { duration: 800, easing: 'cubic-bezier(.22,1,.36,1)' });
+    entrances.set(item, entrance);
+    entrance.finished.then(() => entrances.delete(item)).catch(() => {});
+  };
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        reveal(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    entranceItems.forEach(item => observer.observe(item));
+  }
+  motionPreference.addEventListener('change', () => {
+    if (!motionPreference.matches) return;
+    entrances.forEach(animation => animation.cancel());
+    entrances.clear();
+    document.querySelectorAll('.handoff-panel, .request-example').forEach(item => item.getAnimations().forEach(animation => animation.cancel()));
+  });
+  const animateChange = item => {
+    item.getAnimations().forEach(animation => animation.cancel());
+    if (canAnimate()) item.animate([
+      { opacity: 0.35, transform: 'translateY(8px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], { duration: 300, easing: 'cubic-bezier(.22,1,.36,1)' });
+  };
 
   const tabs = [...document.querySelectorAll('[data-handoff]')];
   const activateTab = tab => {
@@ -56,7 +97,9 @@
       const selected = item === tab;
       item.setAttribute('aria-selected', String(selected));
       item.tabIndex = selected ? 0 : -1;
-      document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      const panel = document.getElementById(item.getAttribute('aria-controls'));
+      panel.hidden = !selected;
+      if (selected) animateChange(panel);
     });
   };
   tabs.forEach((tab, index) => {
@@ -83,6 +126,7 @@
   requestOptions.forEach(option => option.addEventListener('click', () => {
     requestOptions.forEach(item => item.setAttribute('aria-pressed', String(item === option)));
     requestExample.textContent = `“${requests[option.dataset.request]}”`;
+    animateChange(requestExample);
   }));
   const dialog = document.querySelector('.art-dialog');
   const enlarged = dialog.querySelector('img');
