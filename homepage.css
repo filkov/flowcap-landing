@@ -7,12 +7,12 @@
 .landing-page .hero h1 { font-size: clamp(48px, 4.8vw, 68px); line-height: 1.06; }
 .landing-page .hero .lead { max-width: 510px; margin-top: 28px; }
 .landing-page .hero-phone { top: 62px; right: 0; width: min(29vw, 340px); transform: translateY(24px); }
-/* Extend the real landscape beneath the steps, with one continuous fade.
-   Scroll depth moves this layer only; the video itself keeps a fixed camera. */
-.landing-page .hero-scene { padding-bottom: 0; margin-bottom: 0; background: #0e1025; }
-.landing-page .hero-landscape { position: absolute; inset: -40px 0 0; z-index: -2; transform: translate3d(0, var(--hero-parallax, 0px), 0); mask-image: linear-gradient(#000 calc(100% - 96px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 96px), transparent 100%); }
+/* The landscape and its colour wash dissolve together into the next section.
+   The transparent tail also covers the maximum scroll-parallax offset. */
+.landing-page .hero-scene { --hero-blend: linear-gradient(#000 calc(100% - 440px), #000000ed calc(100% - 360px), #000000b8 calc(100% - 270px), #0000005c calc(100% - 170px), #00000014 calc(100% - 80px), transparent calc(100% - 40px)); padding-bottom: 0; margin-bottom: 0; background: #0e1025; }
+.landing-page .hero-landscape { position: absolute; inset: -40px 0 0; z-index: -2; transform: translate3d(0, var(--hero-parallax, 0px), 0); mask-image: var(--hero-blend); -webkit-mask-image: var(--hero-blend); }
 .landing-page .hero-landscape .hero-backdrop, .landing-page .hero-landscape .hero-video { z-index: auto; object-position: 50% 25%; }
-.landing-page .hero-scene::after { background: linear-gradient(90deg, #04071880, #0407181f), linear-gradient(180deg, #090b2114 35%, #090b2129 68%, #090b2173 calc(100% - 96px), #0e1025 100%); }
+.landing-page .hero-scene::after { background: linear-gradient(90deg, #04071880, #0407181f), linear-gradient(180deg, #090b2114 35%, #090b2129 68%, #090b2173 100%); mask-image: var(--hero-blend); -webkit-mask-image: var(--hero-blend); }
 .landing-page .hero-phone { max-height: calc(100% - 86px); overflow: hidden; mask-image: linear-gradient(#000 calc(100% - 160px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 160px), transparent 100%); }
 .landing-page .workflow { position: relative; }
 .landing-page .hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; pointer-events: none; opacity: 0; }
@@ -236,10 +236,10 @@
 }
 @media (max-width: 760px) {
  .landing-page .hero { min-height: 0; padding-block: 26px 0; gap: 0; }
- .landing-page .hero-scene { padding-bottom: 0; margin-bottom: 0; }
- .landing-page .hero-landscape { inset-block-start: -24px; mask-image: linear-gradient(#000 calc(100% - 80px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 80px), transparent 100%); }
+ .landing-page .hero-scene { --hero-blend: linear-gradient(#000 calc(100% - 400px), #000000ed calc(100% - 330px), #000000b8 calc(100% - 245px), #0000005c calc(100% - 150px), #00000014 calc(100% - 60px), transparent calc(100% - 24px)); padding-bottom: 0; margin-bottom: 0; }
+ .landing-page .hero-landscape { inset-block-start: -24px; }
  .landing-page .hero-landscape .hero-backdrop, .landing-page .hero-landscape .hero-video { object-position: 50% 25%; }
- .landing-page .hero-scene::after { background: linear-gradient(180deg, #04071840, #090b2159 55%, #090b2173 calc(100% - 80px), #0e1025 100%); }
+ .landing-page .hero-scene::after { background: linear-gradient(180deg, #04071840, #090b2159 55%, #090b2173 100%); }
  .landing-page .hero .eyebrow { margin-bottom: 16px; }
  .landing-page .hero h1 { font-size: clamp(36px, 9.8vw, 54px); line-height: 1.08; }
  .landing-page .hero .lead { margin-top: 20px; font-size: 17px; line-height: 1.55; }
