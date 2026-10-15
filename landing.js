@@ -108,118 +108,14 @@
     entrances.forEach(animation => animation.cancel());
     entrances.clear();
   });
-  // A single short product story, then a quiet, complete flow map.
-  // Manual selection cancels playback. Visibility pauses the remaining time.
-  const flowScene = document.querySelector('[data-flow-scene]');
-  if (flowScene) {
-    const controls = flowScene.querySelector('.flow-controls');
-    const buttons = [...flowScene.querySelectorAll('[data-flow-select]')];
-    const views = [...flowScene.querySelectorAll('[data-flow-view]')];
-    const steps = ['recording', 'screens', 'map'];
-    let seen = false;
-    let inView = false;
-    let ready = false;
-    let automatic = false;
-    let index = 0;
-    let timer = 0;
-    let startedAt = 0;
-    let remaining = 2800;
-    let transition;
-    const selectStep = step => {
-      transition?.cancel();
-      flowScene.dataset.flowStep = step;
-      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.flowSelect === step)));
-      views.forEach(view => {
-        const selected = view.dataset.flowView === step;
-        view.hidden = !selected;
-        if (selected && canAnimate()) transition = view.animate([
-          { opacity: .55, transform: 'translateY(6px)' },
-          { opacity: 1, transform: 'translateY(0)' }
-        ], { duration: 360, easing: 'cubic-bezier(.22,1,.36,1)' });
-      });
-    };
-    const pause = () => {
-      if (!timer) return;
-      clearTimeout(timer);
-      timer = 0;
-      remaining = Math.max(0, remaining - (performance.now() - startedAt));
-    };
-    const sync = () => {
-      if (!canAnimate()) {
-        transition?.cancel();
-        pause();
-        if (automatic) selectStep('map');
-        automatic = false;
-        return;
-      }
-      if (!inView || document.hidden) { pause(); return; }
-      if (!seen) {
-        if (!ready) return;
-        seen = true;
-        automatic = true;
-        index = 0;
-        selectStep(steps[index]);
-      }
-      if (!automatic || timer) return;
-      startedAt = performance.now();
-      timer = window.setTimeout(() => {
-        timer = 0;
-        index += 1;
-        selectStep(steps[index]);
-        remaining = 2800;
-        if (index === steps.length - 1) automatic = false;
-        sync();
-      }, remaining);
-    };
-    controls.hidden = false;
-    buttons.forEach(button => button.addEventListener('click', () => {
-      pause();
-      seen = true;
-      automatic = false;
-      selectStep(button.dataset.flowSelect);
-    }));
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(([entry]) => {
-        inView = entry.isIntersecting;
-        ready = entry.intersectionRatio >= .45;
-        sync();
-      }, { threshold: [0, .45] });
-      observer.observe(flowScene);
-    }
-    motionPreference.addEventListener('change', sync);
-    document.addEventListener('visibilitychange', sync);
-  }
   const tabs = [...document.querySelectorAll('[data-handoff]')];
-  const exportViews = [...document.querySelectorAll('[data-export-view]')];
-  const destinations = document.querySelector('.export-destinations');
-  if (destinations) {
-    destinations.querySelectorAll('.handoff-panel').forEach(panel => {
-      panel.setAttribute('aria-hidden', String(panel.hidden));
-      panel.inert = panel.hidden;
-    });
-    destinations.classList.add('destinations-ready');
-  }
-  let exportTransition;
-  motionPreference.addEventListener('change', () => { if (!canAnimate()) exportTransition?.cancel(); });
   const activateTab = tab => {
-    exportTransition?.cancel();
     tabs.forEach(item => {
       const selected = item === tab;
       item.setAttribute('aria-selected', String(selected));
       item.tabIndex = selected ? 0 : -1;
-      const panel = document.getElementById(`panel-${item.dataset.handoff}`);
+      const panel = document.getElementById(item.getAttribute('aria-controls'));
       panel.hidden = !selected;
-      panel.setAttribute('aria-hidden', String(!selected));
-      panel.inert = !selected;
-    });
-    exportViews.forEach(view => {
-      const selected = view.dataset.exportView === tab.dataset.handoff;
-      view.setAttribute('aria-hidden', String(!selected));
-      view.inert = !selected;
-      if (selected && canAnimate()) exportTransition = view.animate([
-        { opacity: .6, transform: 'translateY(6px)' },
-        { opacity: 1, transform: 'translateY(0)' }
-      ], { duration: 280, easing: 'ease-out' });
     });
   };
   tabs.forEach((tab, index) => {
