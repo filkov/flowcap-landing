@@ -100,7 +100,8 @@ existing Figma nodes, exported in isolation without modifying the source file:
 | Asset | Source node | Export bounds |
 | --- | --- | --- |
 | map-phone | 1357:2838 | 1122 × 2048 |
-| voice-phone | 1357:2906 | 1207 × 2061 |
+| voice-phone (archived crop) | 1357:2906 | 1207 × 2061 |
+| voice-phone-complete (current) | 1357:2908 | 1090 × 2228 |
 | voice-comment | 1357:3068 | 1320 × 767 |
 | library-phone | 1357:3174 | 1080 × 2048 |
 | versions | 1357:3119 | 1320 × 2018 |
@@ -223,3 +224,19 @@ Reviewed at 320, 390, 820 and 1440 px; local links/assets, HTML nesting, unique
 IDs and JavaScript syntax checked. Export tabs retain keyboard navigation and
 stable board height, native FAQ disclosure works, and decorative motion pauses
 offscreen.
+
+## Typography consolidation and complete voice phone (2026-10-15)
+
+The homepage now has one shared Urbanist type system in `homepage.css`: display,
+section, feature, card, short title, body, supporting text and label. All main
+paragraphs use 16 px / 1.6; all section headings share the same size and weight.
+Responsive heading sizes are controlled by four variables instead of per-section
+overrides. Controls use 500, headings 600 and body 400. The unused 700 webfont
+weight was removed from the homepage request. Product screenshots and App Store
+badges retain their original artwork typography.
+
+The original Comments phone was cut by campaign frame `1357:2907`. Its full
+child `1357:2908` contains the complete rounded bottom. Exported a temporary
+copy outside that crop, saved the original PNG and responsive WebP assets as
+`voice-phone-complete-*`, then removed the copy. No UI or device parts were
+reconstructed. The full phone fits its stage on desktop and mobile.
