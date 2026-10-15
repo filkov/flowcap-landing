@@ -28,9 +28,9 @@ All six product visuals come from the owner's publication-ready App Store campai
 | library | 1357:3168 | Feature gallery |
 | handoff | 1357:3280 | Figma / AI handoff |
 
-Exported on 2026-10-14 at their original 1320 × 2868 resolution. The complete approved compositions are encoded as WebP at 440, 880 and 1320 px width (quality 90). Source Figma nodes were not changed. The hero uses a transparent export of the original phone node `1357:2745` (1120 × 2048 RGBA, resized to WebP at 440/880/1120 px). No image generation or reconstructed UI is involved. The hero clips the lower phone at its boundary. The handoff uses a CSS viewport; gallery and handoff buttons open the complete composition. Text outside the images remains semantic HTML. Urbanist is the existing web font; no unlicensed Roobert font files were copied.
+Exported on 2026-10-14 at their original 1320 × 2868 resolution. The complete approved compositions are encoded as WebP at 440, 880 and 1320 px width (quality 90). Source Figma nodes were not changed. The hero uses a transparent export of the original phone node `1357:2745` (1120 × 2048 RGBA, resized to WebP at 440/880/1120 px). No image generation or reconstructed UI is involved. The hero clips the lower phone at its boundary. The product chapters use isolated exports from the same approved nodes; image buttons open the complete campaign composition. Text outside the images remains semantic HTML. Urbanist is the existing web font; no unlicensed Roobert font files were copied.
 
-`assets/campaign/` contains all live product artwork. The original `hero-calm` landscape is the composition reference for the detailed `hero-lake-*` background; other older product illustrations remain unused. The owner’s voice-led hero and How it works copy, plus blue-to-violet heading accents, were restored after the campaign refresh. `srcset`, intrinsic dimensions and lazy loading limit transfer and layout shift; the hero is eager/high priority. Total for all 18 WebP sizes is approximately 1.7 MB, not the per-page download.
+`assets/campaign/` contains the complete campaign compositions. `assets/product/` contains the isolated product layers used by the current homepage. The original `hero-calm` landscape is the composition reference for the detailed `hero-lake-*` background; other older product illustrations remain unused. The owner’s voice-led hero and How it works copy, plus blue-to-violet heading accents, were restored after the campaign refresh. `srcset`, intrinsic dimensions and lazy loading limit transfer and layout shift; the hero is eager/high priority. Total for all 18 WebP sizes is approximately 1.7 MB, not the per-page download.
 
 The hero uses `assets/hero-lake-natural-3k.mp4`, a silent 3072 × 2048, 12-second
 loop with a fixed camera. It moves only existing water texture; it paints no
@@ -79,3 +79,46 @@ The hero now uses Apple's unmodified official English App Store SVG (`https://de
 Reduced heading weight and relaxed negative tracking across the current landing, MCP and Guides styles. Added a shared footer with Guides, MCP Setup, Support, Privacy Policy and Terms of Use. `/privacy/` derives from the existing app privacy source including MCP. `/terms/` links the same standard Apple EULA as the app. `/support/` contains real help paths, with a truthful preview notice until a public contact exists. No email address, provider identity, backend policy update or App Store Connect configuration was invented or changed.
 
 The owner's requested next task—create and verify a public support/privacy mailbox—is tracked in `Docs/LAUNCH_CHECKLIST.md`, along with contact publication and App Store metadata checks. All nine HTML routes were checked for balanced markup, local links/assets, unique IDs and one H1; sitemap and official badge XML parsed successfully. Browser checks covered the hero, footer and new information pages at desktop and 320/390 px without horizontal overflow. Store badge destination was checked against the app source; an App Store download is not testable before publication.
+
+## Product story refresh (2026-10-15)
+
+The homepage now presents the map and voice comments as two large alternating
+chapters, followed by smaller library and version cards. All sections share the
+1280 px outer container; the chapters use a deliberate 7/5 column split on
+desktop and stack copy before artwork on mobile. Homepage heading weight is
+600; the shared Guides and MCP typography is unchanged.
+
+The additional transparent WebP artwork in `assets/product/` comes from these
+existing Figma nodes, exported in isolation without modifying the source file:
+
+| Asset | Source node | Export bounds |
+| --- | --- | --- |
+| map-phone | 1357:2838 | 1122 × 2048 |
+| voice-phone | 1357:2906 | 1207 × 2061 |
+| voice-comment | 1357:3068 | 1320 × 767 |
+| library-phone | 1357:3174 | 1080 × 2048 |
+| versions | 1357:3119 | 1320 × 2018 |
+
+Assets retain their original content, transparency and proportions, with 480
+and 960 px responsive encodings. The enlarged comment uses 960 px directly for
+legibility. The original full campaign exports remain available in the dialog.
+
+The handoff section shows the verified export contents and accessible tabs for
+Claude & Codex, Figma and ZIP. The review request is explicitly labeled as an
+example, not represented as an actual generated export. MCP is labeled as a Mac
+preview and the Figma plugin as coming soon. All tab content remains accessible
+without JavaScript. Privacy uses the same three existing claims in a clearer
+three-column layout. The two App Store actions retain the identical official
+180 × 60 badge, in the hero and closing sections.
+
+Decorative loops emphasize the two existing map steps, the enlarged comment and
+voice waveform, and the export contents. IntersectionObserver stops them when
+out of view; reduced motion, data saving and background tabs get static content.
+The authored hero lake loop and fixed camera are unchanged.
+
+Validation: all 10 HTML routes passed local resource, link, fragment, duplicate-ID
+and H1 checks; all three public scripts passed syntax checks. Browser checks at
+320, 390, 820 and 1440 px found no document or text overflow. Tabs worked with
+clicks and Arrow/Home keys, retained the panel height, and updated selection and
+focus. The image dialog, Escape/focus return and FAQ worked; the browser console
+reported no warnings or errors on those paths.
