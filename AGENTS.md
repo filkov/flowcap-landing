@@ -13,6 +13,8 @@ the root of `main`. Preview locally with `python3 -m http.server 8793`.
   headings and transparent full-width header are deliberate design choices.
 - The homepage header links to internal pages (MCP Setup and Guides), not
   in-page anchors. The first hero action is the official App Store badge.
+  Keep all homepage App Store actions identical: the unmodified badge in
+  `assets/app-store-badge.svg`, displayed at 180 × 60 px via `.app-store-link`.
 - Keep public claims aligned with the product's release state. The app is not
   yet available in the App Store; the public MCP setup is a tested Mac preview.
   The browser OAuth connection remains restricted preview. Do not advertise
