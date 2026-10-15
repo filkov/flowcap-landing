@@ -1,14 +1,16 @@
 # Flow Capture website — next launch steps
 
-## Next task: establish a public support and privacy contact
+## Public support and privacy contact
 
-Requested by the owner on October 14, 2026. No support mailbox currently exists.
+Completed on October 14, 2026; keep the operational checks current.
 
-- [ ] Create and verify a monitored support mailbox (owner chooses address/provider).
-- [ ] Publish that address and a mail link on `/support/` and `/privacy/`.
-- [ ] Replace the preview contact notices with the verified contact details.
-- [ ] Configure the same mailbox in the app's `FeedbackChannelConfiguration.supportEmail`.
-- [ ] Test a support message end to end and confirm receipt.
+- [x] Create `support@flowcap.me` in Google Workspace and verify inbox access.
+- [x] Publish the address and mail links on `/support/`, `/privacy/` and `/mcp/`.
+- [x] Replace preview contact notices with the verified contact details.
+- [x] Set `FeedbackChannelConfiguration.supportEmail` in the current iOS app worktree.
+- [x] Send a non-sensitive self-test and confirm receipt in the support inbox.
+- [ ] Verify delivery from an external provider and check spam placement.
+- [ ] Confirm the in-app Report a Problem route in the release build.
 
 ## App Store publication checks
 

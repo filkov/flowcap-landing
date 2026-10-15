@@ -2,6 +2,9 @@
 
 Static site for [flowcap.me](https://flowcap.me), hosted from `main` on GitHub Pages. HTML, CSS and JavaScript; no build step.
 
+For work on another computer or in a new Codex session, start with
+[`Docs/HANDOFF_2026-10-15.md`](Docs/HANDOFF_2026-10-15.md) and [`AGENTS.md`](AGENTS.md).
+
 ## Preview
 
 ```sh
