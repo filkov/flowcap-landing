@@ -189,3 +189,15 @@ entrances pause offscreen instead of replaying on every visit; the voice loop
 stops offscreen or when the document is hidden. `landing.js` respects reduced
 motion and save-data, and content is never pre-hidden. The hero phone's final
 24 px downward offset and the lake's fixed camera are preserved.
+
+## Shoreline light shimmer — 15 October 2026
+
+The owner requested gentle blinking of the existing hero lights. The authored
+12-second lake loop now varies only the existing warm emissive pixels along the
+shore and their existing reflections. Nearby lamps have different smooth rhythms;
+reflection changes are weaker. No new light sources, glow, beams or bands are
+painted. The 3072 × 2048 camera, scene detail and water movement are unchanged.
+`render_hero_loop.py --preview-dir /tmp/hero-preview --preview-only` exports
+inspection frames and the light-selection mask. The renderer asserts identical
+loop endpoints and no pixel changes outside water and selected existing lights.
+The video URL is versioned to refresh the cached background after publication.
