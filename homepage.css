@@ -1,5 +1,5 @@
 /* Homepage composition. Shared Guides and MCP layouts remain independent. */
-.landing-page { --column-gap: 40px; --soft: #929dbc; }
+.landing-page { --column-gap: 40px; --soft: #929dbc; background: #0e1025; }
 .landing-page .hero { min-height: 670px; padding-block: 52px 72px; grid-template-columns: 1.4fr 1fr; gap: 40px; }
 .landing-page .hero .lead { max-width: 510px; margin-top: 28px; }
 .landing-page .hero-phone { top: 62px; right: 0; width: min(29vw, 340px); transform: translateY(24px); }
