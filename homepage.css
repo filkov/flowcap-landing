@@ -42,7 +42,8 @@
 .landing-page .story-heading h2 { font-size: clamp(42px, 4.2vw, 56px); line-height: 1.02; text-wrap: balance; }
 .landing-page .story-heading p { color: var(--muted); font-size: 18px; line-height: 1.5; margin-top: 24px; }
 .landing-page .story-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: var(--card-gap); border: 1px solid #a4b2df21; border-radius: 28px; overflow: hidden; }
-.landing-page .story-map { --accent: #a9e2d3; background: radial-gradient(ellipse at 8% 85%, #24394a, #182232 52%, #151c2d); }
+.landing-page .story-map { --accent: #91afff; border-color: #6c8bfa40; background: radial-gradient(ellipse at 8% 85%, #233568, #1a2547 52%, #151c36); }
+.landing-page .story-map .feature-kicker { color: var(--accent); }
 .landing-page .story-voice { --accent: #c6b2ff; background: radial-gradient(ellipse at 90% 80%, #353154, #222238 55%, #1a1c30); }
 .landing-page .story-row + .story-row { margin-top: var(--card-gap); }
 .landing-page .story-copy { min-width: 0; padding: 48px; }
@@ -59,8 +60,8 @@
 .landing-page .feature-highlights strong { display: block; font-size: 15px; line-height: 1.4; font-weight: 600; color: #e0e6f5; }
 .landing-page .feature-highlights li > span > span { display: block; color: #a4aec9; font-size: 13px; line-height: 1.5; margin-top: 5px; max-width: 170px; }
 .landing-page .product-stage { border: 0; border-radius: 0; height: 650px; position: relative; display: block; width: 100%; padding: 0; overflow: hidden; text-align: left; background: transparent; isolation: isolate; }
-.landing-page .map-stage { background-image: radial-gradient(#a0b4d51f .8px, transparent .8px); background-size: 28px 28px; }
-.landing-page .map-stage::after { content: ''; position: absolute; inset: auto 0 0; height: 60px; background: linear-gradient(transparent, #1c2b3ce6); pointer-events: none; }
+.landing-page .map-stage { background-image: radial-gradient(#8aa4ff26 .8px, transparent .8px); background-size: 28px 28px; }
+.landing-page .map-stage::after { content: ''; position: absolute; inset: auto 0 0; height: 60px; background: linear-gradient(transparent, #20326566); pointer-events: none; }
 .landing-page .map-canvas { display: block; position: absolute; width: 280px; top: -127px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 18px 22px #0004); }
 .landing-page .map-canvas img { width: 100%; clip-path: inset(18.7% 0 12.7%); }
 /* The readable thought and signal sit beside the complete app screen. */
@@ -157,9 +158,9 @@
 
 /* Motion describes the product: a route, a linked thought, a collected handoff. */
 .landing-page .map-journey { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
-.landing-page .map-node { stroke: #a9dce9; stroke-width: 2.5; opacity: 0; }
-.landing-page .map-route { stroke: #c5f5ec; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 108; stroke-dashoffset: 108; opacity: 0; }
-.landing-page .map-traveler { fill: #e3fff8; opacity: 0; }
+.landing-page .map-node { stroke: #78a4ff; stroke-width: 2.5; opacity: 0; }
+.landing-page .map-route { stroke: #8fb7ff; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 108; stroke-dashoffset: 108; opacity: 0; }
+.landing-page .map-traveler { fill: #d9e7ff; opacity: 0; }
 .landing-page .library-tile { display: block; }
 .landing-page .story-row, .landing-page .detail-card { transition: border-color .25s ease; }
 .landing-page .story-row:focus-within, .landing-page .detail-card:focus-within { border-color: #b4c5fa66; }
