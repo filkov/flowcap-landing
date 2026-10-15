@@ -205,3 +205,21 @@ painted. The 3072 × 2048 camera, scene detail and water movement are unchanged.
 inspection frames and the light-selection mask. The renderer asserts identical
 loop endpoints and no pixel changes outside water and selected existing lights.
 The video URL is versioned to refresh the cached background after publication.
+
+## Whole-page design critique (2026-10-15)
+
+An independent desktop/mobile critique informed a quieter hierarchy: plain
+subject labels replace tilted stickers; section, feature and supporting-card
+headings use distinct scales. The voice example now groups its readable quote
+and continuous waveform on one surface, without repeating the same benefits.
+The complete approved phone remains visible. The export introduction uses a
+horizontal editorial layout; privacy and FAQ have quieter colours and borders.
+Library tiles are smaller, with more room around them. Floating amplitudes are
+4 px for map/tiles and 5 px for phones; three slower waveform rhythms keep the
+voice active without a silent hold. Existing hero artwork, parallax, transparent
+App Store badges, 24/20 px card gaps and 80/56 px section-bottom spacing remain.
+
+Reviewed at 320, 390, 820 and 1440 px; local links/assets, HTML nesting, unique
+IDs and JavaScript syntax checked. Export tabs retain keyboard navigation and
+stable board height, native FAQ disclosure works, and decorative motion pauses
+offscreen.
