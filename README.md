@@ -30,14 +30,16 @@ All six product visuals come from the owner's publication-ready App Store campai
 
 Exported on 2026-10-14 at their original 1320 × 2868 resolution. The complete approved compositions are encoded as WebP at 440, 880 and 1320 px width (quality 90). Source Figma nodes were not changed. The hero uses a transparent export of the original phone node `1357:2745` (1120 × 2048 RGBA, resized to WebP at 440/880/1120 px). No image generation or reconstructed UI is involved. The hero clips the lower phone at its boundary. The handoff uses a CSS viewport; gallery and handoff buttons open the complete composition. Text outside the images remains semantic HTML. Urbanist is the existing web font; no unlicensed Roobert font files were copied.
 
-`assets/campaign/` contains all live product artwork. The original `hero-calm` landscape is reused behind the hero; other older product illustrations remain unused. The owner’s voice-led hero and How it works copy, plus blue-to-violet heading accents, were restored after the campaign refresh. `srcset`, intrinsic dimensions and lazy loading limit transfer and layout shift; the hero is eager/high priority. Total for all 18 WebP sizes is approximately 1.7 MB, not the per-page download.
+`assets/campaign/` contains all live product artwork. The original `hero-calm` landscape is the composition reference for the detailed `hero-lake-*` background; other older product illustrations remain unused. The owner’s voice-led hero and How it works copy, plus blue-to-violet heading accents, were restored after the campaign refresh. `srcset`, intrinsic dimensions and lazy loading limit transfer and layout shift; the hero is eager/high priority. Total for all 18 WebP sizes is approximately 1.7 MB, not the per-page download.
 
-The hero uses `assets/hero-lake-loop.mp4`, a silent 12-second loop with a fixed
-camera and motion masked to the lake. The original still is the fallback for
+The hero uses `assets/hero-lake-natural-3k.mp4`, a silent 3072 × 2048, 12-second
+loop with a fixed camera. It moves only existing water texture; it paints no
+light bands, glow, or fog. The detailed still is the fallback for
 reduced motion, data saving, blocked autoplay, or media errors. There are no
 playback controls. Re-render the asset offline with
 `python3 scripts/render_hero_loop.py` (Pillow, numpy, and ffmpeg); the site
-itself still needs no build step.
+itself still needs no build step. The image master and generation prompts are
+documented in `Docs/HERO_ARTWORK.md`.
 
 ## Verification (2026-10-14)
 

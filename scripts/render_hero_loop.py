@@ -19,15 +19,16 @@ DURATION = 12
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--output', type=Path, default=ROOT / 'assets/hero-lake-loop.mp4')
+    parser.add_argument('--output', type=Path, default=ROOT / 'assets/hero-lake-natural-3k.mp4')
     parser.add_argument('--preview-dir', type=Path)
     args = parser.parse_args()
-    source = Image.open(ROOT / 'assets/hero-calm.webp').convert('RGB')
+    source = Image.open(ROOT / 'assets/source/hero-lake-3k.png').convert('RGB')
     width, height = source.size
     original = np.asarray(source, dtype=np.float32)
 
     # Trace the real shoreline, excluding the wooded island and foreground trees.
-    mask_image = Image.new('L', source.size)
+    scale = width / 1536
+    mask_image = Image.new('L', (1536, 1024))
     draw = ImageDraw.Draw(mask_image)
     draw.polygon([(0, 269), (102, 271), (215, 263), (345, 250),
                   (405, 255), (535, 250), (600, 241), (757, 244),
@@ -40,23 +41,24 @@ def main():
     draw.polygon([(391, 280), (416, 268), (445, 266), (460, 260),
                   (480, 265), (498, 269), (513, 269), (534, 278),
                   (515, 287), (449, 290), (411, 286)], fill=0)
-    mask_image = mask_image.filter(ImageFilter.GaussianBlur(2))
+    mask_image = mask_image.filter(ImageFilter.GaussianBlur(2)).resize(source.size, Image.Resampling.LANCZOS)
     mask_full = np.asarray(mask_image, dtype=np.float32) / 255
-    y_start, y_end = 235, 410
+    y_start, y_end = round(235 * scale), round(410 * scale)
     mask = mask_full[y_start:y_end]
     yy, xx = np.mgrid[y_start:y_end, 0:width].astype(np.float32)
-    depth = np.clip((yy - 237) / 165, 0, 1)
+    ref_x, ref_y = xx / scale, yy / scale
+    depth = np.clip((ref_y - 237) / 165, 0, 1)
     perspective = 60 * np.log1p(4 * depth)
     base = original[y_start:y_end]
 
     def frame(phase):
         phase %= math.tau
-        wave_a = np.sin(perspective + xx * .014 - phase * 4)
-        wave_b = np.sin(perspective * 1.37 - xx * .021 + phase * 3)
-        wave_c = np.sin(perspective * .63 + xx * .008 - phase * 2)
+        wave_a = np.sin(perspective + ref_x * .014 - phase * 4)
+        wave_b = np.sin(perspective * 1.37 - ref_x * .021 + phase * 3)
+        wave_c = np.sin(perspective * .63 + ref_x * .008 - phase * 2)
         strength = .25 + depth * .75
-        dx = (wave_a * 2.4 + wave_b * 1.1) * strength * mask
-        dy = (wave_a * .9 + wave_c * .65) * strength * mask
+        dx = (wave_a * .65 + wave_b * .25) * strength * mask * scale
+        dy = (wave_a * .25 + wave_c * .18) * strength * mask * scale
         sx = np.clip(xx + dx, 0, width - 1.001)
         sy = np.clip(yy + dy, 0, height - 1.001)
         x0, y0 = sx.astype(np.int32), sy.astype(np.int32)
@@ -64,18 +66,7 @@ def main():
         warped = ((original[y0, x0] * (1 - fx) + original[y0, x0 + 1] * fx) * (1 - fy)
                   + (original[y0 + 1, x0] * (1 - fx) + original[y0 + 1, x0 + 1] * fx) * fy)
 
-        # Small travelling highlights break up the original light reflections.
-        crest = np.maximum(0, wave_a * .75 + wave_b * .25) ** 8
-        patches = .5 + .5 * np.sin(xx * .031 + wave_c * 1.4 + phase)
-        glint = crest * patches * strength
-        warped += glint[..., None] * np.array([8, 11, 19], dtype=np.float32)
-        warped *= (1 + .035 * wave_b * strength)[..., None]
-
-        # Low mist drifts within the lake rather than across the text or hills.
-        mist_y = 265 + 7 * np.sin(xx * .006 + phase)
-        mist = np.exp(-((yy - mist_y) / 17) ** 2)
-        mist *= .025 + .018 * np.sin(xx * .009 + yy * .021 - phase * 2)
-        warped = warped * (1 - mist[..., None]) + np.array([130, 141, 192]) * mist[..., None]
+        # Move existing texture only. Never paint light, glow, stripes, or mist.
         output = original.copy()
         output[y_start:y_end] = base * (1 - mask[..., None]) + warped * mask[..., None]
         return np.clip(np.rint(output), 0, 255).astype(np.uint8)
