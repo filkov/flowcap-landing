@@ -82,7 +82,7 @@
   // Scroll entrances are progressive enhancement: content is never pre-hidden.
   // Once revealed, a section stays in place on every subsequent visit.
   const canAnimate = () => !motionPreference.matches && !navigator.connection?.saveData;
-  const entranceItems = document.querySelectorAll('.workflow-steps li, .story-heading, .story-copy, .detail-card, .handoff-heading, .export-board, .privacy-story header, .faq-side, .closing');
+  const entranceItems = document.querySelectorAll('.workflow-steps li, .story-heading, .story-copy, .detail-card, .privacy-story header, .faq-side, .closing');
   const entrances = new Map();
   const reveal = item => {
     if (!canAnimate()) return;
@@ -107,16 +107,7 @@
     if (!motionPreference.matches) return;
     entrances.forEach(animation => animation.cancel());
     entrances.clear();
-    document.querySelectorAll('.handoff-panel, .request-example').forEach(item => item.getAnimations().forEach(animation => animation.cancel()));
   });
-  const animateChange = item => {
-    item.getAnimations().forEach(animation => animation.cancel());
-    if (canAnimate()) item.animate([
-      { opacity: 0.55, transform: 'translateY(0)' },
-      { opacity: 1, transform: 'translateY(0)' }
-    ], { duration: 180, easing: 'cubic-bezier(.22,1,.36,1)' });
-  };
-
   const tabs = [...document.querySelectorAll('[data-handoff]')];
   const activateTab = tab => {
     tabs.forEach(item => {
@@ -125,7 +116,6 @@
       item.tabIndex = selected ? 0 : -1;
       const panel = document.getElementById(item.getAttribute('aria-controls'));
       panel.hidden = !selected;
-      if (selected) animateChange(panel);
     });
   };
   tabs.forEach((tab, index) => {
@@ -142,16 +132,4 @@
       tabs[nextIndex].focus();
     });
   });
-  const requests = {
-    review: 'Review this flow and its linked comments. Identify confusing steps and suggest improvements.',
-    friction: 'Follow this journey screen by screen. Where could someone get stuck, and what would make the next step clearer?',
-    changes: 'Use these screens and comments to propose a focused improvement plan. Explain what to change and why.'
-  };
-  const requestOptions = [...document.querySelectorAll('[data-request]')];
-  const requestExample = document.querySelector('.request-example');
-  requestOptions.forEach(option => option.addEventListener('click', () => {
-    requestOptions.forEach(item => item.setAttribute('aria-pressed', String(item === option)));
-    requestExample.textContent = `“${requests[option.dataset.request]}”`;
-    animateChange(requestExample);
-  }));
 })();
