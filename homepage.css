@@ -239,7 +239,7 @@
  .landing-page .destination-heading h3 { font-size: 23px; }
  .landing-page .handoff-tabs { margin-top: 22px; }
  .landing-page .handoff-tabs button { font-size: 12px; padding-inline: 4px; }
- .landing-page .handoff-panel { min-height: 354px; padding-top: 24px; }
+ .landing-page .handoff-panel { min-height: 390px; padding-top: 24px; }
  .landing-page .handoff-panel blockquote { font-size: 21px; }
  .landing-page .handoff-panel p { font-size: 15px; }
  .landing-page .handoff-panel .btn { font-size: 14px; padding-inline: 16px; gap: 12px; }
@@ -269,7 +269,7 @@
  .landing-page .handoff-tabs button { font-size: 11px; }
  .landing-page .package-heading h3 { font-size: 26px; }
  .landing-page .package-heading .eyebrow { letter-spacing: .1em; }
- .landing-page .handoff-panel { min-height: 380px; }
+ .landing-page .handoff-panel { min-height: 390px; }
  .landing-page .privacy-story h2 { font-size: 34px; }
 }
 @media (prefers-reduced-motion: reduce), (forced-colors: active) { .landing-page .hero-video { display: none; } }
