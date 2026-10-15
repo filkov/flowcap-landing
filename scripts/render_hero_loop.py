@@ -59,16 +59,22 @@ def main():
     light_source = original[light_y_start:light_y_end]
     red, green, blue = (light_source[..., channel] for channel in range(3))
     warm = ((red > 100) & (green > 75) & (red > blue * 1.08) & (green > blue * 1.03))
-    light_mask_image = Image.fromarray((warm * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(.4 * scale))
-    light_mask = np.asarray(light_mask_image, dtype=np.float32) / 255
+    warm_image = Image.fromarray((warm * 255).astype(np.uint8))
     luminance = red * .2126 + green * .7152 + blue * .0722
-    light_mask *= np.clip((luminance - 45) / 125, 0, 1)
+    # A lamp's clipped white core is often less saturated than its warm edge.
+    # Include that core rather than animating only its faint outer pixels.
+    nearby_warm = np.asarray(warm_image.filter(ImageFilter.MaxFilter(5))) > 0
+    cores = warm | ((luminance > 155) & nearby_warm)
+    core_image = Image.fromarray((cores * 255).astype(np.uint8))
+    softened = np.asarray(core_image.filter(ImageFilter.GaussianBlur(.4 * scale)), dtype=np.float32) / 255
+    light_mask = np.maximum(softened, cores.astype(np.float32))
+    light_mask_image = Image.fromarray(np.rint(light_mask * 255).astype(np.uint8))
     light_x = np.arange(width, dtype=np.float32)[None, :] / scale
     light_y = np.arange(light_y_start, light_y_end, dtype=np.float32)[:, None] / scale
-    light_rate = 1 + (np.floor(light_x / 23).astype(np.int32) % 3)
+    light_rate = 3 + (np.floor(light_x / 29).astype(np.int32) % 3)
     light_phase = np.sin(light_x * .19) * 2.4 + np.sin(light_x * .047)
     # Reflections share the nearby lamp's rhythm, at a lower intensity.
-    light_strength = np.where(light_y > 270, .6, 1).astype(np.float32)
+    light_strength = np.where(light_y > 270, .45, 1).astype(np.float32)
     changed_mask = mask_full.copy()
     changed_mask[light_y_start:light_y_end] = np.maximum(changed_mask[light_y_start:light_y_end], light_mask)
 
@@ -90,9 +96,10 @@ def main():
         # Move existing water texture, then modulate existing warm light pixels.
         output = original.copy()
         output[y_start:y_end] = base * (1 - mask[..., None]) + warped * mask[..., None]
-        twinkle = (.15 * np.sin(phase * light_rate + light_phase)
-                   + .05 * np.sin(phase * 5 + light_x * .083))
-        gain = 1 + twinkle * light_mask * light_strength
+        # Soft, short peaks every 2.4–4 seconds; distant lamps never strobe.
+        pulse = (.5 + .5 * np.cos(phase * light_rate + light_phase)) ** 3
+        lamp_level = .35 + 1.2 * pulse
+        gain = 1 + (lamp_level - 1) * light_mask * light_strength
         output[light_y_start:light_y_end] *= gain[..., None]
         return np.clip(np.rint(output), 0, 255).astype(np.uint8)
 

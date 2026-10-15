@@ -193,8 +193,10 @@ motion and save-data, and content is never pre-hidden. The hero phone's final
 ## Shoreline light shimmer — 15 October 2026
 
 The owner requested gentle blinking of the existing hero lights. The authored
-12-second lake loop now varies only the existing warm emissive pixels along the
-shore and their existing reflections. Nearby lamps have different smooth rhythms;
+12-second lake loop varies only existing lamp cores and their warm edges along
+the shore, plus their existing reflections. Clipped white cores are included so
+the effect remains visible after the hero overlay and scaling. Nearby lamps have
+different smooth 2.4–4 second rhythms, with short bright peaks and longer dim intervals;
 reflection changes are weaker. No new light sources, glow, beams or bands are
 painted. The 3072 × 2048 camera, scene detail and water movement are unchanged.
 `render_hero_loop.py --preview-dir /tmp/hero-preview --preview-only` exports
