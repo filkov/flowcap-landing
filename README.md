@@ -84,8 +84,9 @@ The owner's requested next task—create and verify a public support/privacy mai
 
 The homepage now presents the map and voice comments as two large alternating
 chapters, followed by smaller library and version cards. All sections share the
-1280 px outer container; the chapters use a deliberate 7/5 column split on
-desktop and stack copy before artwork on mobile. Homepage heading weight is
+1280 px outer container; the chapters and smaller cards share two equal columns and a 24 px gutter on
+desktop, with matching text edges (36 px card padding plus the 1 px outline). Chapters stack copy before artwork
+on mobile. Homepage heading weight is
 600; the shared Guides and MCP typography is unchanged.
 
 The additional transparent WebP artwork in `assets/product/` comes from these

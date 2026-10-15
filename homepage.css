@@ -33,16 +33,14 @@
 .landing-page .story-heading .eyebrow { margin-bottom: 22px; }
 .landing-page .story-heading h2 { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.02; }
 .landing-page .story-heading p { color: var(--muted); font-size: 19px; line-height: 1.5; margin-top: 24px; }
-.landing-page .story-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(40px, 5.5vw, 88px); }
+.landing-page .story-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 24px; }
 .landing-page .story-row + .story-row { margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--line); }
-.landing-page .story-voice { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
-.landing-page .story-copy { max-width: 440px; }
-.landing-page .story-map .story-copy { padding-right: 16px; }
-.landing-page .story-voice .story-copy { padding-left: 32px; }
+/* Match the cards' 36px padding plus their 1px outline. */
+.landing-page .story-copy { min-width: 0; padding-inline: 37px; }
 .landing-page .feature-kicker { transform: rotate(-3deg); font-weight: 600; margin-bottom: 28px; }
 .landing-page .story-copy h3 { font-size: clamp(38px, 4vw, 58px); line-height: 1.04; }
 .landing-page .story-copy h3 span { color: #a9b2ca; }
-.landing-page .story-copy > p { color: var(--muted); font-size: 19px; line-height: 1.65; margin-top: 26px; }
+.landing-page .story-copy > p { color: var(--muted); font-size: 19px; line-height: 1.65; margin-top: 26px; max-width: 440px; }
 .landing-page .story-copy .text-link { margin-top: 22px; color: #c1bcff; }
 .landing-page .feature-notes { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 12px; color: #d0d7e9; font-size: 15px; }
 .landing-page .feature-notes li::before { content: '↳'; color: #8fbaa9; margin-right: 12px; }
@@ -157,8 +155,6 @@
  .landing-page .hero { min-height: 620px; }
  .landing-page .hero-phone { top: 104px; width: 30vw; }
  .landing-page .hero h1 { font-size: 48px; }
- .landing-page .story-row, .landing-page .story-voice { gap: 36px; }
- .landing-page .story-voice .story-copy { padding-left: 0; }
  .landing-page .product-stage { height: 550px; }
  .landing-page .stage-label { left: 20px; font-size: 8px; }
  .landing-page .map-stage { height: 550px; }
