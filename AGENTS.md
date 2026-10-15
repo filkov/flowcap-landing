@@ -14,9 +14,11 @@ the root of `main`. Preview locally with `python3 -m http.server 8793`.
   The hero background has a locked camera: animate water, reflections and gentle brightness changes in existing shore lights only.
   Do not replace this with image panning/zooming or add playback controls.
 - The homepage header links to internal pages (MCP Setup and Guides), not
-  in-page anchors. The first hero action is the official App Store badge.
-  Keep all homepage App Store actions identical: the unmodified badge in
-  `assets/app-store-badge.svg`, displayed at 180 × 60 px via `.app-store-link`.
+  in-page anchors. The first hero action is the App Store badge.
+  Keep all homepage App Store actions identical: the owner-requested transparent
+  variant in `assets/app-store-badge-transparent.svg`, displayed at 180 × 60 px
+  via `.app-store-link`. Keep the white logo/text and thin outline. The original
+  official asset is preserved in `assets/app-store-badge.svg`.
 - Keep public claims aligned with the product's release state. The app is not
   yet available in the App Store; the public MCP setup is a tested Mac preview.
   The browser OAuth connection remains restricted preview. Do not advertise
