@@ -50,7 +50,7 @@
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => entry.isIntersecting ? visibleItems.add(entry.target) : visibleItems.delete(entry.target));
       syncMotion();
-    }, { threshold: 0.2 });
+    }, { threshold: 0 });
     motionItems.forEach(item => observer.observe(item));
   }
   motionPreference.addEventListener('change', syncMotion);

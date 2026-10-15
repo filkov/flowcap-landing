@@ -57,17 +57,18 @@
 .landing-page .map-stage::after { content: ''; position: absolute; inset: auto 0 0; height: 60px; background: linear-gradient(transparent, #1c2b3ce6); pointer-events: none; }
 .landing-page .map-canvas { display: block; position: absolute; width: 280px; top: -127px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 18px 22px #0004); }
 .landing-page .map-canvas img { width: 100%; clip-path: inset(18.7% 0 12.7%); }
-/* Three separate areas: app header, readable comment, then voice signal. */
-.landing-page .voice-stage { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 72px 36px 32px; }
-.landing-page .voice-device-window { flex-shrink: 0; position: relative; width: min(100%, 350px); aspect-ratio: 3 / 2; overflow: hidden; mask-image: linear-gradient(#000 94%, transparent); }
+/* The readable thought and signal sit beside the complete app screen. */
+.landing-page .voice-stage { display: flex; align-items: center; justify-content: center; align-self: stretch; height: auto; min-height: 800px; padding: 76px 32px 40px; }
+.landing-page .voice-aside { margin-top: 32px; }
+.landing-page .voice-device-window { flex-shrink: 0; position: relative; width: min(100%, 390px); aspect-ratio: 1207 / 2061; }
 .landing-page .voice-device { position: static; width: 100%; height: auto; }
-.landing-page .linked-comment { flex-shrink: 0; width: 100%; padding: 24px 28px; margin: 0; border: 1px solid #a8b3db38; border-radius: 22px; background: #161a2d; }
+.landing-page .linked-comment { flex-shrink: 0; width: 100%; padding: 20px 24px; margin: 0; border: 1px solid #a8b3db38; border-radius: 22px; background: #161a2d; }
 .landing-page .linked-comment figcaption { color: #a7b3cd; font-size: 13px; line-height: 1.4; font-weight: 500; }
-.landing-page .linked-comment blockquote { margin: 10px 0 0; color: #eef0fa; font-size: 21px; line-height: 1.45; letter-spacing: -.01em; }
-.landing-page .voice-signal { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 64px; margin-top: auto; padding-top: 8px; }
-.landing-page .voice-signal > span:first-child { color: #aaa5c7; font-size: 9px; font-weight: 600; letter-spacing: .12em; line-height: 1.4; }
-.landing-page .waveform { height: 28px; display: flex; align-items: center; justify-content: center; gap: 3px; }
-.landing-page .waveform i { display: block; width: 2px; height: calc(var(--h) * .5); border-radius: 2px; background: #b1a0fa; transform-origin: center; }
+.landing-page .linked-comment blockquote { margin: 10px 0 0; color: #eef0fa; font-size: 18px; line-height: 1.45; letter-spacing: -.01em; }
+.landing-page .voice-signal { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 112px; margin-top: 20px; }
+.landing-page .voice-signal > span:first-child { color: #aaa5c7; font-size: 10px; font-weight: 600; letter-spacing: .12em; line-height: 1.4; }
+.landing-page .waveform { width: min(100%, 300px); height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 3px; }
+.landing-page .waveform i { display: block; flex: 1; max-width: 4px; height: calc(var(--h) * 1.25); border-radius: 3px; background: #b1a0fa; transform-origin: center; }
 .landing-page .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); margin-top: var(--card-gap); }
 .landing-page .detail-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #a4b2df21; border-radius: 28px; background: #171e33; }
 .landing-page .detail-copy { flex: 1; padding: 36px 40px 0; position: relative; z-index: 1; }
@@ -169,21 +170,37 @@
 @keyframes map-route-point { 0%, 31% { transform: translateY(0); opacity: 0; } 34% { opacity: 1; } 57% { transform: translateY(108px); opacity: 1; } 65%, 100% { transform: translateY(108px); opacity: 0; } }
 @keyframes map-second-focus { 0%, 50%, 93%, 100% { opacity: 0; } 61%, 80% { opacity: .65; } }
 @keyframes comment-arrive { from { opacity: .6; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-/* One spoken phrase followed by a long rest; only the dedicated signal moves. */
-@keyframes voice-phrase { 0%, 12%, 62%, 100% { transform: scaleY(.18); opacity: .5; } 23% { transform: scaleY(.75); opacity: .9; } 34% { transform: scaleY(.35); opacity: .7; } 43% { transform: scaleY(1); opacity: 1; } 52% { transform: scaleY(.5); opacity: .8; } }
+/* Independent, seamless rhythms keep the voice active without a silent hold. */
+@keyframes voice-phrase { 0%, 100% { transform: scaleY(.45); } 22% { transform: scaleY(.85); } 46% { transform: scaleY(.35); } 72% { transform: scaleY(1.1); } }
+@keyframes gentle-float { 0%, 100% { translate: 0 6px; } 50% { translate: 0 -6px; } }
+@keyframes screen-float { 0%, 100% { translate: 0 8px; } 50% { translate: 0 -8px; } }
 @media (prefers-reduced-motion: no-preference) {
  html.motion-enabled .landing-page .hero-copy > .eyebrow, html.motion-enabled .landing-page .hero-copy > h1, html.motion-enabled .landing-page .hero-copy > .lead, html.motion-enabled .landing-page .hero-copy > .actions { animation: content-arrive .7s cubic-bezier(.22,1,.36,1) both; }
  html.motion-enabled .landing-page .hero-copy > .lead { animation-delay: .06s; }
  html.motion-enabled .landing-page .hero-copy > .actions { animation-delay: .12s; }
  html.motion-enabled .landing-page .hero-phone img { animation: phone-arrive .9s ease-out both; }
- .landing-page .motion-seen .map-node-first { animation: map-first-focus 3.6s ease-in-out both; }
- .landing-page .motion-seen .map-route { animation: map-route-follow 3.6s ease-in-out both; }
- .landing-page .motion-seen .map-traveler { animation: map-route-point 3.6s ease-in-out both; }
- .landing-page .motion-seen .map-node-second { animation: map-second-focus 3.6s ease-in-out both; }
+ .landing-page .motion-seen .map-node-first { animation: map-first-focus 6s ease-in-out infinite; }
+ .landing-page .motion-seen .map-route { animation: map-route-follow 6s ease-in-out infinite; }
+ .landing-page .motion-seen .map-traveler { animation: map-route-point 6s ease-in-out infinite; }
+ .landing-page .motion-seen .map-node-second { animation: map-second-focus 6s ease-in-out infinite; }
  .landing-page .motion-seen:not(.motion-active) .map-journey > * { animation-play-state: paused; }
  .landing-page .motion-seen .linked-comment { animation: comment-arrive .5s cubic-bezier(.22,1,.36,1) .18s both; }
  .landing-page .motion-seen:not(.motion-active) .linked-comment { animation-play-state: paused; }
- .landing-page .motion-active .waveform i { animation: voice-phrase 7s ease-in-out infinite; animation-delay: calc(var(--n) * -35ms); }
+ .landing-page .motion-seen .waveform i { animation: voice-phrase 1.8s ease-in-out infinite; animation-delay: calc(var(--n) * -137ms); }
+ .landing-page .motion-seen .waveform i:nth-child(3n) { animation-duration: 1.3s; }
+ .landing-page .motion-seen .waveform i:nth-child(3n + 1) { animation-duration: 2.1s; }
+ .landing-page .motion-seen .map-canvas, .landing-page .motion-seen .library-tile { animation: gentle-float 6s ease-in-out infinite; }
+ .landing-page .motion-seen .library-tile:nth-child(2) { animation-delay: -1.8s; animation-duration: 6.8s; }
+ .landing-page .motion-seen .library-tile:nth-child(3) { animation-delay: -3.2s; animation-duration: 5.4s; }
+ .landing-page .motion-seen .library-tile:nth-child(4) { animation-delay: -4.6s; animation-duration: 6.4s; }
+ .landing-page .motion-seen .voice-device-window, .landing-page .versions-visual.motion-seen img, .landing-page .motion-seen .export-screen { animation: screen-float 7s ease-in-out infinite; }
+ .landing-page .motion-seen .screen-two { animation-delay: -2.5s; animation-duration: 6s; }
+ .landing-page .motion-seen:not(.motion-active) .waveform i,
+ .landing-page .motion-seen:not(.motion-active) .map-canvas,
+ .landing-page .motion-seen:not(.motion-active) .library-tile,
+ .landing-page .motion-seen:not(.motion-active) .voice-device-window,
+ .landing-page .versions-visual.motion-seen:not(.motion-active) img,
+ .landing-page .motion-seen:not(.motion-active) .export-screen { animation-play-state: paused; }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
  .landing-page .story-row:hover, .landing-page .detail-card:hover { border-color: #b4c5fa40; }
@@ -251,7 +268,9 @@
  .landing-page .stage-label { top: 22px; left: 20px; font-size: 8px; letter-spacing: .1em; }
  .landing-page .map-stage { height: 640px; }
  .landing-page .map-canvas { top: -85px; width: min(76%, 290px); }
- .landing-page .voice-stage { height: auto; min-height: 620px; padding: 64px 24px 28px; }
+ .landing-page .voice-stage { height: auto; min-height: 0; padding: 64px 24px 24px; }
+ .landing-page .voice-device-window { width: min(100%, 320px); }
+ .landing-page .voice-aside { margin-top: 28px; }
  .landing-page .linked-comment { padding: 22px; }
  .landing-page .linked-comment blockquote { font-size: 19px; }
  .landing-page .detail-grid { grid-template-columns: 1fr; }
@@ -320,7 +339,7 @@
  .landing-page .hero-phone { height: 400px; }
  .landing-page .product-stage { height: 450px; }
  .landing-page .map-stage { height: 520px; }
- .landing-page .voice-stage { height: auto; min-height: 580px; padding-inline: 20px; }
+ .landing-page .voice-stage { height: auto; min-height: 0; padding-inline: 20px; }
  .landing-page .linked-comment { padding: 20px; }
  .landing-page .linked-comment blockquote { font-size: 17px; }
  .landing-page .map-canvas { top: -70px; }
