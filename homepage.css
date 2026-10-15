@@ -28,15 +28,16 @@
 .landing-page .workflow-steps p { margin-top: 20px; font-size: 17px; max-width: 340px; }
 
 /* Real Figma artwork gets enough space to read as a product, not a poster. */
-.landing-page .product-story { padding: 72px 0 96px; background: #0e1025; }
-.landing-page .story-heading { max-width: 780px; margin: 0 auto 48px; text-align: center; }
+.landing-page .product-story { --card-gap: 24px; padding: 72px 0 var(--card-gap); background: #0e1025; }
+.landing-page .story-heading { margin: 0 auto 48px; text-align: center; }
 .landing-page .story-heading .eyebrow { margin-bottom: 22px; }
-.landing-page .story-heading h2 { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.02; }
+.landing-page .story-heading h2 { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.02; text-wrap: balance; }
 .landing-page .story-heading p { color: var(--muted); font-size: 19px; line-height: 1.5; margin-top: 24px; }
-.landing-page .story-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 24px; }
-.landing-page .story-row + .story-row { margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--line); }
-/* Match the cards' 36px padding plus their 1px outline. */
-.landing-page .story-copy { min-width: 0; padding-inline: 37px; }
+.landing-page .story-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: var(--card-gap); border: 1px solid #a4b2df21; border-radius: 28px; overflow: hidden; }
+.landing-page .story-map { background: radial-gradient(ellipse at 18% 85%, #2a3765, #171e37 50%, #14192c); }
+.landing-page .story-voice { background: radial-gradient(ellipse at 82% 80%, #373165, #24233e 60%, #1a1b2d); }
+.landing-page .story-row + .story-row { margin-top: var(--card-gap); }
+.landing-page .story-copy { min-width: 0; padding: 48px 36px; }
 .landing-page .feature-kicker { transform: rotate(-3deg); font-weight: 600; margin-bottom: 28px; }
 .landing-page .story-copy h3 { font-size: clamp(38px, 4vw, 58px); line-height: 1.04; }
 .landing-page .story-copy h3 span { color: #a9b2ca; }
@@ -44,28 +45,26 @@
 .landing-page .story-copy .text-link { margin-top: 22px; color: #c1bcff; }
 .landing-page .feature-notes { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 12px; color: #d0d7e9; font-size: 15px; }
 .landing-page .feature-notes li::before { content: '↳'; color: #8fbaa9; margin-right: 12px; }
-.landing-page .product-stage { border: 1px solid #a8b5eb21; border-radius: 28px; height: 620px; position: relative; display: block; width: 100%; padding: 0; overflow: hidden; text-align: left; background: radial-gradient(ellipse at 50% 85%, #2a3765, #171e37 60%, #14192c); isolation: isolate; }
+.landing-page .product-stage { border: 0; border-radius: 0; height: 620px; position: relative; display: block; width: 100%; padding: 0; overflow: hidden; text-align: left; background: transparent; isolation: isolate; }
+.landing-page .product-stage:focus-visible { outline-offset: -8px; }
 .landing-page .stage-label { position: absolute; z-index: 2; top: 28px; left: 28px; display: flex; gap: 10px; align-items: center; color: #b4c4df; font-size: 10px; font-weight: 600; letter-spacing: .12em; }
 .landing-page .stage-label .ico { width: 17px; height: 17px; }
-.landing-page .map-stage { height: 660px; }
-.landing-page .map-device { display: block; position: absolute; width: min(65%, 320px); top: 64px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 22px 28px #0006); }
+.landing-page .map-stage { height: 620px; }
+.landing-page .map-device { display: block; position: absolute; width: min(65%, 300px); top: 60px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 22px 28px #0006); }
 .landing-page .map-device > img { width: 100%; }
-.landing-page .stage-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 54px 28px 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: linear-gradient(transparent, #12182cee 48%); color: #c3cde2; font-size: 13px; }
+.landing-page .stage-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 54px 28px 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: transparent; color: #c3cde2; font-size: 13px; }
 .landing-page .stage-caption .ico { width: 18px; height: 18px; }
 .landing-page .map-focus { position: absolute; width: 50%; left: 25%; height: 25.8%; border: 1px solid #8cb9ff; border-radius: 16px; opacity: 0; box-shadow: 0 0 0 5px #5a9dff18; pointer-events: none; }
 .landing-page .map-focus-one { top: 32.1%; }
 .landing-page .map-focus-two { top: 63.4%; }
-.landing-page .voice-stage { background: radial-gradient(ellipse at 65% 80%, #373165, #24233e 65%, #1a1b2d); }
 .landing-page .voice-device { width: min(70%, 390px); position: absolute; top: 77px; left: 50%; transform: translateX(-50%); }
 .landing-page .comment-detail { width: min(91%, 520px); display: block; position: absolute; z-index: 2; left: 0; bottom: 36px; filter: drop-shadow(0 16px 26px #09091b99); }
 .landing-page .comment-detail img { width: 100%; }
-.landing-page .voice-signal { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 28px; min-height: 68px; background: #17172cea; border-top: 1px solid #b3a7ff24; z-index: 3; }
+.landing-page .voice-signal { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 28px; min-height: 68px; background: linear-gradient(transparent, #24233ef2); z-index: 3; }
 .landing-page .voice-signal > span:first-child { color: #b6a9dd; font-size: 9px; font-weight: 600; letter-spacing: .1em; }
 .landing-page .waveform { height: 36px; display: flex; align-items: center; justify-content: flex-end; gap: 3px; }
 .landing-page .waveform i { display: block; width: 3px; height: calc(var(--h) * .65); border-radius: 2px; background: #b1a0fa; transform-origin: center; }
-.landing-page .detail-group { margin-top: 80px; }
-.landing-page .detail-group > .eyebrow { margin-bottom: 28px; color: var(--soft); }
-.landing-page .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.landing-page .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); margin-top: var(--card-gap); }
 .landing-page .detail-card { overflow: hidden; border: 1px solid #a4b2df21; border-radius: 28px; background: #171b33; }
 .landing-page .detail-copy { padding: 36px 36px 0; position: relative; z-index: 1; }
 .landing-page .detail-copy > .ico { color: #959fca; width: 24px; height: 24px; margin-bottom: 22px; }
@@ -187,20 +186,19 @@
  .landing-page .step-title { font-size: 16px; border-radius: 9px; padding: 8px 11px; }
  .landing-page .step-title .ico { width: 17px; height: 17px; }
  .landing-page .workflow-steps p { margin-top: 14px; font-size: 16px; }
- .landing-page .product-story { padding-block: 56px 64px; }
+ .landing-page .product-story { --card-gap: 20px; padding-block: 56px var(--card-gap); }
  .landing-page .story-heading { margin-bottom: 36px; }
  .landing-page .story-heading h2 { font-size: 44px; }
  .landing-page .story-heading p { font-size: 17px; margin-top: 20px; }
- .landing-page .story-row, .landing-page .story-voice { grid-template-columns: 1fr; gap: 30px; }
- .landing-page .story-row + .story-row { margin-top: 48px; padding-top: 48px; }
- .landing-page .story-map .story-copy, .landing-page .story-voice .story-copy { padding: 0; max-width: 480px; }
+ .landing-page .story-row { grid-template-columns: 1fr; gap: 24px; border-radius: 22px; }
+ .landing-page .story-map .story-copy, .landing-page .story-voice .story-copy { padding: 28px 28px 0; }
  .landing-page .story-map .story-copy { grid-row: 1; }
  .landing-page .feature-kicker { font-size: 16px; margin-bottom: 22px; }
  .landing-page .story-copy h3 { font-size: 40px; }
  .landing-page .story-copy > p { font-size: 17px; line-height: 1.6; margin-top: 20px; }
  .landing-page .feature-notes { margin-top: 20px; gap: 10px; font-size: 14px; }
  .landing-page .story-copy .text-link { font-size: 15px; margin-top: 16px; }
- .landing-page .product-stage { height: 520px; border-radius: 22px; }
+ .landing-page .product-stage { height: 520px; }
  .landing-page .stage-label { top: 22px; left: 20px; font-size: 8px; letter-spacing: .1em; }
  .landing-page .map-stage { height: clamp(480px, 150vw, 600px); }
  .landing-page .map-device { top: 60px; width: 78%; max-width: 320px; }
@@ -211,9 +209,7 @@
  .landing-page .voice-signal > span:first-child { max-width: 100px; font-size: 8px; line-height: 1.5; }
  .landing-page .waveform { gap: 2px; }
  .landing-page .waveform i { width: 2px; }
- .landing-page .detail-group { margin-top: 64px; }
- .landing-page .detail-group > .eyebrow { margin-bottom: 24px; }
- .landing-page .detail-grid { grid-template-columns: 1fr; gap: 20px; }
+ .landing-page .detail-grid { grid-template-columns: 1fr; }
  .landing-page .detail-card { border-radius: 22px; }
  .landing-page .detail-copy { padding: 28px 28px 0; }
  .landing-page .detail-copy > .ico { margin-bottom: 18px; }

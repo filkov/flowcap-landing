@@ -82,12 +82,15 @@ The owner's requested next task—create and verify a public support/privacy mai
 
 ## Product story refresh (2026-10-15)
 
-The homepage now presents the map and voice comments as two large alternating
-chapters, followed by smaller library and version cards. All sections share the
-1280 px outer container; the chapters and smaller cards share two equal columns and a 24 px gutter on
-desktop, with matching text edges (36 px card padding plus the 1 px outline). Chapters stack copy before artwork
-on mobile. Homepage heading weight is
-600; the shared Guides and MCP typography is unchanged.
+The homepage presents the map and voice comments as two full-width cards with
+their copy inside: map illustration left / copy right, then copy left / voice
+illustration right. Two smaller library and version cards follow in equal
+columns. All cards share the 1280 px outer container and 24 px gaps (20 px on
+mobile), including the space below the final row. The product heading occupies
+one line on desktop and wraps naturally on narrow screens. The Library &
+Versions group label and the separators between cards have been removed at the
+owner's request. Mobile cards place copy above artwork within the same surface.
+Homepage heading weight is 600; shared Guides and MCP typography is unchanged.
 
 The additional transparent WebP artwork in `assets/product/` comes from these
 existing Figma nodes, exported in isolation without modifying the source file:
@@ -137,3 +140,8 @@ breaks. Hero placement, product art and App Store badges are unchanged.
 Validated homepage HTML nesting, local resources, unique IDs and one H1; all
 three scripts passed syntax checks. Desktop, 390 px, 320 px and tablet widths
 were checked for overflow; mobile export tabs retain equal heights.
+
+Owner-directed card layout follow-up: the full-width card surfaces replace the
+earlier separate illustration panels and chapter dividers. Browser review at
+1440, 820, 390 and 320 px found no horizontal overflow. The image dialog and
+Escape/focus return still work.
