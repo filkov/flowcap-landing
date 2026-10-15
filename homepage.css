@@ -4,50 +4,11 @@
 .landing-page .hero-phone { top: 62px; right: 0; width: min(29vw, 340px); }
 .landing-page .hero h1 { font-size: clamp(48px, 4.8vw, 68px); }
 .landing-page .hero .lead { max-width: 510px; }
-/* Animate only decorative layers; the dark contrast overlay stays above them. */
-.landing-page .hero-atmosphere { position: absolute; inset: 0; z-index: -2; pointer-events: none; overflow: hidden; }
-.landing-page .hero-atmosphere::before,
-.landing-page .hero-atmosphere::after { content: ""; position: absolute; inset: -4%; opacity: 0; }
-.landing-page .hero-atmosphere::before {
-  background: radial-gradient(ellipse at 52% 25%, rgba(146, 124, 234, .3), transparent 42%), radial-gradient(ellipse at 80% 38%, rgba(82, 133, 209, .2), transparent 35%);
-}
-.landing-page .hero-atmosphere::after {
-  background: repeating-linear-gradient(0deg, transparent 0 6px, rgba(159, 186, 255, .24) 7px, transparent 9px 16px);
-  -webkit-mask-image: radial-gradient(ellipse 29% 10% at 48% 34%, #000, transparent);
-  mask-image: radial-gradient(ellipse 29% 10% at 48% 34%, #000, transparent);
-}
-.landing-page .hero-scene[data-motion] .hero-backdrop { animation: hero-landscape 28s ease-in-out infinite alternate; }
-.landing-page .hero-scene[data-motion] .hero-atmosphere::before { animation: hero-mist 18s ease-in-out infinite alternate; }
-.landing-page .hero-scene[data-motion] .hero-atmosphere::after { animation: hero-reflections 9s ease-in-out infinite alternate; }
-.landing-page .hero-scene[data-motion="paused"] .hero-backdrop,
-.landing-page .hero-scene[data-motion="paused"] .hero-atmosphere::before,
-.landing-page .hero-scene[data-motion="paused"] .hero-atmosphere::after { animation-play-state: paused; }
-.landing-page .hero-motion-toggle { position: absolute; left: 0; bottom: 16px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: rgba(9, 11, 33, .55); color: var(--muted); }
-.landing-page .hero-motion-toggle:hover { background: #1a1d3a; color: var(--text); }
-.landing-page .hero-motion-toggle[hidden],
-.landing-page .hero-motion-toggle .motion-play,
-.landing-page .hero-motion-toggle[aria-pressed="true"] .motion-pause { display: none; }
-.landing-page .hero-motion-toggle[aria-pressed="true"] .motion-play { display: block; }
-@keyframes hero-landscape {
-  from { transform: scale(1.025) translate3d(-.35%, 0, 0); }
-  to { transform: scale(1.065) translate3d(.35%, -.5%, 0); }
-}
-@keyframes hero-mist {
-  from { opacity: .25; transform: translate3d(-2%, 0, 0) scale(1); }
-  to { opacity: .8; transform: translate3d(2%, 1%, 0) scale(1.04); }
-}
-@keyframes hero-reflections {
-  from { opacity: .12; transform: translate3d(-.3%, 0, 0) scaleX(.98); }
-  to { opacity: .42; transform: translate3d(.3%, 3px, 0) scaleX(1.02); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .landing-page .hero-scene[data-motion] .hero-backdrop,
-  .landing-page .hero-scene[data-motion] .hero-atmosphere::before,
-  .landing-page .hero-scene[data-motion] .hero-atmosphere::after { animation: none; transform: none; }
-  .landing-page .hero-motion-toggle { display: none; }
-}
-@media (forced-colors: active) {
-  .landing-page .hero-atmosphere, .landing-page .hero-motion-toggle { display: none; }
+/* The landscape stays fixed; only the water in the authored loop moves. */
+.landing-page .hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; pointer-events: none; opacity: 0; }
+.landing-page .hero-video.is-playing { opacity: 1; }
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  .landing-page .hero-video { display: none; }
 }
 .landing-page .actions { gap: 24px; margin-top: 30px; }
 .landing-page .availability { margin-top: 22px; }
@@ -108,7 +69,7 @@
 }
 @media (max-width: 760px) {
   .landing-page .hero { min-height: 0; padding-block: 26px 0; }
-  .landing-page .hero-motion-toggle { top: 12px; right: 0; bottom: auto; left: auto; }
+  .landing-page .hero-video { object-position: 50% 25%; }
   .landing-page .hero .eyebrow { margin-bottom: 16px; }
   .landing-page .hero h1 { font-size: clamp(36px, 9.8vw, 54px); line-height: 1.08; }
   .landing-page .hero .lead { margin-top: 20px; font-size: 17px; line-height: 1.55; }

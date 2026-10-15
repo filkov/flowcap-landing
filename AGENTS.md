@@ -11,6 +11,8 @@ the root of `main`. Preview locally with `python3 -m http.server 8793`.
   linked Figma source. Do not invent app screens, device mockups, or product
   states. The forest/lake hero image, voice-led copy, restrained gradient
   headings and transparent full-width header are deliberate design choices.
+  The hero background has a locked camera: animate water and reflections only.
+  Do not replace this with image panning/zooming or add playback controls.
 - The homepage header links to internal pages (MCP Setup and Guides), not
   in-page anchors. The first hero action is the official App Store badge.
   Keep all homepage App Store actions identical: the unmodified badge in

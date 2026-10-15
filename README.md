@@ -32,6 +32,13 @@ Exported on 2026-10-14 at their original 1320 × 2868 resolution. The complete a
 
 `assets/campaign/` contains all live product artwork. The original `hero-calm` landscape is reused behind the hero; other older product illustrations remain unused. The owner’s voice-led hero and How it works copy, plus blue-to-violet heading accents, were restored after the campaign refresh. `srcset`, intrinsic dimensions and lazy loading limit transfer and layout shift; the hero is eager/high priority. Total for all 18 WebP sizes is approximately 1.7 MB, not the per-page download.
 
+The hero uses `assets/hero-lake-loop.mp4`, a silent 12-second loop with a fixed
+camera and motion masked to the lake. The original still is the fallback for
+reduced motion, data saving, blocked autoplay, or media errors. There are no
+playback controls. Re-render the asset offline with
+`python3 scripts/render_hero_loop.py` (Pillow, numpy, and ffmpeg); the site
+itself still needs no build step.
+
 ## Verification (2026-10-14)
 
 - Local image/script/style references, fragment links, unique IDs, and JavaScript syntax checked.

@@ -1,29 +1,37 @@
 (() => {
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scene = document.querySelector('.hero-scene');
-  const motionToggle = document.querySelector('.hero-motion-toggle');
-  if (scene && motionToggle) {
-    let userPaused = false;
+  const backgroundVideo = document.querySelector('.hero-video');
+  if (scene && backgroundVideo) {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     let inView = true;
-    const syncMotion = () => {
-      scene.dataset.motion = userPaused || !inView || document.hidden ? 'paused' : 'playing';
+    const syncBackground = () => {
+      if (motionPreference.matches || navigator.connection?.saveData) {
+        backgroundVideo.pause();
+        backgroundVideo.classList.remove('is-playing');
+        return;
+      }
+      if (!inView || document.hidden) {
+        backgroundVideo.pause();
+        return;
+      }
+      if (!backgroundVideo.getAttribute('src')) backgroundVideo.src = backgroundVideo.dataset.src;
+      backgroundVideo.play()?.catch(() => backgroundVideo.classList.remove('is-playing'));
     };
-    motionToggle.hidden = false;
-    motionToggle.addEventListener('click', () => {
-      userPaused = !userPaused;
-      motionToggle.setAttribute('aria-pressed', String(userPaused));
-      motionToggle.setAttribute('aria-label', userPaused ? 'Resume background animation' : 'Pause background animation');
-      syncMotion();
+    backgroundVideo.addEventListener('playing', () => {
+      if (!motionPreference.matches) backgroundVideo.classList.add('is-playing');
     });
-    document.addEventListener('visibilitychange', syncMotion);
+    backgroundVideo.addEventListener('error', () => backgroundVideo.classList.remove('is-playing'));
+    document.addEventListener('visibilitychange', syncBackground);
+    motionPreference.addEventListener('change', syncBackground);
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(([entry]) => {
         inView = entry.isIntersecting;
-        syncMotion();
+        syncBackground();
       });
       observer.observe(scene);
     }
-    syncMotion();
+    syncBackground();
   }
   const gallery = document.querySelector('.gallery');
   const cards = [...gallery.children];
