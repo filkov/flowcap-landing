@@ -35,7 +35,7 @@
 .landing-page .workflow-steps p { margin-top: 20px; font-size: 17px; max-width: 340px; }
 
 /* Feature chapters: close-up product details and concise, specific benefits. */
-.landing-page .product-story { --card-gap: 24px; padding: 72px 0 var(--card-gap); background: #0e1025; }
+.landing-page .product-story { --card-gap: 24px; padding: 72px 0 80px; background: #0e1025; }
 .landing-page .story-heading { margin: 0 auto 48px; text-align: center; }
 .landing-page .story-heading .eyebrow { margin-bottom: 22px; }
 .landing-page .story-heading h2 { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.02; text-wrap: balance; }
@@ -260,7 +260,7 @@
  .landing-page .step-title { font-size: 16px; border-radius: 9px; padding: 8px 11px; }
  .landing-page .step-title .ico { width: 17px; height: 17px; }
  .landing-page .workflow-steps p { margin-top: 14px; font-size: 16px; }
- .landing-page .product-story { --card-gap: 20px; padding-block: 56px var(--card-gap); }
+ .landing-page .product-story { --card-gap: 20px; padding-block: 56px; }
  .landing-page .story-heading { margin-bottom: 36px; }
  .landing-page .story-heading h2 { font-size: 44px; }
  .landing-page .story-heading p { font-size: 17px; margin-top: 20px; }
