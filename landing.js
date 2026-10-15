@@ -73,6 +73,17 @@
       tabs[nextIndex].focus();
     });
   });
+  const requests = {
+    review: 'Review this flow and its linked comments. Identify confusing steps and suggest improvements.',
+    friction: 'Follow this journey screen by screen. Where could someone get stuck, and what would make the next step clearer?',
+    changes: 'Use these screens and comments to propose a focused improvement plan. Explain what to change and why.'
+  };
+  const requestOptions = [...document.querySelectorAll('[data-request]')];
+  const requestExample = document.querySelector('.request-example');
+  requestOptions.forEach(option => option.addEventListener('click', () => {
+    requestOptions.forEach(item => item.setAttribute('aria-pressed', String(item === option)));
+    requestExample.textContent = `“${requests[option.dataset.request]}”`;
+  }));
   const dialog = document.querySelector('.art-dialog');
   const enlarged = dialog.querySelector('img');
   const artTitle = document.querySelector('#art-title');

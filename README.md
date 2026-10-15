@@ -145,3 +145,29 @@ Owner-directed card layout follow-up: the full-width card surfaces replace the
 earlier separate illustration panels and chapter dividers. Browser review at
 1440, 820, 390 and 320 px found no horizontal overflow. The image dialog and
 Escape/focus return still work.
+
+## Feature close-ups — 15 October 2026
+
+The Anchor reference informed the visual hierarchy: larger real interface details,
+short icon-led benefits, distinct feature accents and concrete example requests.
+The first two feature cards remain full width with opposite text placement;
+24 px desktop / 20 px mobile card gaps remain uniform. Map connections are shown
+without the phone frame, the comment stays readable throughout the waveform loop,
+and the library uses isolated native app tiles rather than a cropped phone.
+The export board includes actual screen previews and three manually selectable
+example requests. These are examples, not a live AI session.
+
+Additional isolated Figma exports in `assets/product/`:
+
+| Asset | Approved source node |
+| --- | --- |
+| `map-canvas.webp` | `1357:2856` — original map cards and connectors |
+| `library-airbnb.webp` | `1357:3192` |
+| `library-spotify.webp` | `1357:3205` |
+| `library-duolingo.webp` | `1357:3216` |
+| `library-notion.webp` | `1357:3227` |
+| `screen-explore.webp` | `1357:2868` — original preview crop |
+| `screen-dates.webp` | `1357:2870` — original preview crop |
+
+These are isolated PNG exports converted to WebP; their product content is
+unchanged. CSS crops the map to the two connected flow cards.
