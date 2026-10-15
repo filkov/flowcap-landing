@@ -15,7 +15,7 @@
 .landing-page .btn-primary:hover { background: #6b5cdd; }
 
 /* A compact introduction, with the same labels as the product chapters. */
-.landing-page .workflow { padding-block: 72px 80px; }
+.landing-page .workflow { padding-block: 72px 64px; }
 .landing-page .workflow-steps { max-width: none; gap: var(--column-gap); }
 .landing-page .workflow-steps li { border-top: 1px solid var(--line); padding-top: 20px; }
 .landing-page .step-number { display: flex; justify-content: space-between; margin-bottom: 24px; color: var(--soft); font-size: 12px; }
@@ -28,13 +28,13 @@
 .landing-page .workflow-steps p { margin-top: 20px; font-size: 17px; max-width: 340px; }
 
 /* Real Figma artwork gets enough space to read as a product, not a poster. */
-.landing-page .product-story { padding: 88px 0 96px; background: #0e1025; }
-.landing-page .story-heading { max-width: 780px; margin: 0 auto 72px; text-align: center; }
+.landing-page .product-story { padding: 72px 0 96px; background: #0e1025; }
+.landing-page .story-heading { max-width: 780px; margin: 0 auto 48px; text-align: center; }
 .landing-page .story-heading .eyebrow { margin-bottom: 22px; }
 .landing-page .story-heading h2 { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.02; }
 .landing-page .story-heading p { color: var(--muted); font-size: 19px; line-height: 1.5; margin-top: 24px; }
 .landing-page .story-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(40px, 5.5vw, 88px); }
-.landing-page .story-row + .story-row { margin-top: 88px; }
+.landing-page .story-row + .story-row { margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--line); }
 .landing-page .story-voice { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
 .landing-page .story-copy { max-width: 440px; }
 .landing-page .story-map .story-copy { padding-right: 16px; }
@@ -65,7 +65,9 @@
 .landing-page .voice-signal > span:first-child { color: #b6a9dd; font-size: 9px; font-weight: 600; letter-spacing: .1em; }
 .landing-page .waveform { height: 36px; display: flex; align-items: center; justify-content: flex-end; gap: 3px; }
 .landing-page .waveform i { display: block; width: 3px; height: calc(var(--h) * .65); border-radius: 2px; background: #b1a0fa; transform-origin: center; }
-.landing-page .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 88px; }
+.landing-page .detail-group { margin-top: 80px; }
+.landing-page .detail-group > .eyebrow { margin-bottom: 28px; color: var(--soft); }
+.landing-page .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .landing-page .detail-card { overflow: hidden; border: 1px solid #a4b2df21; border-radius: 28px; background: #171b33; }
 .landing-page .detail-copy { padding: 36px 36px 0; position: relative; z-index: 1; }
 .landing-page .detail-copy > .ico { color: #959fca; width: 24px; height: 24px; margin-bottom: 22px; }
@@ -97,7 +99,7 @@
 .landing-page .package-check { color: #a9d2c5; margin-left: auto; font-size: 16px; }
 .landing-page .package-footer { margin-top: auto; display: flex; align-items: center; gap: 9px; font-size: 13px; color: #a3b1d0; }
 .landing-page .package-footer .ico { width: 17px; height: 17px; }
-.landing-page .export-destinations { min-width: 0; padding: 40px; }
+.landing-page .export-destinations { min-width: 0; padding: 40px; border-left: 1px solid #a4b2df2e; }
 .landing-page .destination-heading .eyebrow { margin-bottom: 12px; color: #909bbc; font-size: 9px; }
 .landing-page .destination-heading h3 { font-size: 25px; }
 .landing-page .handoff-tabs { display: flex; gap: 4px; padding: 5px; background: #080b1d; border: 1px solid #9dace21c; border-radius: 13px; margin-top: 28px; }
@@ -113,7 +115,7 @@
 .landing-page .handoff-panel .btn, .landing-page .handoff-panel .text-link { margin-top: 24px; }
 .landing-page .preview-note { display: block; color: #929dbc; font-size: 12px; margin-top: 14px; }
 
-.landing-page .privacy-story { padding-block: 88px; border-top: 1px solid var(--line); }
+.landing-page .privacy-story { padding-block: 88px; background: #13172e; border-block: 1px solid var(--line); }
 .landing-page .privacy-story header { text-align: center; }
 .landing-page .privacy-story h2 { font-size: clamp(38px, 4.1vw, 58px); }
 .landing-page .privacy-story header > p { color: var(--muted); font-size: 18px; line-height: 1.55; margin-top: 24px; }
@@ -122,7 +124,7 @@
 .landing-page .privacy-grid .ico { width: 28px; height: 28px; color: #aaa4dd; margin-bottom: 22px; }
 .landing-page .privacy-grid h3 { font-size: 23px; }
 .landing-page .privacy-grid p { color: var(--muted); font-size: 16px; line-height: 1.6; margin-top: 12px; max-width: 310px; }
-.landing-page .faq { padding-block: 72px 88px; }
+.landing-page .faq { padding-block: 80px 88px; }
 .landing-page .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
 .landing-page .faq-side h2 { font-size: clamp(36px, 4vw, 54px); }
 .landing-page .faq-intro { font-size: 17px; line-height: 1.6; color: var(--muted); max-width: 290px; margin-top: 24px; }
@@ -181,7 +183,7 @@
  .landing-page .actions { margin-top: 24px; gap: 8px 20px; }
  .landing-page .actions .text-link { font-size: 15px; }
  .landing-page .hero-phone { top: auto; right: auto; margin-top: 32px; width: min(78%, 300px); height: 450px; }
- .landing-page .workflow { padding-block: 40px 56px; }
+ .landing-page .workflow { padding-block: 40px 48px; }
  .landing-page .workflow-steps { gap: 0; }
  .landing-page .workflow-steps li { padding: 24px 0 24px 40px; }
  .landing-page .workflow-steps li:last-child { padding-bottom: 0; }
@@ -189,12 +191,12 @@
  .landing-page .step-title { font-size: 16px; border-radius: 9px; padding: 8px 11px; }
  .landing-page .step-title .ico { width: 17px; height: 17px; }
  .landing-page .workflow-steps p { margin-top: 14px; font-size: 16px; }
- .landing-page .product-story { padding-block: 64px; }
- .landing-page .story-heading { margin-bottom: 48px; }
+ .landing-page .product-story { padding-block: 56px 64px; }
+ .landing-page .story-heading { margin-bottom: 36px; }
  .landing-page .story-heading h2 { font-size: 44px; }
  .landing-page .story-heading p { font-size: 17px; margin-top: 20px; }
  .landing-page .story-row, .landing-page .story-voice { grid-template-columns: 1fr; gap: 30px; }
- .landing-page .story-row + .story-row { margin-top: 64px; }
+ .landing-page .story-row + .story-row { margin-top: 48px; padding-top: 48px; }
  .landing-page .story-map .story-copy, .landing-page .story-voice .story-copy { padding: 0; max-width: 480px; }
  .landing-page .story-map .story-copy { grid-row: 1; }
  .landing-page .feature-kicker { font-size: 16px; margin-bottom: 22px; }
@@ -213,7 +215,9 @@
  .landing-page .voice-signal > span:first-child { max-width: 100px; font-size: 8px; line-height: 1.5; }
  .landing-page .waveform { gap: 2px; }
  .landing-page .waveform i { width: 2px; }
- .landing-page .detail-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 64px; }
+ .landing-page .detail-group { margin-top: 64px; }
+ .landing-page .detail-group > .eyebrow { margin-bottom: 24px; }
+ .landing-page .detail-grid { grid-template-columns: 1fr; gap: 20px; }
  .landing-page .detail-card { border-radius: 22px; }
  .landing-page .detail-copy { padding: 28px 28px 0; }
  .landing-page .detail-copy > .ico { margin-bottom: 18px; }
@@ -229,6 +233,7 @@
  .landing-page .handoff-heading > p br { display: none; }
  .landing-page .export-board { grid-template-columns: 1fr; border-radius: 22px; }
  .landing-page .export-package, .landing-page .export-destinations { padding: 28px 24px; }
+ .landing-page .export-destinations { border-left: 0; border-top: 1px solid #a4b2df2e; }
  .landing-page .package-heading { gap: 16px; }
  .landing-page .package-heading img { width: 40px; height: 40px; border-radius: 11px; }
  .landing-page .package-heading .eyebrow { font-size: 8px; margin-bottom: 10px; }
@@ -244,7 +249,7 @@
  .landing-page .handoff-panel p { font-size: 15px; }
  .landing-page .handoff-panel .btn { font-size: 14px; padding-inline: 16px; gap: 12px; }
  .landing-page .handoff-panel h4 { font-size: 23px; }
- .landing-page .privacy-story { padding-block: 64px 32px; }
+ .landing-page .privacy-story { padding-block: 64px; }
  .landing-page .privacy-story h2 { font-size: 38px; }
  .landing-page .privacy-story header > p { font-size: 17px; margin-top: 20px; }
  .landing-page .privacy-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
@@ -252,7 +257,7 @@
  .landing-page .privacy-grid .ico { position: absolute; top: 24px; left: 0; width: 25px; height: 25px; }
  .landing-page .privacy-grid h3 { font-size: 22px; }
  .landing-page .privacy-grid p { margin-top: 10px; }
- .landing-page .faq { padding-block: 48px 56px; }
+ .landing-page .faq { padding-block: 56px; }
  .landing-page .faq-grid { grid-template-columns: 1fr; gap: 28px; }
  .landing-page .faq-intro { max-width: 340px; margin-top: 16px; }
  .landing-page .faq-item summary { font-size: 18px; gap: 16px; }

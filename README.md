@@ -122,3 +122,17 @@ and H1 checks; all three public scripts passed syntax checks. Browser checks at
 clicks and Arrow/Home keys, retained the panel height, and updated selection and
 focus. The image dialog, Escape/focus return and FAQ worked; the browser console
 reported no warnings or errors on those paths.
+
+## Section rhythm review (2026-10-15)
+
+An independent design critique and a second visual pass checked section
+boundaries on desktop and mobile. Privacy now has its own full-width surface
+and an inner container, separating it from the FAQ. A fine divider and balanced
+spacing distinguish the map and voice chapters; a shared Library & Versions
+label groups the smaller cards. The two export-board halves have an internal
+separator. Introductory spacing was reduced to offset the stronger chapter
+breaks. Hero placement, product art and App Store badges are unchanged.
+
+Validated homepage HTML nesting, local resources, unique IDs and one H1; all
+three scripts passed syntax checks. Desktop, 390 px, 320 px and tablet widths
+were checked for overflow; mobile export tabs retain equal heights.
