@@ -172,16 +172,20 @@ Additional isolated Figma exports in `assets/product/`:
 These are isolated PNG exports converted to WebP; their product content is
 unchanged. CSS crops the map to the two connected flow cards.
 
-## Motion pass — 15 October 2026
+## Current motion and composition — 15 October 2026
 
-The homepage has one-time scroll entrances, a repeating route highlight on the
-existing map connection, a linked-comment entrance, gently offset library tiles
-and a fan-out entrance for the real handoff previews. Tabs and example requests
-use short transitions; they do not change layout height. The hero phone's final
-24 px downward offset is preserved and the lake camera remains fixed.
+The voice illustration has three separate areas: the approved phone header,
+a readable HTML quote of the existing Choose dates comment, and a dedicated
+voice-signal area with clear space above it. The original long phone screenshot
+is clipped before its comment list, so text is not repeated behind the quote.
+Circular enlargement arrows and the image dialog have been removed; illustrations
+are noninteractive figures. Desktop privacy heading and introduction each fit one
+line. The closing block has one centered official App Store badge.
 
-`landing.js` runs illustrative loops only while visible, stops them when the
-document is hidden and respects reduced motion and save-data. Content is never
-pre-hidden for scroll entrances and remains readable without JavaScript. Reduced
-motion also cancels active entrance and tab animations. No animation library or
-additional media download is required.
+Motion uses short one-time entrances and a single pass through the real map
+connection. Library tiles, version artwork and export previews stay still.
+The compact voice waveform alternates one phrase with a long rest. Map and comment
+entrances pause offscreen instead of replaying on every visit; the voice loop
+stops offscreen or when the document is hidden. `landing.js` respects reduced
+motion and save-data, and content is never pre-hidden. The hero phone's final
+24 px downward offset and the lake's fixed camera are preserved.

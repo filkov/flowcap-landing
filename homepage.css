@@ -57,15 +57,17 @@
 .landing-page .map-stage::after { content: ''; position: absolute; inset: auto 0 0; height: 60px; background: linear-gradient(transparent, #1c2b3ce6); pointer-events: none; }
 .landing-page .map-canvas { display: block; position: absolute; width: 280px; top: -127px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 18px 22px #0004); }
 .landing-page .map-canvas img { width: 100%; clip-path: inset(18.7% 0 12.7%); }
-.landing-page .stage-open { position: absolute; z-index: 4; right: 24px; bottom: 24px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #161e30cc; border: 1px solid #a4b9d638; transition: background .2s; }
-.landing-page .product-stage:hover .stage-open { background: #344359; }
-.landing-page .voice-device { width: min(78%, 440px); position: absolute; top: 76px; left: 54%; transform: translateX(-50%); }
-.landing-page .comment-detail { width: min(100%, 590px); display: block; position: absolute; z-index: 2; left: -3%; bottom: -4px; filter: drop-shadow(0 16px 26px #09091b66); }
-.landing-page .comment-detail img { width: 100%; }
-.landing-page .voice-signal { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 28px; min-height: 68px; background: linear-gradient(transparent, #28263ef2); z-index: 3; }
-.landing-page .voice-signal > span:first-child { color: #c3b5e4; font-size: 9px; font-weight: 600; letter-spacing: .1em; }
-.landing-page .waveform { height: 36px; display: flex; align-items: center; justify-content: flex-end; gap: 3px; }
-.landing-page .waveform i { display: block; width: 3px; height: calc(var(--h) * .65); border-radius: 2px; background: #b1a0fa; transform-origin: center; }
+/* Three separate areas: app header, readable comment, then voice signal. */
+.landing-page .voice-stage { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 72px 36px 32px; }
+.landing-page .voice-device-window { flex-shrink: 0; position: relative; width: min(100%, 350px); aspect-ratio: 3 / 2; overflow: hidden; mask-image: linear-gradient(#000 94%, transparent); }
+.landing-page .voice-device { position: static; width: 100%; height: auto; }
+.landing-page .linked-comment { flex-shrink: 0; width: 100%; padding: 24px 28px; margin: 0; border: 1px solid #a8b3db38; border-radius: 22px; background: #161a2d; }
+.landing-page .linked-comment figcaption { color: #a7b3cd; font-size: 13px; line-height: 1.4; font-weight: 500; }
+.landing-page .linked-comment blockquote { margin: 10px 0 0; color: #eef0fa; font-size: 21px; line-height: 1.45; letter-spacing: -.01em; }
+.landing-page .voice-signal { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 64px; margin-top: auto; padding-top: 8px; }
+.landing-page .voice-signal > span:first-child { color: #aaa5c7; font-size: 9px; font-weight: 600; letter-spacing: .12em; line-height: 1.4; }
+.landing-page .waveform { height: 28px; display: flex; align-items: center; justify-content: center; gap: 3px; }
+.landing-page .waveform i { display: block; width: 2px; height: calc(var(--h) * .5); border-radius: 2px; background: #b1a0fa; transform-origin: center; }
 .landing-page .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); margin-top: var(--card-gap); }
 .landing-page .detail-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #a4b2df21; border-radius: 28px; background: #171e33; }
 .landing-page .detail-copy { flex: 1; padding: 36px 40px 0; position: relative; z-index: 1; }
@@ -78,15 +80,9 @@
 .landing-page .library-visual { background: radial-gradient(ellipse at 50% 100%, #263d5c, transparent 75%); }
 .landing-page .library-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; width: 360px; max-width: 82%; margin-inline: auto; padding-top: 14px; }
 .landing-page .library-visual .library-items img { position: static; width: 100%; transform: none; transition: transform .3s ease; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
- .landing-page .library-visual:hover .library-items img { transform: translateY(-5px); }
- .landing-page .library-visual:hover .library-items img:nth-child(even) { transform: translateY(-10px); }
-}
 .landing-page .versions-card { background: #211e36; }
 .landing-page .versions-card .detail-visual { background: radial-gradient(ellipse at 50% 100%, #453a6a, transparent 75%); }
 .landing-page .versions-card .detail-visual img { width: min(88%, 520px); top: 0; }
-.landing-page .detail-open { position: absolute; right: 24px; bottom: 24px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #161a30dd; border: 1px solid #9faada40; transition: background .2s; }
-.landing-page .detail-visual:hover .detail-open { background: #3a3f64; }
 
 /* A single export, with three concrete ways to continue the work. */
 .landing-page .handoff-story { padding-block: 104px; background: #090b1d; }
@@ -166,51 +162,33 @@
 .landing-page .story-row, .landing-page .detail-card { transition: border-color .25s ease; }
 .landing-page .story-row:focus-within, .landing-page .detail-card:focus-within { border-color: #b4c5fa66; }
 .landing-page .handoff-tabs button, .landing-page .request-options button { transition: color .2s, background .2s, border-color .2s; }
-@keyframes content-arrive { from { opacity: .3; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes phone-arrive { from { opacity: .4; transform: translateY(34px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes map-first-focus { 0%, 8%, 48%, 100% { opacity: 0; } 17%, 34% { opacity: .9; } }
-@keyframes map-route-follow { 0%, 28% { stroke-dashoffset: 108; opacity: 0; } 32% { opacity: 1; } 57%, 64% { stroke-dashoffset: 0; opacity: 1; } 78%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes content-arrive { from { opacity: .7; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes phone-arrive { from { opacity: .65; } to { opacity: 1; } }
+@keyframes map-first-focus { 0%, 8%, 48%, 100% { opacity: 0; } 17%, 34% { opacity: .65; } }
+@keyframes map-route-follow { 0%, 28% { stroke-dashoffset: 108; opacity: 0; } 32% { opacity: .85; } 57%, 64% { stroke-dashoffset: 0; opacity: .85; } 78%, 100% { stroke-dashoffset: 0; opacity: 0; } }
 @keyframes map-route-point { 0%, 31% { transform: translateY(0); opacity: 0; } 34% { opacity: 1; } 57% { transform: translateY(108px); opacity: 1; } 65%, 100% { transform: translateY(108px); opacity: 0; } }
-@keyframes map-second-focus { 0%, 50%, 93%, 100% { opacity: 0; } 61%, 80% { opacity: .9; } }
-@keyframes comment-attach { from { opacity: .25; transform: translate(26px, 18px) scale(.94); } to { opacity: 1; transform: translate(0) scale(1); } }
-@keyframes voice-wave { 0%, 100% { transform: scaleY(.45); opacity: .6; } 40% { transform: scaleY(1); opacity: 1; } 70% { transform: scaleY(.65); opacity: .8; } }
-@keyframes library-drift { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-12px) rotate(1deg); } }
-@keyframes versions-arrive { from { opacity: .45; transform: translate(-50%, 36px) rotate(-4deg); } to { opacity: 1; transform: translate(-50%, 0) rotate(0); } }
-@keyframes export-left { from { opacity: .3; transform: translate(30px, 18px) rotate(0); } to { opacity: 1; transform: translate(0) rotate(-7deg); } }
-@keyframes export-right { from { opacity: .3; transform: translate(-22px, 24px) rotate(-7deg); } to { opacity: 1; transform: translate(0) rotate(5deg); } }
-@keyframes export-check { from { opacity: .2; transform: scale(.6); } to { opacity: 1; transform: scale(1); } }
+@keyframes map-second-focus { 0%, 50%, 93%, 100% { opacity: 0; } 61%, 80% { opacity: .65; } }
+@keyframes comment-arrive { from { opacity: .6; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+/* One spoken phrase followed by a long rest; only the dedicated signal moves. */
+@keyframes voice-phrase { 0%, 12%, 62%, 100% { transform: scaleY(.18); opacity: .5; } 23% { transform: scaleY(.75); opacity: .9; } 34% { transform: scaleY(.35); opacity: .7; } 43% { transform: scaleY(1); opacity: 1; } 52% { transform: scaleY(.5); opacity: .8; } }
 @media (prefers-reduced-motion: no-preference) {
- html.motion-enabled .landing-page .hero-copy > .eyebrow, html.motion-enabled .landing-page .hero-copy > h1, html.motion-enabled .landing-page .hero-copy > .lead, html.motion-enabled .landing-page .hero-copy > .actions { animation: content-arrive .9s cubic-bezier(.22,1,.36,1) both; }
- html.motion-enabled .landing-page .hero-copy > h1 { animation-delay: .08s; }
- html.motion-enabled .landing-page .hero-copy > .lead { animation-delay: .16s; }
- html.motion-enabled .landing-page .hero-copy > .actions { animation-delay: .24s; }
- html.motion-enabled .landing-page .hero-phone img { animation: phone-arrive 1.15s cubic-bezier(.22,1,.36,1) .16s both; }
- .landing-page .motion-active .map-node-first { animation: map-first-focus 7s ease-in-out infinite; }
- .landing-page .motion-active .map-route { animation: map-route-follow 7s ease-in-out infinite; }
- .landing-page .motion-active .map-traveler { animation: map-route-point 7s ease-in-out infinite; }
- .landing-page .motion-active .map-node-second { animation: map-second-focus 7s ease-in-out infinite; }
- .landing-page .motion-active .comment-detail { animation: comment-attach 1s cubic-bezier(.22,1,.36,1) .25s both; }
- .landing-page .motion-active .waveform i { animation: voice-wave 1.8s ease-in-out infinite; animation-delay: calc(var(--n) * -83ms); }
- .landing-page .motion-active .library-tile { animation: library-drift 6.5s ease-in-out infinite; }
- .landing-page .motion-active .library-tile:nth-child(2) { animation-delay: -2.2s; }
- .landing-page .motion-active .library-tile:nth-child(3) { animation-delay: -4s; }
- .landing-page .motion-active .library-tile:nth-child(4) { animation-delay: -1s; }
- .landing-page .motion-active[data-art=versions] > img { animation: versions-arrive 1s cubic-bezier(.22,1,.36,1) both; }
- .landing-page .motion-active .screen-one { animation: export-left .95s cubic-bezier(.22,1,.36,1) .15s both; }
- .landing-page .motion-active .screen-two { animation: export-right .95s cubic-bezier(.22,1,.36,1) .3s both; }
- .landing-page .motion-active .package-check { animation: export-check .45s cubic-bezier(.22,1,.36,1) .6s both; }
- .landing-page .motion-active .package-list li:nth-child(2) .package-check { animation-delay: .75s; }
- .landing-page .motion-active .package-list li:nth-child(3) .package-check { animation-delay: .9s; }
- .landing-page .motion-active .package-list li:nth-child(4) .package-check { animation-delay: 1.05s; }
+ html.motion-enabled .landing-page .hero-copy > .eyebrow, html.motion-enabled .landing-page .hero-copy > h1, html.motion-enabled .landing-page .hero-copy > .lead, html.motion-enabled .landing-page .hero-copy > .actions { animation: content-arrive .7s cubic-bezier(.22,1,.36,1) both; }
+ html.motion-enabled .landing-page .hero-copy > .lead { animation-delay: .06s; }
+ html.motion-enabled .landing-page .hero-copy > .actions { animation-delay: .12s; }
+ html.motion-enabled .landing-page .hero-phone img { animation: phone-arrive .9s ease-out both; }
+ .landing-page .motion-seen .map-node-first { animation: map-first-focus 3.6s ease-in-out both; }
+ .landing-page .motion-seen .map-route { animation: map-route-follow 3.6s ease-in-out both; }
+ .landing-page .motion-seen .map-traveler { animation: map-route-point 3.6s ease-in-out both; }
+ .landing-page .motion-seen .map-node-second { animation: map-second-focus 3.6s ease-in-out both; }
+ .landing-page .motion-seen:not(.motion-active) .map-journey > * { animation-play-state: paused; }
+ .landing-page .motion-seen .linked-comment { animation: comment-arrive .5s cubic-bezier(.22,1,.36,1) .18s both; }
+ .landing-page .motion-seen:not(.motion-active) .linked-comment { animation-play-state: paused; }
+ .landing-page .motion-active .waveform i { animation: voice-phrase 7s ease-in-out infinite; animation-delay: calc(var(--n) * -35ms); }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
- .landing-page .story-row:hover, .landing-page .detail-card:hover { border-color: #b4c5fa50; }
- .landing-page .story-copy .feature-kicker { transition: transform .3s cubic-bezier(.22,1,.36,1); }
- .landing-page .story-row:hover .feature-kicker { transform: rotate(0deg) translateY(-2px); }
- .landing-page .text-link .ico, .landing-page .btn .ico { transition: transform .25s cubic-bezier(.22,1,.36,1); }
- .landing-page .text-link:hover .ico, .landing-page .btn:hover .ico { transform: translateX(4px); }
- .landing-page .stage-open, .landing-page .detail-open { transition: transform .25s ease, background .25s ease; }
- .landing-page .product-stage:hover .stage-open, .landing-page .detail-visual:hover .detail-open { transform: rotate(6deg) scale(1.08); }
+ .landing-page .story-row:hover, .landing-page .detail-card:hover { border-color: #b4c5fa40; }
+ .landing-page .text-link .ico, .landing-page .btn .ico { transition: transform .2s ease; }
+ .landing-page .text-link:hover .ico, .landing-page .btn:hover .ico { transform: translateX(3px); }
 }
 @media (min-width: 761px) and (max-width: 1100px) {
  .landing-page .hero { min-height: 620px; }
@@ -224,11 +202,9 @@
  .landing-page .product-stage { height: 660px; }
  .landing-page .stage-label { left: 20px; font-size: 9px; }
  .landing-page .map-canvas { width: 260px; top: -80px; }
- .landing-page .voice-device { width: 95%; left: 55%; top: 100px; }
- .landing-page .comment-detail { width: 100%; left: 0; bottom: 70px; }
- .landing-page .voice-signal { padding-inline: 18px; }
- .landing-page .voice-signal > span:first-child { max-width: 95px; line-height: 1.5; }
- .landing-page .waveform { gap: 2px; }
+ .landing-page .voice-stage { padding-inline: 24px; }
+ .landing-page .linked-comment { padding: 22px; }
+ .landing-page .linked-comment blockquote { font-size: 18px; }
  .landing-page .detail-copy { padding-inline: 28px; }
  .landing-page .detail-copy h3 { font-size: 32px; }
  .landing-page .detail-visual img { top: -65px; }
@@ -275,12 +251,9 @@
  .landing-page .stage-label { top: 22px; left: 20px; font-size: 8px; letter-spacing: .1em; }
  .landing-page .map-stage { height: 640px; }
  .landing-page .map-canvas { top: -85px; width: min(76%, 290px); }
- .landing-page .voice-device { top: 65px; width: 92%; max-width: 370px; left: 54%; }
- .landing-page .comment-detail { width: 114%; max-width: 520px; left: -7%; bottom: -10px; }
- .landing-page .voice-signal { min-height: 62px; padding: 12px 18px; }
- .landing-page .voice-signal > span:first-child { max-width: 100px; font-size: 8px; line-height: 1.5; }
- .landing-page .waveform { gap: 2px; }
- .landing-page .waveform i { width: 2px; }
+ .landing-page .voice-stage { height: auto; min-height: 620px; padding: 64px 24px 28px; }
+ .landing-page .linked-comment { padding: 22px; }
+ .landing-page .linked-comment blockquote { font-size: 19px; }
  .landing-page .detail-grid { grid-template-columns: 1fr; }
  .landing-page .detail-card { border-radius: 22px; }
  .landing-page .detail-copy { flex: 1; padding: 28px 28px 0; }
@@ -347,13 +320,14 @@
  .landing-page .hero-phone { height: 400px; }
  .landing-page .product-stage { height: 450px; }
  .landing-page .map-stage { height: 520px; }
+ .landing-page .voice-stage { height: auto; min-height: 580px; padding-inline: 20px; }
+ .landing-page .linked-comment { padding: 20px; }
+ .landing-page .linked-comment blockquote { font-size: 17px; }
  .landing-page .map-canvas { top: -70px; }
  .landing-page .feature-highlights { gap: 12px; }
  .landing-page .feature-highlights strong { font-size: 13px; }
  .landing-page .feature-highlights li > span > span { font-size: 12px; }
  .landing-page .stage-label { font-size: 7px; }
- .landing-page .voice-signal { padding-inline: 14px; }
- .landing-page .waveform { gap: 1px; }
  .landing-page .export-package, .landing-page .export-destinations { padding-inline: 18px; }
  .landing-page .handoff-tabs button { font-size: 11px; }
  .landing-page .package-heading h3 { font-size: 26px; }

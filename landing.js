@@ -40,7 +40,11 @@
   const syncMotion = () => {
     const enabled = !motionPreference.matches && !navigator.connection?.saveData;
     document.documentElement.classList.toggle('motion-enabled', enabled);
-    motionItems.forEach(item => item.classList.toggle('motion-active', visibleItems.has(item) && !document.hidden && enabled));
+    motionItems.forEach(item => {
+      const active = visibleItems.has(item) && !document.hidden && enabled;
+      item.classList.toggle('motion-active', active);
+      if (active) item.classList.add('motion-seen');
+    });
   };
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
@@ -56,14 +60,14 @@
   // Scroll entrances are progressive enhancement: content is never pre-hidden.
   // Once revealed, a section stays in place on every subsequent visit.
   const canAnimate = () => !motionPreference.matches && !navigator.connection?.saveData;
-  const entranceItems = document.querySelectorAll('.workflow-steps li, .story-heading, .story-row, .detail-card, .handoff-heading, .export-board, .privacy-story header, .privacy-grid li, .faq-side, .closing');
+  const entranceItems = document.querySelectorAll('.workflow-steps li, .story-heading, .story-copy, .detail-card, .handoff-heading, .export-board, .privacy-story header, .faq-side, .closing');
   const entrances = new Map();
   const reveal = item => {
     if (!canAnimate()) return;
     const entrance = item.animate([
-      { opacity: 0.45, transform: 'translateY(28px)' },
+      { opacity: 0.7, transform: 'translateY(12px)' },
       { opacity: 1, transform: 'translateY(0)' }
-    ], { duration: 800, easing: 'cubic-bezier(.22,1,.36,1)' });
+    ], { duration: 560, easing: 'cubic-bezier(.22,1,.36,1)' });
     entrances.set(item, entrance);
     entrance.finished.then(() => entrances.delete(item)).catch(() => {});
   };
@@ -86,9 +90,9 @@
   const animateChange = item => {
     item.getAnimations().forEach(animation => animation.cancel());
     if (canAnimate()) item.animate([
-      { opacity: 0.35, transform: 'translateY(8px)' },
+      { opacity: 0.55, transform: 'translateY(0)' },
       { opacity: 1, transform: 'translateY(0)' }
-    ], { duration: 300, easing: 'cubic-bezier(.22,1,.36,1)' });
+    ], { duration: 180, easing: 'cubic-bezier(.22,1,.36,1)' });
   };
 
   const tabs = [...document.querySelectorAll('[data-handoff]')];
@@ -128,17 +132,4 @@
     requestExample.textContent = `“${requests[option.dataset.request]}”`;
     animateChange(requestExample);
   }));
-  const dialog = document.querySelector('.art-dialog');
-  const enlarged = dialog.querySelector('img');
-  const artTitle = document.querySelector('#art-title');
-  const titles = {capture:'From recording to a clear flow',map:'Every step. Connected.',voice:'Your voice. In context.',versions:'Every version. One flow.',library:'All your flows. One library.',handoff:'Ready for Figma & AI'};
-  document.querySelectorAll('[data-art]').forEach(button => button.addEventListener('click', () => {
-    enlarged.src = `assets/campaign/${button.dataset.art}-1320.webp`;
-    enlarged.alt = button.querySelector('img').alt;
-    artTitle.textContent = titles[button.dataset.art];
-    dialog.showModal();
-    dialog.scrollTop = 0;
-  }));
-  dialog.querySelector('[data-close-art]').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => { if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();} });
 })();
