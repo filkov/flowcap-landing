@@ -12,7 +12,9 @@ the root of `main`. Preview locally with `python3 -m http.server 8793`.
   states. The forest/lake hero image, voice-led copy, restrained gradient
   headings and transparent full-width header are deliberate design choices.
   The hero background has a locked camera: animate water, reflections and gentle brightness changes in existing shore lights only.
-  Do not replace this with image panning/zooming or add playback controls.
+  The owner requested light scroll parallax on the background layer (maximum
+  32 px desktop / 18 px mobile); the authored video camera still stays fixed.
+  Do not add autonomous image panning/zooming or playback controls.
 - The homepage header links to internal pages (MCP Setup and Guides), not
   in-page anchors. The first hero action is the App Store badge.
   Keep all homepage App Store actions identical: the owner-requested transparent

@@ -36,6 +36,28 @@
   // always readable, including with reduced motion, no JavaScript or save-data.
   const motionItems = [...document.querySelectorAll('[data-motion]')];
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  // A small scroll-only background offset; foreground content stays in place.
+  const landscape = document.querySelector('.hero-landscape');
+  let parallaxFrame = 0;
+  const syncParallax = () => {
+    parallaxFrame = 0;
+    if (!scene || !landscape) return;
+    const enabled = !motionPreference.matches && !navigator.connection?.saveData && !document.hidden;
+    const distance = Math.max(0, -scene.getBoundingClientRect().top);
+    const limit = window.innerWidth <= 760 ? 18 : 32;
+    const offset = enabled ? Math.min(limit, distance * .055) : 0;
+    landscape.style.setProperty('--hero-parallax', `${offset.toFixed(2)}px`);
+  };
+  const queueParallax = () => {
+    if (!parallaxFrame) parallaxFrame = requestAnimationFrame(syncParallax);
+  };
+  if (landscape) {
+    window.addEventListener('scroll', queueParallax, { passive: true });
+    window.addEventListener('resize', queueParallax);
+    motionPreference.addEventListener('change', queueParallax);
+    document.addEventListener('visibilitychange', queueParallax);
+    syncParallax();
+  }
   const visibleItems = new Set();
   const syncMotion = () => {
     const enabled = !motionPreference.matches && !navigator.connection?.saveData;
