@@ -26,6 +26,8 @@
 .landing-page .feature-card { flex-basis: 340px; }
 .landing-page .feature-card p { font-size: 16px; line-height: 1.5; padding-top: 18px; }
 .landing-page .gallery-actions[hidden] { display: none; }
+.landing-page .gallery-cta { margin-top: 32px; }
+.landing-page .cta-note { color: var(--muted); font-size: 14px; line-height: 1.5; }
 .landing-page .handoff { padding-block: 88px; }
 .landing-page .handoff-art { max-width: 400px; justify-self: start; }
 .landing-page .handoff h2, .landing-page .privacy h2 { font-size: clamp(36px, 4vw, 54px); }
@@ -43,6 +45,7 @@
 .landing-page .closing > img { width: 64px; height: 64px; border-radius: 18px; margin-bottom: 24px; }
 .landing-page .closing h2 { font-size: clamp(36px, 4.2vw, 56px); }
 .landing-page .closing p { margin-block: 20px 24px; }
+.landing-page .closing .actions { justify-content: center; margin-top: 0; }
 .landing-page .footer { padding-block: 36px; }
 /* Match the outer container edges and the midpoint across two-column sections. */
 @media (min-width: 761px) {
