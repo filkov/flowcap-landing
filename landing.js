@@ -1,5 +1,30 @@
 (() => {
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scene = document.querySelector('.hero-scene');
+  const motionToggle = document.querySelector('.hero-motion-toggle');
+  if (scene && motionToggle) {
+    let userPaused = false;
+    let inView = true;
+    const syncMotion = () => {
+      scene.dataset.motion = userPaused || !inView || document.hidden ? 'paused' : 'playing';
+    };
+    motionToggle.hidden = false;
+    motionToggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      motionToggle.setAttribute('aria-pressed', String(userPaused));
+      motionToggle.setAttribute('aria-label', userPaused ? 'Resume background animation' : 'Pause background animation');
+      syncMotion();
+    });
+    document.addEventListener('visibilitychange', syncMotion);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        syncMotion();
+      });
+      observer.observe(scene);
+    }
+    syncMotion();
+  }
   const gallery = document.querySelector('.gallery');
   const cards = [...gallery.children];
   const prev = document.querySelector('[data-prev]');
