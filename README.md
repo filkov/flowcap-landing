@@ -240,3 +240,8 @@ child `1357:2908` contains the complete rounded bottom. Exported a temporary
 copy outside that crop, saved the original PNG and responsive WebP assets as
 `voice-phone-complete-*`, then removed the copy. No UI or device parts were
 reconstructed. The full phone fits its stage on desktop and mobile.
+
+
+### Simplified launch homepage — 15 October 2026
+
+The homepage now contains the hero, three workflow points, FAQ and closing App Store action. At the owner's request, the complete feature section (“Every detail. In its place.”), handoff section (“Your flow. In your next tool.”), and recordings section (“Your recordings. In your hands.”) were removed from the HTML. Related feature motion and export-tab JavaScript was removed; approved product assets remain archived. FAQ shares the hero fade's #0e1025 background. Earlier design notes above describe the previous full page.
