@@ -240,3 +240,27 @@ child `1357:2908` contains the complete rounded bottom. Exported a temporary
 copy outside that crop, saved the original PNG and responsive WebP assets as
 `voice-phone-complete-*`, then removed the copy. No UI or device parts were
 reconstructed. The full phone fits its stage on desktop and mobile.
+
+## Product scenarios and linked export previews (2026-10-15)
+
+Inspired by the functional demonstrations in the Anchor reference, the existing
+blue map card now shows one calm passage from a recording to key screens and
+the approved Flow Map. All screen content uses the existing Figma exports.
+Three real buttons allow direct inspection. The one-time 5.6-second passage
+pauses offscreen/when the document is hidden, resumes its remaining time, and
+settles on the map. A manual choice cancels it. Reduced motion/save-data keep
+the map static by default, and the controls remain functional.
+
+The single export tab row now controls both the illustration and instructions.
+The AI preview preserves the complete handoff contents. Figma shows real images
+grouped in flow order; ZIP shows the documented package contents. These are
+website diagrams, with no fabricated app/editor chrome or unverified filenames.
+The left area uses a quieter graphite surface. Shared grid tracks reserve the
+maximum scene/panel size, avoiding layout shifts on tab changes; inactive views
+are hidden from accessibility and focus. Mobile places tabs above both areas.
+No automatic export rotation or second row of controls was introduced.
+
+The existing type scale, hero, transparent store badges and complete voice
+phone are preserved. JavaScript syntax, local assets/links, keyboard controls,
+manual selection, timer pause/resume, reduced motion/save-data and responsive
+layouts are checked before publication.

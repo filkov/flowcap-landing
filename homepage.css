@@ -27,11 +27,11 @@
 .landing-page .story-copy h3 { font-size: var(--type-feature); }
 .landing-page .detail-copy h3, .landing-page .package-heading h3, .landing-page .handoff-panel h4 { font-size: var(--type-card); }
 .landing-page .hero .lead, .landing-page .workflow-steps p, .landing-page .story-heading p, .landing-page .story-copy > p, .landing-page .detail-copy p, .landing-page .handoff-heading > p, .landing-page .handoff-panel > p, .landing-page .privacy-story header > p, .landing-page .privacy-grid p, .landing-page .faq-intro, .landing-page .faq-item p, .landing-page .closing p, .landing-page .destination-steps li { font-size: 16px; line-height: 1.6; font-weight: 400; letter-spacing: 0; }
-.landing-page .text-link, .landing-page .actions .text-link, .landing-page .story-copy .text-link, .landing-page .btn, .landing-page .handoff-panel .btn, .landing-page .faq-item summary, .landing-page .feature-highlights strong, .landing-page .package-list strong { font-size: 16px; line-height: 1.5; font-weight: 500; letter-spacing: 0; }
+.landing-page .archive-heading, .landing-page .archive-list strong, .landing-page .text-link, .landing-page .actions .text-link, .landing-page .story-copy .text-link, .landing-page .btn, .landing-page .handoff-panel .btn, .landing-page .faq-item summary, .landing-page .feature-highlights strong, .landing-page .package-list strong { font-size: 16px; line-height: 1.5; font-weight: 500; letter-spacing: 0; }
 .landing-page .step-title, .landing-page .privacy-grid h3 { font-size: 20px; font-weight: 600; line-height: 1.3; }
-.landing-page .eyebrow, .landing-page .feature-kicker, .landing-page .detail-label, .landing-page .destination-label, .landing-page .package-heading .eyebrow, .landing-page .faq-side .label { font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; }
-.landing-page .feature-highlights li > span > span, .landing-page .package-list li > span > span, .landing-page .linked-comment figcaption, .landing-page .export-preview figcaption, .landing-page .destination-status, .landing-page .package-footer { font-size: 14px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
-.landing-page .handoff-tabs button, .landing-page .nav-links a, .landing-page .footer nav a { font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: 0; }
+.landing-page .flow-scene-label, .landing-page .eyebrow, .landing-page .feature-kicker, .landing-page .detail-label, .landing-page .destination-label, .landing-page .package-heading .eyebrow, .landing-page .faq-side .label { font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; }
+.landing-page .flow-scene-note, .landing-page .flow-screen-pair figcaption, .landing-page .figma-flow-preview figcaption, .landing-page .archive-list li > span > span, .landing-page .feature-highlights li > span > span, .landing-page .package-list li > span > span, .landing-page .linked-comment figcaption, .landing-page .export-preview figcaption, .landing-page .destination-status, .landing-page .package-footer { font-size: 14px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
+.landing-page .flow-controls button, .landing-page .handoff-tabs button, .landing-page .nav-links a, .landing-page .footer nav a { font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: 0; }
 .landing-page .step-number, .landing-page .destination-steps .step-index, .landing-page .footer p { font-size: 12px; line-height: 1.5; letter-spacing: 0; font-weight: 400; }
 .landing-page .linked-comment blockquote { font-size: 20px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
 .landing-page .story-copy > p strong { font-weight: 500; }
@@ -76,7 +76,7 @@
 .landing-page .product-stage { border: 0; border-radius: 0; height: 650px; position: relative; display: block; width: 100%; padding: 0; overflow: hidden; text-align: left; background: transparent; isolation: isolate; }
 .landing-page .map-stage { background-image: radial-gradient(#8aa4ff26 .8px, transparent .8px); background-size: 28px 28px; }
 .landing-page .map-stage::after { content: ''; position: absolute; inset: auto 0 0; height: 60px; background: linear-gradient(transparent, #20326566); pointer-events: none; }
-.landing-page .map-canvas { display: block; position: absolute; width: 280px; top: -127px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 18px 22px #0004); }
+.landing-page .map-canvas { display: block; position: absolute; width: min(76%, 260px); top: -127px; left: 50%; transform: translateX(-50%); filter: drop-shadow(0 18px 22px #0004); }
 .landing-page .map-canvas img { width: 100%; clip-path: inset(18.7% 0 12.7%); }
 /* The readable thought and signal sit beside the complete app screen. */
 .landing-page .voice-stage { display: flex; align-items: center; justify-content: center; align-self: stretch; height: auto; min-height: 800px; padding: 48px 32px 40px; }
@@ -113,8 +113,8 @@
 .landing-page .handoff-heading .feature-kicker { margin-bottom: 24px; }
 .landing-page .handoff-heading > p { color: var(--muted); max-width: 390px; margin-bottom: 4px; }
 .landing-page .handoff-heading h2 span, .landing-page .privacy-story h2 span, .landing-page .faq-side h2 span { color: #adb8d3; background: none; -webkit-text-fill-color: currentColor; }
-.landing-page .export-board { display: grid; grid-template-columns: .95fr 1.05fr; border: 1px solid #a4b2df2e; border-radius: 28px; overflow: hidden; background: #12172c; }
-.landing-page .export-package { padding: 40px; display: flex; flex-direction: column; background: linear-gradient(145deg, #202c48, #151e33 80%); }
+.landing-page .export-board { display: grid; grid-template-columns: .95fr 1.05fr; grid-template-areas: "package choice" "package details"; grid-template-rows: auto 1fr; border: 1px solid #a4b2df2e; border-radius: 28px; overflow: hidden; background: #12172c; }
+.landing-page .export-package { grid-area: package; padding: 40px; display: flex; flex-direction: column; background: radial-gradient(ellipse at 0 0, #202d47, #151c2b 70%); }
 .landing-page .package-heading .eyebrow, .landing-page .destination-label { display: block; color: #9facc9; }
 .landing-page .package-heading .eyebrow { margin-bottom: 14px; }
 .landing-page .export-preview { display: flex; align-items: flex-start; justify-content: center; gap: 20px; margin-top: 32px; padding: 0 12px; }
@@ -128,7 +128,8 @@
 .landing-page .package-list li > span > span { display: block; color: #a8b6d1; margin-top: 4px; }
 .landing-page .package-footer { display: flex; align-items: center; gap: 9px; color: #a8b6d1; border-top: 1px solid #b4c6ff1a; padding-top: 20px; margin-top: 28px; }
 .landing-page .package-footer .ico { width: 17px; height: 17px; }
-.landing-page .export-destinations { min-width: 0; padding: 40px; display: flex; flex-direction: column; border-left: 1px solid #a4b2df2e; }
+.landing-page .export-choice { grid-area: choice; min-width: 0; padding: 40px 40px 0; border-left: 1px solid #a4b2df2e; }
+.landing-page .export-destinations { grid-area: details; min-width: 0; padding: 0 40px 40px; display: flex; flex-direction: column; border-left: 1px solid #a4b2df2e; }
 .landing-page .destination-label { margin-bottom: 18px; }
 .landing-page .handoff-tabs { display: flex; gap: 4px; padding: 5px; background: #090e20; border: 1px solid #9dace21c; border-radius: 12px; }
 .landing-page .handoff-tabs button { flex: 1; border: 1px solid transparent; background: transparent; color: #9da8c7; border-radius: 8px; padding: 12px 6px; white-space: nowrap; min-height: 44px; }
@@ -136,6 +137,9 @@
 .landing-page .handoff-tabs button[aria-selected=true] { color: #f7f8ff; background: #2b304c; border-color: #b6bfff24; }
 .landing-page .handoff-panel { flex: 1; min-height: 440px; padding-top: 30px; display: flex; flex-direction: column; align-items: flex-start; }
 .landing-page .handoff-panel[hidden] { display: none; }
+.landing-page .export-destinations.destinations-ready { display: grid; }
+.landing-page .destinations-ready .handoff-panel { grid-area: 1 / 1; }
+.landing-page .destinations-ready .handoff-panel[hidden] { display: flex; visibility: hidden; pointer-events: none; }
 .landing-page .destination-status { display: block; color: #a99cda; margin-bottom: 16px; }
 .landing-page .handoff-panel h4 { margin: 0; }
 .landing-page .handoff-panel > p { color: #b3bdd5; margin-top: 14px; max-width: 430px; }
@@ -162,6 +166,71 @@
 .landing-page .closing p { margin-block: 20px 24px; }
 .landing-page .closing .actions { justify-content: center; margin-top: 0; }
 .landing-page .footer { padding-block: 36px; }
+
+/* One short, explorable story inside the existing map card. */
+.landing-page .map-stage { display: flex; flex-direction: column; }
+.landing-page .map-stage::after { display: none; }
+.landing-page .flow-viewport { flex: 1; position: relative; min-height: 0; overflow: hidden; }
+.landing-page .flow-view { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 28px; }
+.landing-page .flow-view[hidden], .landing-page .flow-controls[hidden] { display: none; }
+.landing-page .flow-view[data-flow-view=map]:not([hidden]) { display: block; padding: 0; }
+.landing-page .flow-scene-label { color: #b5c8ff; }
+.landing-page .flow-scene-note { color: #aab9d8; text-align: center; }
+.landing-page .recording-frame { padding: 12px; width: 246px; max-width: 76%; border: 1px solid #7197ff55; border-radius: 22px; background: #182443; box-shadow: 0 18px 40px #080d242e; }
+.landing-page .recording-frame img { width: 100%; border-radius: 12px; }
+.landing-page .recording-timeline { display: block; height: 3px; width: 180px; max-width: 70%; border-radius: 3px; background: #91afff26; overflow: hidden; }
+.landing-page .recording-timeline i { display: block; height: 100%; width: 100%; background: #91afff; transform-origin: left; }
+.landing-page .flow-screen-pair { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 20px; width: min(100%, 420px); }
+.landing-page .flow-screen-pair img { width: 100%; height: 240px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 16px 24px #080d2440); }
+.landing-page .flow-screen-pair figcaption { color: #b5c6e7; text-align: center; margin-top: 16px; }
+.landing-page .flow-controls { display: flex; flex: 0 0 60px; padding-inline: 16px; border-top: 1px solid #91afff26; background: #0e193133; }
+.landing-page .flow-controls button { position: relative; flex: 1; padding: 12px 4px; min-width: 0; border: 0; background: transparent; color: #9fafd0; }
+.landing-page .flow-controls button[aria-pressed=true] { color: #d6e2ff; }
+.landing-page .flow-controls button[aria-pressed=true]::after { content: ''; position: absolute; inset: auto 12px 0; height: 2px; background: #91afff; border-radius: 2px; }
+.landing-page .flow-controls button:focus-visible { outline-offset: -5px; border-radius: 8px; }
+.landing-page .map-stage:not([data-flow-step=map]) .map-journey > * { animation: none; }
+@keyframes recording-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: no-preference) {
+ html.motion-enabled .landing-page .motion-seen .flow-recording:not([hidden]) .recording-timeline i { animation: recording-progress 2.8s linear both; }
+ .landing-page .motion-seen:not(.motion-active) .recording-timeline i { animation-play-state: paused; }
+}
+/* Every destination gets its own illustration. Invisible views share a grid
+   track so switching tabs never changes the card height or scroll position. */
+.landing-page .export-scenes { display: grid; flex: 1; min-width: 0; }
+.landing-page .export-scene { grid-area: 1 / 1; min-width: 0; align-self: start; }
+.landing-page .export-scene[aria-hidden=true] { visibility: hidden; pointer-events: none; }
+.landing-page .figma-flow-preview { margin-top: 32px; padding: 20px; border: 1px solid #8196d540; border-radius: 18px; background: #0d152780; }
+.landing-page .figma-flow-preview > figcaption { display: flex; align-items: center; gap: 10px; color: #b7c7e7; }
+.landing-page .figma-flow-preview > figcaption .ico { width: 18px; height: 18px; }
+.landing-page .figma-screen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; align-items: end; }
+.landing-page .figma-screen-grid img { height: 210px; width: 100%; object-fit: contain; object-position: left bottom; }
+.landing-page .figma-screen-grid figcaption { color: #a9b7d2; margin-top: 12px; }
+.landing-page .export-facts { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 16px; color: #bdc9e1; }
+.landing-page .export-facts li { display: flex; gap: 12px; align-items: center; }
+.landing-page .export-facts .ico { width: 21px; height: 21px; color: #9fb9ff; }
+.landing-page .archive-preview { margin-top: 32px; border: 1px solid #8196d540; border-radius: 18px; background: #0d152780; overflow: hidden; }
+.landing-page .archive-heading { display: flex; align-items: center; gap: 12px; padding: 18px 22px; border-bottom: 1px solid #8196d526; color: #d7e2f7; }
+.landing-page .archive-heading .ico { color: #a7bdff; }
+.landing-page .archive-list { list-style: none; padding: 22px; margin: 0; display: grid; gap: 20px; }
+.landing-page .archive-list li { display: flex; align-items: flex-start; gap: 12px; }
+.landing-page .archive-list .ico { color: #9fb9ff; width: 21px; height: 21px; margin-top: 2px; }
+.landing-page .archive-list strong { display: block; color: #e3eafa; overflow-wrap: anywhere; }
+.landing-page .archive-list li > span > span { display: block; color: #a8b6d1; margin-top: 2px; }
+@media (max-width: 1100px) {
+ .landing-page .figma-flow-preview { padding: 16px; }
+ .landing-page .figma-screen-grid { gap: 16px; }
+ .landing-page .figma-screen-grid img { height: 190px; }
+}
+@media (max-width: 360px) {
+ .landing-page .flow-view { padding: 20px; gap: 20px; }
+ .landing-page .flow-screen-pair { gap: 12px; }
+ .landing-page .flow-screen-pair img { height: 190px; }
+ .landing-page .flow-controls { padding-inline: 8px; }
+ .landing-page .figma-flow-preview { padding: 14px; }
+ .landing-page .figma-screen-grid { gap: 12px; }
+ .landing-page .figma-screen-grid img { height: 170px; }
+ .landing-page .archive-list, .landing-page .archive-heading { padding: 18px; }
+}
 
 /* Motion describes the product: a route, a linked thought, a collected handoff. */
 .landing-page .map-journey { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
@@ -198,7 +267,7 @@
  .landing-page .motion-seen .waveform i { animation: voice-phrase 2.8s ease-in-out infinite; animation-delay: calc(var(--n) * -110ms); }
  .landing-page .motion-seen .waveform i:nth-child(3n) { animation-duration: 3.2s; }
  .landing-page .motion-seen .waveform i:nth-child(3n + 1) { animation-duration: 3.6s; }
- .landing-page .motion-seen .map-canvas, .landing-page .motion-seen .library-tile { animation: gentle-float 6s ease-in-out infinite; }
+ .landing-page .motion-seen .library-tile { animation: gentle-float 6s ease-in-out infinite; }
  .landing-page .motion-seen .library-tile:nth-child(2) { animation-delay: -1.8s; animation-duration: 6.8s; }
  .landing-page .motion-seen .library-tile:nth-child(3) { animation-delay: -3.2s; animation-duration: 5.4s; }
  .landing-page .motion-seen .library-tile:nth-child(4) { animation-delay: -4.6s; animation-duration: 6.4s; }
@@ -221,13 +290,15 @@
  .landing-page .story-copy { padding: 36px 28px; }
  .landing-page .feature-highlights { gap: 16px; }
  .landing-page .product-stage { height: 660px; }
- .landing-page .map-canvas { width: 260px; top: -80px; }
+ .landing-page .map-canvas { top: -127px; }
  .landing-page .voice-stage { height: auto; min-height: 680px; padding-inline: 24px; }
  .landing-page .linked-comment { padding: 22px; }
  .landing-page .detail-copy { padding-inline: 28px; }
  .landing-page .detail-visual img { top: -65px; }
  .landing-page .versions-card .detail-visual img { top: 20px; }
- .landing-page .export-package, .landing-page .export-destinations { padding: 32px 24px; }
+ .landing-page .export-package { padding: 32px 24px; }
+ .landing-page .export-choice { padding: 32px 24px 0; }
+ .landing-page .export-destinations { padding: 0 24px 32px; }
  .landing-page .package-list { gap: 20px 16px; }
  .landing-page .package-list li { flex-direction: column; gap: 8px; }
  .landing-page .export-preview { gap: 14px; padding: 0; }
@@ -265,7 +336,7 @@
  .landing-page .story-copy .text-link { margin-top: 16px; }
  .landing-page .product-stage { height: 520px; }
  .landing-page .map-stage { height: 640px; }
- .landing-page .map-canvas { top: -85px; width: min(76%, 290px); }
+ .landing-page .map-canvas { top: -127px; }
  .landing-page .voice-stage { height: auto; min-height: 0; padding: 24px; }
  .landing-page .voice-device-window { width: min(100%, 280px); }
  .landing-page .voice-aside { margin-top: 28px; }
@@ -282,7 +353,8 @@
  .landing-page .handoff-heading { grid-template-columns: 1fr; gap: 20px; margin-bottom: 36px; }
  .landing-page .handoff-heading > p { margin: 0; }
  .landing-page .handoff-heading > p br { display: none; }
- .landing-page .export-board { grid-template-columns: 1fr; border-radius: 22px; }
+ .landing-page .export-board { grid-template-columns: 1fr; grid-template-areas: "choice" "package" "details"; border-radius: 22px; }
+ .landing-page .export-choice { padding: 28px 24px; border-left: 0; border-bottom: 1px solid #a4b2df2e; }
  .landing-page .export-package, .landing-page .export-destinations { padding: 28px 24px; }
  .landing-page .export-destinations { border-left: 0; border-top: 1px solid #a4b2df2e; }
  .landing-page .export-preview { margin-top: 26px; gap: 18px; }
@@ -291,7 +363,7 @@
  .landing-page .package-list li { flex-direction: row; gap: 10px; }
  .landing-page .package-list .ico { width: 18px; height: 18px; }
  .landing-page .handoff-tabs button { padding-inline: 4px; }
- .landing-page .handoff-panel { min-height: 420px; padding-top: 26px; }
+ .landing-page .handoff-panel { min-height: 420px; padding-top: 0; }
  .landing-page .handoff-panel .btn { margin-top: 0; }
  .landing-page .privacy-story { padding-block: 64px; }
  .landing-page .privacy-story header > p { margin-top: 20px; }
@@ -311,9 +383,9 @@
  .landing-page .map-stage { height: 520px; }
  .landing-page .voice-stage { height: auto; min-height: 0; padding-inline: 20px; }
  .landing-page .linked-comment { padding: 20px; }
- .landing-page .map-canvas { top: -70px; }
+ .landing-page .map-canvas { top: -105px; }
  .landing-page .feature-highlights { gap: 12px; }
- .landing-page .export-package, .landing-page .export-destinations { padding-inline: 18px; }
+ .landing-page .export-package, .landing-page .export-choice, .landing-page .export-destinations { padding-inline: 18px; }
  .landing-page .handoff-panel { min-height: 450px; }
  .landing-page .package-list li { flex-direction: column; gap: 8px; }
  .landing-page .export-screen { height: 150px; }
