@@ -4,6 +4,7 @@ const id=new URLSearchParams(location.search).get('authorization_id');
 const storageKey='flowcap-phone-approval-'+id;
 let pairing,timer,stopped=false;
 function forget(){try{sessionStorage.removeItem(storageKey);}catch{}}
+function formatCode(code){return code.slice(0,4)+'-'+code.slice(4);}
 function fail(message){stopped=true;clearTimeout(timer);el('status').textContent=message;el('restart').hidden=false;el('pairing').hidden=true;forget();}
 async function call(route,body){
  const response=await fetch(endpoint+route,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer',signal:AbortSignal.timeout(15000)});
@@ -31,8 +32,9 @@ async function start(){
  if(!pairing||Date.parse(pairing.expires_at)<=Date.now()){
   pairing=await call('/pair/start',{authorization_id:id});try{sessionStorage.setItem(storageKey,JSON.stringify(pairing));}catch{}
  }
- el('code').textContent=pairing.code.slice(0,4)+' '+pairing.code.slice(4);el('pairing').hidden=false;
- el('copy').onclick=async()=>{try{await navigator.clipboard.writeText(pairing.code);el('copy').textContent='Copied';}catch{el('status').textContent='Enter the code shown above on your iPhone.';}};
+ const formattedCode=formatCode(pairing.code);
+ el('code').textContent=formattedCode;el('pairing').hidden=false;
+ el('copy').onclick=async()=>{try{await navigator.clipboard.writeText(formattedCode);el('copy').textContent='Copied';}catch{el('status').textContent='Enter the code shown above on your iPhone.';}};
  await poll();
 }
 start().catch(()=>fail('Could not prepare this connection. Start again in Claude or Codex, or contact support@flowcap.me.'));
