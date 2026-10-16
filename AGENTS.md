@@ -24,7 +24,7 @@ the root of `main`. Preview locally with `python3 -m http.server 8793`.
 - Keep public claims aligned with the product's release state. The app is not
   yet available in the App Store; the public MCP setup uses remote OAuth with iPhone approval.
   Do not restore Mac installers or Terminal steps in the user path. Do not advertise
-  unverified Windows support or a Claude/Codex directory listing.
+  unverified Windows support or an unpublished directory listing.
 - `support@flowcap.me` is the public contact. Never commit credentials,
   deployment keys, user data or private recordings.
 - Before pushing, check internal links and assets, validate JavaScript, review
