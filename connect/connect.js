@@ -37,6 +37,10 @@ async function start(){
  el('copy').onclick=async()=>{try{await navigator.clipboard.writeText(formattedCode);el('copy').textContent='Copied';}catch{el('status').textContent='Enter the code shown above on your iPhone.';}};
  await poll();
 }
-start().catch(()=>fail('Could not prepare this connection. Start again in Claude or Codex, or contact support@flowcap.me.'));
+if(new URLSearchParams(location.search).get('review')==='1'){
+ el('heading').textContent='Connect reviewer account';
+ el('instructions').textContent='Sign in with the dedicated test account, then confirm read access for the requesting AI app.';
+ el('status').textContent='';el('footnote').hidden=true;
+}else start().catch(()=>fail('Could not prepare this connection. Start again in Claude or Codex, or contact support@flowcap.me.'));
 
 if(typeof addEventListener==='function')addEventListener('flowcap-reviewer-approved',()=>{stopped=true;clearTimeout(timer);forget();});
