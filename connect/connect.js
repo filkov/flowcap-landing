@@ -38,3 +38,5 @@ async function start(){
  await poll();
 }
 start().catch(()=>fail('Could not prepare this connection. Start again in Claude or Codex, or contact support@flowcap.me.'));
+
+if(typeof addEventListener==='function')addEventListener('flowcap-reviewer-approved',()=>{stopped=true;clearTimeout(timer);forget();});

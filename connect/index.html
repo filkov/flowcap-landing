@@ -7,7 +7,8 @@
 <main><div class="card"><p class="eyebrow">CLAUDE &amp; CODEX</p><h1 id="heading">Connect with your iPhone</h1>
 <p id="instructions">Open Flow Capture on your iPhone, then go to <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.</p>
 <section id="pairing" hidden aria-label="Connection code"><p>Enter this code and confirm access:</p><div id="code" class="pairing-code"></div><button id="copy" class="secondary" type="button">Copy code</button><p class="hint">Only approve the app you just started connecting. It can read the exports you send, not your entire library.</p></section>
+<section id="review-access" hidden aria-label="Directory reviewer access"><h2>Reviewer account</h2><p class="hint">Use the dedicated test account supplied in the directory portal. No iPhone is required for this sign-in.</p><form id="review-form"><label for="review-email">Email</label><input id="review-email" type="email" autocomplete="username" required><label for="review-password">Password</label><input id="review-password" type="password" autocomplete="off" required><button id="review-sign-in" type="submit">Sign in</button></form><p id="review-status" role="status" aria-live="polite"></p><button id="review-allow" type="button" hidden>Allow read access</button></section>
 <p id="status" role="status" aria-live="polite">Preparing your connection…</p><a id="restart" href="/mcp/" hidden>Back to MCP setup</a>
 </div><p id="footnote" class="footnote">Keep this page open. It will return you to your AI app after you approve access.</p></main>
 <footer><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a></footer>
-<script src="connect.js?v=20261016-1" type="module"></script></body></html>
+<script src="connect.js?v=20261016-2" type="module"></script><script src="reviewer.mjs?v=20261016-1" type="module"></script></body></html>
