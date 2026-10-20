@@ -1,9 +1,20 @@
 (() => {
   const scene = document.querySelector('.hero-scene');
-  const setupLoop = (video, target) => {
+  const setupLoop = (video, target, onFirstFrame) => {
     if (!video || !target) return;
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     let inView = true;
+    let framePending = false;
+    let framePresented = false;
+    const revealFrame = () => {
+      framePending = false;
+      if (video.paused || video.readyState < 2 || !inView || document.hidden || motionPreference.matches || navigator.connection?.saveData) return;
+      video.classList.add('is-playing');
+      if (!framePresented) {
+        framePresented = true;
+        onFirstFrame?.();
+      }
+    };
     const syncPlayback = () => {
       if (motionPreference.matches || navigator.connection?.saveData) {
         video.pause();
@@ -14,12 +25,21 @@
         video.pause();
         return;
       }
-      if (!video.getAttribute('src')) video.src = video.dataset.src;
+      if (!video.getAttribute('src')) {
+        video.src = window.innerWidth <= 760 && video.dataset.srcMobile ? video.dataset.srcMobile : video.dataset.src;
+      }
       video.play()?.catch(() => video.classList.remove('is-playing'));
     };
     video.addEventListener('playing', () => {
-      if (!motionPreference.matches && !navigator.connection?.saveData && inView && !document.hidden) video.classList.add('is-playing');
-      else syncPlayback();
+      if (motionPreference.matches || navigator.connection?.saveData || !inView || document.hidden) {
+        syncPlayback();
+        return;
+      }
+      if (framePending) return;
+      framePending = true;
+      // Keep the complete poster visible until a decoded frame is presented.
+      if (video.requestVideoFrameCallback) video.requestVideoFrameCallback(revealFrame);
+      else requestAnimationFrame(() => requestAnimationFrame(revealFrame));
     });
     video.addEventListener('error', () => video.classList.remove('is-playing'));
     document.addEventListener('visibilitychange', syncPlayback);
@@ -34,8 +54,26 @@
     }
     syncPlayback();
   };
-  setupLoop(document.querySelector('.hero-video'), scene);
-  setupLoop(document.querySelector('.hero-demo'), document.querySelector('.hero-phone'));
+  const background = document.querySelector('.hero-video');
+  const demo = document.querySelector('.hero-demo');
+  if (demo) {
+    let firstFramePresented = false;
+    let backgroundScheduled = false;
+    const startBackgroundWhenBuffered = () => {
+      if (!firstFramePresented || backgroundScheduled || !demo.buffered.length) return;
+      const bufferedEnd = demo.buffered.end(demo.buffered.length - 1);
+      if (bufferedEnd - demo.currentTime < 8 && bufferedEnd < demo.duration - .1) return;
+      backgroundScheduled = true;
+      // Give the phone's useful content priority over the decorative lake loop.
+      window.setTimeout(() => setupLoop(background, scene), 1000);
+    };
+    demo.addEventListener('progress', startBackgroundWhenBuffered);
+    demo.addEventListener('canplaythrough', startBackgroundWhenBuffered);
+    setupLoop(demo, document.querySelector('.hero-phone'), () => {
+      firstFramePresented = true;
+      startBackgroundWhenBuffered();
+    });
+  } else setupLoop(background, scene);
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   // A small scroll-only background offset; foreground content stays in place.
   const landscape = document.querySelector('.hero-landscape');
