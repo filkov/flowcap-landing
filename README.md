@@ -11,9 +11,23 @@ For work on another computer or in a new Codex session, start with
 python3 -m http.server 8793
 ```
 
-- `/`: campaign landing (`index.html`, `landing.css`, `landing.js`).
+- `/`: campaign landing (`index.html`, `landing.css`, `homepage.css`, `landing.js`).
 - `/guides/`: article index plus three static guides for recording, voice commentary and AI handoff. Each article has a canonical URL, description, Article/BreadcrumbList JSON-LD, and related links. `sitemap.xml` and `robots.txt` cover all public content routes.
 - `/mcp/`: MCP installation guide and versioned source download. It shares the landing typography, palette and navigation through `landing.css`, with isolated setup layouts in `mcp/mcp.css`.
+
+## Current homepage (20 October 2026)
+
+The owner-approved [Figma redesign](https://www.figma.com/design/CKtXJzKMNosC5uYUHD0b1U/?node-id=1751-26160)
+is implemented in semantic HTML and scoped `homepage.css`: lake hero with the real
+app demo, four white feature chapters, navy handoff, native FAQ, and centered
+App Store closing action. Text, grid and spacing adapt to narrow screens.
+New approved artwork exports and provenance are in
+[`assets/design-20261020/README.md`](assets/design-20261020/README.md).
+Both App Store badges use the same transparent 180 × 60 asset. Existing demo
+startup, reduced-motion/data-saving fallbacks and fixed-camera lake loop remain.
+The full visible phone replaces its earlier bottom crop/fade. Older sections below
+record previous iterations; the current Figma implementation supersedes those
+homepage layouts. MCP, Guides, auth, legal pages and downloads are unchanged.
 
 ## Product imagery
 
