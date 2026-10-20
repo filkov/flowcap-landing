@@ -74,6 +74,7 @@
 .landing-page .product-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .product-demo.is-playing { opacity: 1; }
 .landing-page .feature-copy, .landing-page .handoff-copy { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.landing-page .feature-copy { --feature-text-size: 18px; --feature-text-leading: 28px; }
 .landing-page .feature-copy h2 { font-size: 64px; line-height: 1.0625; letter-spacing: -.025em; }
 .landing-page .feature-copy .feature-description { max-width: 580px; }
 .landing-page .feature-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #edf3ff; font-size: 14px; line-height: 22px; }
@@ -84,6 +85,9 @@
 .landing-page .feature-benefits li { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; line-height: 24px; min-width: 0; }
 .landing-page .benefit-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex: 0 0 36px; border-radius: 11px; color: var(--web-accent); background: #edf3ff; }
 .landing-page .benefit-icon .icon { width: 20px; height: 20px; }
+/* Two type levels per chapter: the heading and one shared supporting style. */
+.landing-page .feature-copy :is(.feature-label, .feature-description, .feature-benefits li, .text-link) { font-size: var(--feature-text-size); font-weight: 400; line-height: var(--feature-text-leading); letter-spacing: 0; }
+.landing-page .feature-copy .text-link .icon { width: 22px; height: 22px; flex: 0 0 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 /* Handoff keeps the original approved artwork and the homepage's navy palette. */
 .landing-page .handoff-section { padding-block: 96px; background: var(--web-navy); color: #fff; }
 .landing-page .handoff-layout { display: grid; grid-template-columns: minmax(0, 544fr) minmax(0, 640fr); align-items: center; gap: 96px; }
@@ -143,7 +147,7 @@
  .landing-page .handoff-copy h2 { font-size: 44px; line-height: 50px; }
  .landing-page .feature-description { font-size: 18px; line-height: 29px; }
  .landing-page .feature-benefits { gap: 20px 24px; }
- .landing-page .feature-copy { gap: 20px; }
+ .landing-page .feature-copy { gap: 20px; --feature-text-size: 16px; --feature-text-leading: 26px; }
  .landing-page .faq-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 40px; }
  .landing-page .closing h2 { font-size: 44px; line-height: 50px; }
 }
@@ -157,7 +161,6 @@
  .landing-page .feature-copy h2 { font-size: 44px; line-height: 48px; }
  .landing-page .handoff-copy h2 { font-size: 38px; line-height: 44px; }
  .landing-page .feature-copy { gap: 16px; }
- .landing-page .feature-benefits li { font-size: 14px; line-height: 21px; }
  .landing-page .feature-benefits { gap: 20px 16px; }
  .landing-page .feature-benefits li { flex-direction: column; align-items: flex-start; gap: 10px; }
  .landing-page .handoff-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -184,12 +187,12 @@
  .landing-page .hero-phone { width: min(78vw, 300px); height: auto; margin: 0; }
  .landing-page .product-features { padding-block: 32px; }
  .landing-page .feature-chapter, .landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 40px; }
- .landing-page .feature-copy { grid-row: 1; gap: 20px; }
+ .landing-page .feature-copy { grid-row: 1; gap: 20px; --feature-text-size: 16px; --feature-text-leading: 26px; }
  .landing-page .feature-copy h2 { font-size: 40px; line-height: 44px; }
  .landing-page .feature-art { grid-row: 2; max-width: 360px; justify-self: center; border-radius: 28px; }
  .landing-page .feature-description { font-size: 18px; line-height: 29px; }
  .landing-page .feature-benefits { gap: 20px 16px; }
- .landing-page .feature-benefits li { flex-direction: column; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 22px; }
+ .landing-page .feature-benefits li { flex-direction: column; align-items: flex-start; gap: 10px; }
  .landing-page .text-link { font-size: 16px; line-height: 24px; }
  .landing-page .handoff-section { padding-block: 64px; }
  .landing-page .handoff-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
