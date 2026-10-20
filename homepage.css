@@ -58,23 +58,32 @@
 .landing-page .hero-phone-screen > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .landing-page .hero-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .hero-demo.is-playing { opacity: 1; }
-/* White editorial chapters, with one shared grid and one illustration ratio. */
+/* Compact portrait stages balance the larger editorial feature copy. */
 .landing-page .product-features { padding-block: 72px; background: #fff; }
-.landing-page .feature-chapter { display: grid; grid-template-columns: minmax(0, 640fr) minmax(0, 544fr); align-items: center; gap: 96px; padding-block: 56px; }
-.landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 544fr) minmax(0, 640fr); }
-.landing-page .feature-art { min-width: 0; width: 100%; aspect-ratio: 640 / 700; display: flex; align-items: center; justify-content: center; border-radius: 32px; overflow: hidden; background: var(--web-stage); }
+.landing-page .feature-chapter { display: grid; grid-template-columns: 480px minmax(0, 1fr); align-items: center; gap: 128px; padding-block: 64px; }
+.landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 1fr) 480px; }
+.landing-page .feature-art { min-width: 0; width: 100%; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; border-radius: 32px; overflow: hidden; background: var(--web-stage); }
+.landing-page .feature-art .product-device { width: 50%; filter: drop-shadow(0 14px 16px #14233b14); }
+.landing-page .art-voice { background: #f0f5fa; }
+.landing-page .art-map { background: #eff4fc; }
+.landing-page .art-versions { background: #f4f2fb; }
 .landing-page .product-device { position: relative; flex: 0 0 auto; width: 48.75%; max-width: none; }
 .landing-page .product-device-frame { display: block; width: 100%; height: auto; }
 .landing-page .product-device-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; overflow: hidden; border-radius: 15% / 6.9%; background: #000; }
 .landing-page .product-device-screen > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .landing-page .product-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .product-demo.is-playing { opacity: 1; }
-.landing-page .art-voice .product-device { width: 50.625%; }
 .landing-page .feature-copy, .landing-page .handoff-copy { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.landing-page .feature-copy h2 { font-size: 64px; line-height: 1.0625; letter-spacing: -.025em; }
+.landing-page .feature-copy .feature-description { max-width: 580px; }
+.landing-page .feature-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #edf3ff; font-size: 14px; line-height: 22px; }
+.landing-page .feature-label .icon { width: 18px; height: 18px; }
+.landing-page .feature-label .icon, .landing-page .benefit-icon .icon { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .landing-page .feature-description { max-width: 516px; color: var(--web-muted); font-size: 20px; line-height: 32px; }
-.landing-page .feature-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; padding: 0; margin: 0; list-style: none; width: 100%; }
-.landing-page .feature-benefits li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; line-height: 24px; min-width: 0; }
-.landing-page .feature-benefits img { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 2px; }
+.landing-page .feature-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; padding: 8px 0 0; margin: 0; list-style: none; width: 100%; max-width: 580px; }
+.landing-page .feature-benefits li { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; line-height: 24px; min-width: 0; }
+.landing-page .benefit-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex: 0 0 36px; border-radius: 11px; color: var(--web-accent); background: #edf3ff; }
+.landing-page .benefit-icon .icon { width: 20px; height: 20px; }
 /* Handoff keeps the original approved artwork and the homepage's navy palette. */
 .landing-page .handoff-section { padding-block: 96px; background: var(--web-navy); color: #fff; }
 .landing-page .handoff-layout { display: grid; grid-template-columns: minmax(0, 544fr) minmax(0, 640fr); align-items: center; gap: 96px; }
@@ -117,10 +126,13 @@
 @media (max-width: 1280px) and (min-width: 761px) {
  .landing-page .hero { gap: 48px; }
  .landing-page .hero-copy h1 { font-size: 60px; line-height: 66px; }
- .landing-page .feature-chapter, .landing-page .handoff-layout { gap: 56px; }
- .landing-page .feature-copy h2, .landing-page .handoff-copy h2 { font-size: 44px; line-height: 50px; }
+ .landing-page .feature-chapter { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; }
+ .landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+ .landing-page .handoff-layout { gap: 56px; }
+ .landing-page .feature-copy h2 { font-size: 56px; line-height: 60px; }
+ .landing-page .handoff-copy h2 { font-size: 44px; line-height: 50px; }
  .landing-page .feature-description { font-size: 18px; line-height: 29px; }
- .landing-page .feature-benefits { grid-template-columns: 1fr; gap: 12px; }
+ .landing-page .feature-benefits { gap: 20px 24px; }
  .landing-page .feature-copy { gap: 20px; }
  .landing-page .faq-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 40px; }
  .landing-page .closing h2 { font-size: 44px; line-height: 50px; }
@@ -132,9 +144,12 @@
  .landing-page .hero-copy .lead { font-size: 18px; line-height: 29px; }
  .landing-page .hero-device-slot { height: auto; }
  .landing-page .feature-chapter, .landing-page .handoff-layout { gap: 32px; }
- .landing-page .feature-copy h2, .landing-page .handoff-copy h2 { font-size: 38px; line-height: 44px; }
+ .landing-page .feature-copy h2 { font-size: 44px; line-height: 48px; }
+ .landing-page .handoff-copy h2 { font-size: 38px; line-height: 44px; }
  .landing-page .feature-copy { gap: 16px; }
  .landing-page .feature-benefits li { font-size: 14px; line-height: 21px; }
+ .landing-page .feature-benefits { gap: 20px 16px; }
+ .landing-page .feature-benefits li { flex-direction: column; align-items: flex-start; gap: 10px; }
  .landing-page .handoff-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
@@ -160,11 +175,11 @@
  .landing-page .product-features { padding-block: 32px; }
  .landing-page .feature-chapter, .landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 40px; }
  .landing-page .feature-copy { grid-row: 1; gap: 20px; }
- .landing-page .feature-art { grid-row: 2; max-width: 540px; justify-self: center; border-radius: 24px; }
+ .landing-page .feature-copy h2 { font-size: 40px; line-height: 44px; }
+ .landing-page .feature-art { grid-row: 2; max-width: 360px; justify-self: center; border-radius: 28px; }
  .landing-page .feature-description { font-size: 18px; line-height: 29px; }
- .landing-page .feature-benefits { gap: 16px; }
- .landing-page .feature-benefits li { gap: 8px; font-size: 14px; line-height: 22px; }
- .landing-page .feature-benefits img { flex-basis: 18px; width: 18px; height: 18px; }
+ .landing-page .feature-benefits { gap: 20px 16px; }
+ .landing-page .feature-benefits li { flex-direction: column; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 22px; }
  .landing-page .text-link { font-size: 16px; line-height: 24px; }
  .landing-page .handoff-section { padding-block: 64px; }
  .landing-page .handoff-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }

@@ -24,6 +24,9 @@ App Store closing action. Text, grid and spacing adapt to narrow screens.
 The five feature cards now use the owner-supplied screen recordings inside the
 approved phone frame. They load on viewport entry and pause offscreen; see
 [`assets/demos/README.md`](assets/demos/README.md) for mapping and provenance.
+The white feature chapters were further refined against the owner’s Anchor
+reference: compact 4:5 stages, smaller phones, larger headings and distinct
+benefit icons. This updates the original Figma row dimensions.
 Initial approved artwork exports and provenance are in
 [`assets/design-20261020/README.md`](assets/design-20261020/README.md).
 Both App Store badges use the same transparent 180 × 60 asset. Existing demo
