@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="landing.css?v=20261014-7">
-  <link rel="stylesheet" href="homepage.css?v=20261020-13">
+  <link rel="stylesheet" href="homepage.css?v=20261020-14">
 <link rel="stylesheet" href="/site.css?v=20261014-7"></head>
 <body class="landing-page">
   <!-- Icon sprite -->
@@ -43,6 +43,14 @@
       <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5H10l2 2h6.5a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></symbol>
       <symbol id="i-board" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
       <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+      <symbol id="i-file-zip" viewBox="0 0 24 24"><path d="M6 20.735a2 2 0 0 1 -1 -1.735v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1" />
+  <path d="M11 17a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2" />
+  <path d="M11 5l-1 0" />
+  <path d="M13 7l-1 0" />
+  <path d="M11 9l-1 0" />
+  <path d="M13 11l-1 0" />
+  <path d="M11 13l-1 0" />
+  <path d="M13 15l-1 0" /></symbol>
       <symbol id="i-zip" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M12 3.5v3M12 9v3M12 15v2.5"/></symbol>
       <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4M9 12h6M9 15.5h6"/></symbol>
       <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5.5h3"/></symbol>
@@ -134,17 +142,16 @@
    <div class="handoff-copy">
     <p class="eyebrow">HANDOFF</p>
     <h2 id="handoff-title">One flow.<br>Four ways to share.</h2>
-    <p class="feature-description">Continue in Claude, bring your screens into Figma, or share a ZIP or PDF with your team. Choose the handoff that fits your next step.</p>
+    <p class="feature-description">Send selected screens and comments to Claude for feedback. Import screenshots into Figma, or export a ZIP or PDF.</p>
     <a class="btn btn-primary" href="/mcp/">Connect Claude</a>
-    <p class="handoff-note">You choose the screens, comments, and destination.</p>
    </div>
    <figure class="handoff-art"><img src="assets/design-20261020/handoff.webp" width="1536" height="1152" loading="lazy" decoding="async" alt="Flow Capture’s Review Complete screen on a floating, angled iPhone, with AI and Figma handoff options."></figure>
   </div>
   <ul class="handoff-benefits" role="list" aria-label="Handoff destinations">
-   <li><span class="handoff-destination-icon"><img src="assets/brands/claude.svg" width="40" height="40" alt="" aria-hidden="true"></span><div class="handoff-destination-copy"><h3>Claude</h3><p>Review screens in your AI chat.</p></div></li>
-   <li><span class="handoff-destination-icon brand-figma"><img src="assets/brands/figma.svg" width="40" height="40" alt="" aria-hidden="true"></span><div class="handoff-destination-copy"><h3>Figma</h3><p>Continue in your design file.</p></div></li>
-   <li><span class="handoff-destination-icon"><svg aria-hidden="true"><use href="#i-zip"/></svg></span><div class="handoff-destination-copy"><h3>ZIP</h3><p>Screens and context, packaged together.</p></div></li>
-   <li><span class="handoff-destination-icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><div class="handoff-destination-copy"><h3>PDF</h3><p>A document to review and share.</p></div></li>
+   <li><span class="handoff-destination-icon"><img src="assets/brands/claude.svg" width="40" height="40" alt="" aria-hidden="true"></span><div class="handoff-destination-copy"><h3>Claude</h3><p>Send screens and comments for review.</p></div></li>
+   <li><span class="handoff-destination-icon brand-figma"><img src="assets/brands/figma.svg" width="40" height="40" alt="" aria-hidden="true"></span><div class="handoff-destination-copy"><h3>Figma</h3><p>Screenshots grouped by flow.</p></div></li>
+   <li><span class="handoff-destination-icon"><svg aria-hidden="true"><use href="#i-file-zip"/></svg></span><div class="handoff-destination-copy"><h3>ZIP</h3><p>Screens, comments, and flow data.</p></div></li>
+   <li><span class="handoff-destination-icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><div class="handoff-destination-copy"><h3>PDF</h3><p>Selected screens in one document.</p></div></li>
   </ul>
  </div>
 </section>

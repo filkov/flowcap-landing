@@ -98,7 +98,7 @@
 .landing-page .handoff-benefits li { min-width: 0; display: flex; align-items: flex-start; gap: 16px; border-top: 1px solid #b7c4e02b; padding-top: 24px; }
 .landing-page .handoff-destination-copy { min-width: 0; }
 .landing-page .handoff-destination-icon { display: grid; place-items: center; width: 56px; height: 56px; flex: 0 0 56px; border-radius: 16px; color: #8fb0ff; background: #8fb0ff14; }
-.landing-page .handoff-destination-icon svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.landing-page .handoff-destination-icon svg { width: 40px; height: 40px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .landing-page .handoff-destination-icon img { width: 40px; height: 40px; object-fit: contain; }
 .landing-page .handoff-destination-icon.brand-figma { position: relative; overflow: hidden; }
 /* The official SVG includes generous transparent margins around the mark. */
