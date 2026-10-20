@@ -1,0 +1,198 @@
+/* Internal pages share the homepage's white surfaces, navy type and blue accents.
+   Loaded after route styles; OAuth behaviour and article content stay independent. */
+:root { color-scheme: light; background: #fff; }
+.interior-page {
+ --bg: #fff; --text: #151b32; --muted: #5f687d; --violet: #0a5cff;
+ --line: #dfe5f0; --surface: #f2f5fb; --wrap: 1280px;
+ min-height: 100dvh; background: #fff; color: var(--text);
+ font-size: 18px; line-height: 1.6; letter-spacing: 0;
+}
+.interior-page .container { width: min(var(--wrap), calc(100% - 96px)); }
+.interior-page h1, .interior-page h2, .interior-page h3 { color: var(--text); font-weight: 600; letter-spacing: -.025em; }
+.interior-page h1 { font-size: 64px; line-height: 1.0625; }
+.interior-page h2 { font-size: 40px; line-height: 1.15; }
+.interior-page h3 { font-size: 28px; line-height: 1.2; }
+.interior-page h1 span, .interior-page h2 span { color: var(--violet); background: none; -webkit-text-fill-color: currentColor; }
+.interior-page strong { color: var(--text); font-weight: 600; }
+.interior-page .eyebrow { color: var(--violet); font-size: 14px; font-weight: 400; line-height: 24px; letter-spacing: 0; margin-bottom: 24px; }
+.interior-page .lead { color: var(--muted); font-size: 20px; line-height: 32px; max-width: 720px; margin-top: 24px; }
+.interior-page .nav-wrap { position: relative; inset: auto; padding: 40px 0 0; border: 0; background: #fff; backdrop-filter: none; }
+.interior-page .nav { width: min(var(--wrap), calc(100% - 96px)); max-width: none; min-height: 72px; margin: 0 auto; padding: 12px 20px; border: 1px solid var(--line); border-radius: 36px; background: #f7f9fc; gap: 24px; }
+.interior-page .nav-brand { font-size: 18px; line-height: 26px; font-weight: 500; letter-spacing: 0; color: var(--text); gap: 12px; }
+.interior-page .nav-brand img { width: 32px; height: 32px; border-radius: 9px; }
+.interior-page .nav-links { display: flex; gap: 32px; }
+.interior-page .nav-links a { min-height: 44px; color: var(--muted); font-size: 16px; font-weight: 400; line-height: 24px; white-space: nowrap; }
+.interior-page .nav-links a:hover, .interior-page .nav-links [aria-current='page'] { color: var(--violet); }
+.interior-page .nav-links [aria-current='page'] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.interior-page .btn { min-height: 56px; padding: 14px 24px; font-size: 18px; line-height: 26px; font-weight: 500; box-shadow: none; }
+.interior-page .btn-primary { color: #fff; background: #6257d5; }
+.interior-page .btn-primary:hover { background: #5146c3; }
+.interior-page .btn-secondary { color: var(--violet); background: #edf3ff; border-color: transparent; }
+.interior-page .btn-secondary:hover { background: #e0eaff; }
+.interior-page .text-link { color: var(--violet); font-size: 18px; font-weight: 400; line-height: 28px; }
+.interior-page .text-link::after { content: '→'; margin-left: 4px; }
+.interior-page .text-link:hover { color: #0848c7; text-decoration: underline; text-underline-offset: 5px; }
+.interior-page .preview-note, .interior-page .article-meta, .interior-page .quiet { font-size: 16px; line-height: 26px; color: var(--muted); }
+.interior-page .quiet strong { color: var(--text); }
+/* Guides: spacious cards, one reading size, and a clear onward action. */
+.interior-page .guides-main { padding-block: 88px 96px; }
+.interior-page .guides-intro { max-width: 1040px; margin-bottom: 56px; }
+.interior-page .guides-intro .preview-note { margin-top: 20px; }
+.interior-page .guide-grid { gap: 24px; align-items: stretch; }
+.interior-page .guide-card { border: 1px solid transparent; border-radius: 28px; background: var(--surface); padding: 32px; transition: border-color .18s, background .18s; }
+.interior-page .guide-card:hover { border-color: #b7ceff; background: #edf3ff; }
+.interior-page .guide-category { color: var(--violet); background: transparent; padding: 0; border-radius: 0; font-size: 16px; line-height: 26px; font-weight: 400; margin-bottom: 24px; }
+.interior-page .guide-card h2 { font-size: 32px; line-height: 1.15; min-height: 2.3em; }
+.interior-page .guide-card p { color: var(--muted); font-size: 18px; line-height: 28px; margin-block: 24px 32px; }
+.interior-page .guide-card-bottom { color: var(--muted); font-size: 16px; line-height: 26px; }
+.interior-page .guide-card-bottom > span { color: var(--violet); }
+.interior-page .mcp-guide-link { margin-top: 48px; padding: 48px; border: 0; border-radius: 32px; background: #0e1025; color: #fff; gap: 48px; }
+.interior-page .mcp-guide-link h2 { color: #fff; }
+.interior-page .mcp-guide-link .eyebrow { color: #8fb0ff; margin-bottom: 16px; }
+.interior-page .mcp-guide-link p { color: #b7c4e0; font-size: 18px; line-height: 28px; margin-top: 20px; }
+/* Articles and legal pages have a stable left edge and a comfortable measure. */
+.interior-page .article-main { max-width: 880px; padding-block: 48px 96px; }
+.interior-page .breadcrumbs { gap: 12px; font-size: 16px; line-height: 26px; margin-bottom: 40px; }
+.interior-page .breadcrumbs a { color: var(--violet); }
+.interior-page .article-header { padding-bottom: 40px; margin-bottom: 40px; border-color: var(--line); }
+.interior-page .article-header h1 { font-size: 56px; line-height: 1.1; text-wrap: initial; }
+.interior-page .article-header .lead { max-width: 760px; }
+.interior-page .article-meta { margin-top: 24px; }
+.interior-page .article-body { max-width: 760px; margin-inline: 0; font-size: 18px; line-height: 30px; color: var(--muted); }
+.interior-page .article-body h2 { color: var(--text); font-size: 32px; line-height: 38px; margin: 48px 0 20px; }
+.interior-page .article-body p { margin-bottom: 24px; }
+.interior-page .article-body a, .interior-page .setup-card a:not(.btn), .interior-page .sources a, .interior-page .setup-help .setup-content > p a, .interior-page .mcp-faq a { color: var(--violet); text-decoration: underline; text-decoration-color: #0a5cff66; text-underline-offset: 4px; }
+.interior-page .article-body a:hover, .interior-page .setup-card a:not(.btn):hover, .interior-page .sources a:hover, .interior-page .mcp-faq a:hover { color: #0848c7; }
+.interior-page .article-body li::marker { color: var(--violet); }
+.interior-page .article-note { margin-block: 32px; padding: 28px 32px; border: 0; border-radius: 24px; background: #edf3ff; }
+.interior-page .article-note p { margin: 8px 0 0; }
+.interior-page .related-guides { margin-top: 56px; padding-top: 32px; }
+.interior-page .related-guides h2 { font-size: 32px; }
+.interior-page .related-guides a { color: var(--text); font-size: 18px; line-height: 28px; }
+.interior-page .related-guides a:hover, .interior-page .related-guides a span { color: var(--violet); }
+.interior-page .legal-main { padding-top: 88px; }
+/* MCP: three explicit stages, light panels, restrained technical details. */
+.interior-page .setup-hero { padding-block: 88px 64px; }
+.interior-page .setup-hero h1 { max-width: 1040px; }
+.interior-page .setup-hero h1 span { margin-top: 0; }
+.interior-page .setup-hero .actions { gap: 24px; margin-top: 32px; }
+.interior-page .setup-requirements { max-width: 880px; background: var(--surface); padding: 24px 28px; margin-top: 32px; border: 0; border-radius: 20px; }
+.interior-page .setup-requirements strong { margin-bottom: 8px; }
+.setup-journey { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+.setup-journey a { display: flex; align-items: center; gap: 16px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 20px; font-size: 18px; line-height: 28px; }
+.setup-journey a:hover { background: #edf3ff; border-color: #b7ceff; }
+.setup-journey span { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border-radius: 11px; background: #edf3ff; color: var(--violet); font-size: 16px; }
+.setup-journey svg { width: 20px; height: 20px; margin-left: auto; fill: none; stroke: var(--violet); stroke-width: 1.7; }
+.interior-page .setup-section { grid-template-columns: minmax(0, 384fr) minmax(0, 832fr); gap: 64px; padding-block: 48px 64px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.interior-page .setup-section-heading { padding-top: 0; }
+.interior-page .setup-section-heading .eyebrow { margin-bottom: 16px; }
+.interior-page .setup-section-heading h2 { font-size: 40px; line-height: 46px; }
+.interior-page .section-intro { max-width: 520px; color: var(--muted); font-size: 18px; line-height: 28px; margin-top: 24px; }
+.interior-page .setup-connect { display: block; }
+.interior-page .setup-connect > .setup-section-heading { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 64px; margin-bottom: 32px; }
+.interior-page .setup-connect .section-intro { margin-top: 0; }
+.interior-page .client-options { gap: 24px; }
+.interior-page .setup-panel, .interior-page .client-card { padding: 36px; border: 0; border-radius: 28px; background: var(--surface); }
+.interior-page .client-heading { width: 100%; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.interior-page .client-heading .eyebrow { color: var(--muted); margin: 0; font-size: 16px; line-height: 26px; }
+.client-title { display: flex; align-items: center; gap: 14px; }
+.client-title img, .client-title svg { width: 36px; height: 36px; flex: 0 0 36px; }
+.client-title svg { fill: none; stroke: #0a5cff; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.interior-page .setup-card h3 { font-size: 32px; line-height: 38px; }
+.interior-page .setup-card p, .interior-page .setup-steps > li { color: var(--muted); font-size: 18px; line-height: 28px; }
+.interior-page .setup-steps > li { padding-left: 44px; }
+.interior-page .setup-steps > li::before { color: var(--violet); font-size: 16px; line-height: 28px; }
+.interior-page .setup-steps > li + li { margin-top: 24px; }
+.interior-page .setup-steps > li > strong { color: var(--text); font-size: 18px; line-height: 28px; margin-bottom: 8px; }
+.interior-page .setup-panel .quiet, .interior-page .client-card > .quiet { font-size: 16px; line-height: 26px; }
+.interior-page .client-card > .btn, .interior-page .client-card > .text-link { margin-top: 28px; }
+.server-reference { grid-column: 1 / -1; min-width: 0; border: 1px solid var(--line); border-radius: 20px; }
+.server-reference > summary { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 28px; font-size: 16px; line-height: 26px; cursor: pointer; list-style: none; }
+.server-reference > summary::-webkit-details-marker { display: none; }
+.server-reference > summary::after { content: '+'; color: var(--violet); font-size: 24px; }
+.server-reference[open] > summary::after { content: '−'; }
+.interior-page .server-block { background: #fff; border: 0; padding: 0 28px 28px; border-radius: 20px; }
+.interior-page .server-block .server-label, .interior-page .server-block .quiet { color: var(--muted); font-size: 16px; line-height: 26px; letter-spacing: 0; }
+.interior-page .server-block pre { background: var(--surface); border: 0; color: var(--text); font-size: 16px; line-height: 26px; }
+.interior-page .mcp-faq summary { color: var(--text); font-size: 18px; line-height: 28px; font-weight: 400; padding-block: 24px; }
+.interior-page .mcp-faq summary::after { color: var(--violet); border: 0; background: none; }
+.interior-page .mcp-faq details p { color: var(--muted); font-size: 18px; line-height: 28px; }
+.interior-page .setup-help .setup-content > p { color: var(--muted); }
+/* The same quiet, single-line brand/copyright group as the homepage. */
+.interior-page .footer { border: 0; background: #fff; padding-block: 32px 40px; margin-top: 0; gap: 24px 40px; }
+.interior-page .footer-brand { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.interior-page .footer .nav-brand { color: var(--text); font-size: 18px; line-height: 26px; }
+.interior-page .footer nav { gap: 12px 28px; }
+.interior-page .footer nav a { color: var(--muted); font-size: 16px; line-height: 24px; }
+.interior-page .footer nav a:hover { color: var(--violet); }
+.interior-page .footer p { color: #7d869b; font-size: 11px; line-height: 20px; margin: 0; padding: 0; white-space: nowrap; }
+@media (max-width: 1100px) {
+ .interior-page h1 { font-size: 56px; }
+ .interior-page .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .interior-page .guide-card:last-child { grid-column: 1 / -1; }
+ .interior-page .setup-section { gap: 40px; }
+ .interior-page .setup-section-heading h2 { font-size: 36px; line-height: 42px; }
+ .interior-page .setup-panel, .interior-page .client-card { padding: 28px; }
+ .setup-journey a { padding: 18px; gap: 12px; }
+}
+@media (max-width: 760px) {
+ .interior-page { font-size: 16px; line-height: 26px; }
+ .interior-page .container, .interior-page .nav { width: calc(100% - 40px); }
+ .interior-page .nav-wrap { padding-top: 20px; }
+ .interior-page .nav { min-height: 60px; padding: 8px 16px; border-radius: 30px; gap: 12px; }
+ .interior-page .nav-brand { font-size: 16px; gap: 8px; }
+ .interior-page .nav-brand img { width: 28px; height: 28px; }
+ .interior-page .nav-links { gap: 18px; }
+ .interior-page .nav-links a { font-size: 13px; }
+ .interior-page h1, .interior-page .article-header h1 { font-size: 38px; line-height: 42px; }
+ .interior-page .article-header h1 { font-size: 34px; line-height: 38px; }
+ .interior-page h2, .interior-page .setup-section-heading h2 { font-size: 32px; line-height: 38px; }
+ .interior-page .eyebrow { font-size: 14px; line-height: 24px; margin-bottom: 20px; }
+ .interior-page .lead { font-size: 18px; line-height: 28px; }
+ .interior-page .btn, .interior-page .text-link { font-size: 16px; line-height: 26px; }
+ .interior-page .btn { padding: 12px 20px; min-height: 52px; }
+ .interior-page .guides-main, .interior-page .legal-main { padding-block: 48px 64px; }
+ .interior-page .guides-intro { margin-bottom: 40px; }
+ .interior-page .guide-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+ .interior-page .guide-card { padding: 28px 24px; border-radius: 24px; }
+ .interior-page .guide-card h2 { font-size: 28px; line-height: 34px; min-height: 0; }
+ .interior-page .guide-card p { font-size: 16px; line-height: 26px; }
+ .interior-page .mcp-guide-link { flex-direction: column; align-items: flex-start; padding: 32px 24px; border-radius: 24px; gap: 28px; margin-top: 32px; }
+ .interior-page .mcp-guide-link h2 { font-size: 32px; }
+ .interior-page .mcp-guide-link p { font-size: 16px; line-height: 26px; }
+ .interior-page .article-main { padding-block: 24px 64px; }
+ .interior-page .breadcrumbs { margin-bottom: 28px; }
+ .interior-page .article-header { padding-bottom: 32px; margin-bottom: 32px; }
+ .interior-page .article-body { font-size: 18px; line-height: 30px; }
+ .interior-page .article-body h2 { font-size: 28px; line-height: 34px; margin-top: 40px; }
+ .interior-page .article-note { padding: 24px; border-radius: 20px; }
+ .interior-page .related-guides a { font-size: 16px; line-height: 26px; }
+ .interior-page .setup-hero { padding-block: 48px 40px; }
+ .interior-page .setup-hero .actions { gap: 16px 24px; }
+ .interior-page .setup-requirements { padding: 24px; }
+ .setup-journey { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 28px; }
+ .setup-journey a { padding: 16px 20px; font-size: 16px; line-height: 26px; }
+ .interior-page .setup-section { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 32px 48px; }
+ .interior-page .setup-connect > .setup-section-heading { display: block; }
+ .interior-page .setup-connect .section-intro { margin-top: 20px; }
+ .interior-page .section-intro { font-size: 16px; line-height: 26px; margin-top: 20px; }
+ .interior-page .client-options { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+ .interior-page .setup-panel, .interior-page .client-card { padding: 28px 24px; border-radius: 24px; }
+ .interior-page .setup-steps > li, .interior-page .setup-card p { font-size: 16px; line-height: 26px; }
+ .interior-page .setup-steps > li { padding-left: 32px; }
+ .interior-page .setup-steps > li > strong { font-size: 16px; line-height: 26px; }
+ .server-reference > summary { padding: 20px 24px; }
+ .interior-page .server-block { padding: 0 24px 24px; }
+ .interior-page .server-block pre { font-size: 14px; line-height: 24px; }
+ .interior-page .mcp-faq summary, .interior-page .mcp-faq details p { font-size: 16px; line-height: 26px; }
+ .interior-page .footer { gap: 20px; padding-block: 24px 32px; }
+ .interior-page .footer nav { gap: 6px 20px; }
+ .interior-page .footer nav a { font-size: 14px; }
+}
+@media (max-width: 400px) { .interior-page .nav .nav-brand span { display: none; } .interior-page .nav-links { gap: 24px; } }
+@media (prefers-reduced-motion: reduce) { .interior-page .guide-card { transition: none; } }
+@media (forced-colors: active) {
+ .interior-page .nav, .interior-page .guide-card, .interior-page .setup-panel, .interior-page .client-card, .interior-page .article-note { border: 1px solid CanvasText; }
+ .interior-page .btn { border-color: ButtonText; }
+ .interior-page h1 span, .interior-page h2 span { -webkit-text-fill-color: CanvasText; }
+}

@@ -1,2 +1,48 @@
-:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f6f6fa;background:#080910}*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 50% 100%,#30206066,transparent 65%)}header{padding:24px clamp(20px,5vw,64px)}header a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-weight:600}header img{border-radius:9px}main{width:min(480px,calc(100% - 32px));margin:7vh auto 40px}.card{background:#13141c;border:1px solid #ffffff17;border-radius:24px;padding:32px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#aaa4e2;font-weight:600}h1{font-size:30px;line-height:1.2;font-weight:600;letter-spacing:0;margin:12px 0 16px}h2{font-size:20px;overflow-wrap:anywhere}p{line-height:1.55;color:#c3c3d1}label{display:block;margin:24px 0 8px;font-size:14px}input{display:block;width:100%;min-height:48px;padding:12px;border:1px solid #ffffff33;border-radius:10px;background:#080910;font:inherit;color:inherit}button{font:inherit;font-weight:600;min-height:46px;border:0;border-radius:24px;background:#8173ea;color:#080910;padding:12px 20px;cursor:pointer;margin-top:18px}form button{width:100%}button:disabled{opacity:.5;cursor:wait}.hint,.footnote{font-size:14px;color:#a9a9bb}.actions{display:flex;gap:10px;flex-wrap:wrap}.actions button{flex:1}.secondary{background:#ffffff12;color:inherit}.text-button{background:transparent;color:#b5aaff;font-weight:400;padding:8px 0;margin-top:12px}.footnote{text-align:center;margin:20px 16px}footer{display:flex;gap:24px;justify-content:center;padding:20px}a{color:#b5aaff}footer a{font-size:14px;text-decoration:none}#status:empty{display:none}#client-origin{overflow-wrap:anywhere}:focus-visible{outline:3px solid #b5aaff;outline-offset:4px}[hidden]{display:none!important}@media(max-width:420px){.card{padding:24px}main{margin-top:4vh}}
-.pairing-code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(28px,7vw,40px);font-weight:600;letter-spacing:.08em;color:#f6f6fa;margin:24px 0 4px;font-variant-numeric:tabular-nums}strong{font-weight:500;color:#f6f6fa}
+/* Connection callback: the same white/navy/blue palette as the public site.
+   A local font keeps the restricted page independent of external font requests. */
+@font-face { font-family: Urbanist; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/assets/fonts/urbanist-latin.woff2') format('woff2'); }
+:root { color-scheme: light; font-family: Urbanist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #151b32; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100dvh; display: flex; flex-direction: column; background: #fff; }
+header { width: min(1280px, calc(100% - 96px)); margin: 40px auto 0; padding: 12px 20px; min-height: 72px; border: 1px solid #dfe5f0; border-radius: 36px; background: #f7f9fc; }
+header a { display: inline-flex; min-height: 44px; align-items: center; gap: 12px; text-decoration: none; color: #151b32; font-size: 18px; font-weight: 500; }
+header img { border-radius: 9px; }
+main { width: min(560px, calc(100% - 40px)); margin: 64px auto; }
+.card { background: #f2f5fb; border: 0; border-radius: 28px; padding: 40px; }
+.eyebrow { font-size: 14px; line-height: 24px; color: #0a5cff; font-weight: 400; margin: 0 0 20px; }
+h1 { font-size: 36px; line-height: 42px; font-weight: 600; letter-spacing: -.025em; margin: 0 0 24px; }
+h2 { font-size: 24px; line-height: 30px; overflow-wrap: anywhere; margin-top: 32px; }
+p { font-size: 16px; line-height: 26px; color: #5f687d; }
+strong { color: #151b32; font-weight: 600; }
+label { display: block; margin: 24px 0 8px; font-size: 16px; line-height: 26px; }
+input { display: block; width: 100%; min-height: 52px; padding: 12px 16px; border: 1px solid #c7d0df; border-radius: 12px; background: #fff; font: inherit; color: inherit; }
+button { font: inherit; font-size: 16px; font-weight: 500; line-height: 26px; min-height: 52px; border: 0; border-radius: 28px; background: #6257d5; color: #fff; padding: 12px 24px; cursor: pointer; margin-top: 20px; }
+button:hover { background: #5146c3; }
+form button { width: 100%; }
+button:disabled { opacity: .5; cursor: wait; }
+.hint, .footnote { font-size: 16px; line-height: 26px; color: #5f687d; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.actions button { flex: 1; }
+.secondary { background: #e1eaff; color: #0a5cff; }
+.secondary:hover { background: #d3e0ff; }
+.text-button { background: transparent; color: #0a5cff; font-weight: 400; padding: 8px 0; margin-top: 12px; }
+.footnote { text-align: center; margin: 24px 16px 0; }
+footer { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; padding: 24px 20px 40px; margin-top: auto; }
+a { color: #0a5cff; text-underline-offset: 4px; }
+footer a { min-height: 44px; display: inline-flex; align-items: center; font-size: 16px; color: #5f687d; text-decoration: none; }
+footer a:hover { color: #0a5cff; }
+#status:empty { display: none; }
+#status:not(:empty) { border-top: 1px solid #dfe5f0; padding-top: 20px; margin-top: 24px; }
+#client-origin { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid #0a5cff; outline-offset: 4px; }
+[hidden] { display: none !important; }
+.pairing-code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: clamp(28px, 7vw, 40px); font-weight: 600; letter-spacing: .08em; color: #151b32; margin: 24px 0 4px; font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) {
+ header { width: calc(100% - 40px); margin-top: 20px; min-height: 60px; padding: 8px 16px; }
+ header a { font-size: 16px; gap: 8px; }
+ header img { width: 28px; height: 28px; }
+ main { margin-block: 40px; }
+ .card { padding: 28px 24px; border-radius: 24px; }
+ h1 { font-size: 30px; line-height: 36px; }
+}
+@media (forced-colors: active) { .card, header, input, button { border: 1px solid CanvasText; } }
