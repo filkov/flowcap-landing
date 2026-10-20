@@ -127,11 +127,12 @@
 .landing-page .closing p { color: var(--web-on-dark); margin: 24px 0; font-size: 16px; line-height: 24px; }
 .landing-page .closing .actions { justify-content: center; margin: 0; }
 .landing-page .footer { padding-block: 32px 40px; margin-top: 0; gap: 24px 40px; border: 0; background: #fff; }
+.landing-page .footer-brand { display: flex; align-items: center; gap: 16px; min-width: 0; }
 .landing-page .footer .nav-brand { color: var(--web-ink); font-size: 18px; line-height: 26px; }
 .landing-page .footer nav { gap: 12px 28px; }
 .landing-page .footer nav a { color: var(--web-muted); font-size: 16px; line-height: 24px; }
 .landing-page .footer nav a:hover { color: var(--web-accent); }
-.landing-page .footer p { color: #7d869b; font-size: 11px; line-height: 20px; padding: 0; }
+.landing-page .footer p { color: #7d869b; font-size: 11px; line-height: 20px; margin: 0; padding: 0; white-space: nowrap; }
 @media (max-width: 1280px) and (min-width: 761px) {
  .landing-page .hero { gap: 48px; }
  .landing-page .hero-copy h1 { font-size: 60px; line-height: 66px; }
