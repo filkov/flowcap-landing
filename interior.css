@@ -22,6 +22,11 @@ html { scroll-padding-top: 0; }
 .interior-page .nav-links a { min-height: 44px; color: var(--muted); font-size: 16px; font-weight: 400; line-height: 24px; white-space: nowrap; }
 .interior-page .nav-links a:hover, .interior-page .nav-links [aria-current='page'] { color: var(--violet); }
 .interior-page .nav-links [aria-current='page'] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+/* Keep the guide navigation and its entire upper gutter opaque while reading. */
+html:has(.guides-page), html:has(.guide-article-page) { --guide-header-height: 104px; --guide-header-cover: 120px; scroll-padding-top: var(--guide-header-cover); }
+.interior-page:is(.guides-page, .guide-article-page) .nav-wrap { position: sticky; top: 0; z-index: 40; background: #fff; }
+.interior-page:is(.guides-page, .guide-article-page) .nav-wrap::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: calc(var(--guide-header-cover) - var(--guide-header-height)); background: #fff; pointer-events: none; }
+.guide-article-page .reading-rail { top: calc(var(--guide-header-cover) + 16px); max-height: calc(100dvh - var(--guide-header-cover) - 48px); }
 .interior-page .btn { min-height: 56px; padding: 14px 24px; font-size: 18px; line-height: 26px; font-weight: 500; box-shadow: none; }
 .interior-page .btn-primary { color: #fff; background: #6257d5; }
 .interior-page .btn-primary:hover { background: #5146c3; }
@@ -214,6 +219,7 @@ html { scroll-padding-top: 0; }
  .interior-page .start-card .btn { padding-inline: 18px; font-size: 16px; }
 }
 @media (max-width: 760px) {
+ html:has(.guides-page), html:has(.guide-article-page) { --guide-header-height: 80px; --guide-header-cover: 92px; }
  .interior-page .container, .interior-page .nav { width: calc(100% - 40px); }
  .interior-page .nav-wrap { padding-top: 20px; }
  .interior-page .nav { min-height: 60px; padding: 8px 16px; border-radius: 30px; gap: 12px; }
