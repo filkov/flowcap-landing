@@ -1,5 +1,9 @@
 # Owner-supplied feature demos · 20 October 2026
 
+Current usage: the first four clips play in the white feature chapters. The owner
+requested the static floating phone again for the navy Handoff section; its MP4
+and poster remain archived here unchanged.
+
 The owner supplied five screen recordings for the homepage cards. All are silent
 720 × 1566 H.264 at 60 fps. They replace the earlier static campaign screens in
 Capture, Comments, Flow Map, Versions and Handoff respectively. The existing

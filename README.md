@@ -21,9 +21,11 @@ The owner-approved [Figma redesign](https://www.figma.com/design/CKtXJzKMNosC5uY
 is implemented in semantic HTML and scoped `homepage.css`: lake hero with the real
 app demo, four white feature chapters, navy handoff, native FAQ, and centered
 App Store closing action. Text, grid and spacing adapt to narrow screens.
-The five feature cards now use the owner-supplied screen recordings inside the
+The four white feature cards use the owner-supplied screen recordings inside the
 approved phone frame. They load on viewport entry and pause offscreen; see
 [`assets/demos/README.md`](assets/demos/README.md) for mapping and provenance.
+The navy handoff restores the static floating phone and explains the owner’s four
+export destinations—Codex, Figma, ZIP and PDF—with large headings and icons.
 The white feature chapters were further refined against the owner’s Anchor
 reference: compact 4:5 stages, smaller phones, larger headings and distinct
 benefit icons. This updates the original Figma row dimensions.
