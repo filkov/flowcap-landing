@@ -25,7 +25,7 @@ The four white feature cards use the owner-supplied screen recordings inside the
 approved phone frame. They load on viewport entry and pause offscreen; see
 [`assets/demos/README.md`](assets/demos/README.md) for mapping and provenance.
 The navy handoff restores the static floating phone and explains the owner’s four
-export destinations—Codex, Figma, ZIP and PDF—with large headings and icons.
+export destinations—Claude, Figma, ZIP and PDF—with large headings and icons.
 The white feature chapters were further refined against the owner’s Anchor
 reference: compact 4:5 stages, smaller phones, larger headings and distinct
 benefit icons. This updates the original Figma row dimensions.

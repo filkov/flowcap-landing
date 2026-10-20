@@ -99,6 +99,10 @@
 .landing-page .handoff-destination-copy { min-width: 0; }
 .landing-page .handoff-destination-icon { display: grid; place-items: center; width: 56px; height: 56px; flex: 0 0 56px; border-radius: 16px; color: #8fb0ff; background: #8fb0ff14; }
 .landing-page .handoff-destination-icon svg { width: 36px; height: 36px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.landing-page .handoff-destination-icon img { width: 40px; height: 40px; object-fit: contain; }
+.landing-page .handoff-destination-icon.brand-figma { position: relative; overflow: hidden; }
+/* The official SVG includes generous transparent margins around the mark. */
+.landing-page .handoff-destination-icon.brand-figma img { position: absolute; left: 50%; top: 50%; width: 68.267px; height: 85.333px; max-width: none; transform: translate(-50%, -50%); }
 .landing-page .handoff-benefits h3 { margin-bottom: 8px; font-size: 36px; font-weight: 600; line-height: 42px; letter-spacing: -.02em; }
 .landing-page .handoff-benefits p { color: var(--web-on-dark); font-size: 16px; line-height: 24px; }
 /* Native details keep every answer readable without scripting. */
