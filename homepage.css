@@ -2,6 +2,14 @@
 .landing-page { --column-gap: 40px; --soft: #929dbc; background: #0e1025; }
 .landing-page .hero { min-height: 670px; padding-block: 52px 72px; grid-template-columns: 1.4fr 1fr; gap: 40px; }
 .landing-page .hero .lead { max-width: 510px; margin-top: 28px; }
+/* Local text shadows keep the landscape visible while separating each text layer. */
+.landing-page .hero-copy .eyebrow,
+.landing-page .hero-copy .lead,
+.landing-page .hero-copy .text-link { text-shadow: 0 1px 3px #030718cc, 0 4px 14px #03071899; }
+.landing-page .hero-copy h1 { text-shadow: 0 2px 4px #03071899, 0 8px 24px #03071880; }
+/* Gradient glyphs need a shadow of their rendered shape, outside the text fill. */
+.landing-page .hero-copy h1 span { text-shadow: none; filter: drop-shadow(0 2px 4px #03071899) drop-shadow(0 6px 16px #03071866); }
+.landing-page .hero-copy .btn { text-shadow: 0 1px 3px #21164c80; }
 .landing-page .hero-phone { top: 62px; right: 0; width: min(29vw, 340px); transform: translateY(24px); }
 /* The landscape and its colour wash dissolve together into the next section.
    The transparent tail also covers the maximum scroll-parallax offset. */
