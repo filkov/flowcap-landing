@@ -9,7 +9,10 @@
 .landing-page .hero-landscape { position: absolute; inset: -40px 0 0; z-index: -2; transform: translate3d(0, var(--hero-parallax, 0px), 0); mask-image: var(--hero-blend); -webkit-mask-image: var(--hero-blend); }
 .landing-page .hero-landscape .hero-backdrop, .landing-page .hero-landscape .hero-video { z-index: auto; object-position: 50% 25%; }
 .landing-page .hero-scene::after { background: linear-gradient(90deg, #04071880, #0407181f), linear-gradient(180deg, #090b2114 35%, #090b2129 68%, #090b2173 100%); mask-image: var(--hero-blend); -webkit-mask-image: var(--hero-blend); }
-.landing-page .hero-phone { max-height: calc(100% - 86px); overflow: hidden; mask-image: linear-gradient(#000 calc(100% - 160px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 160px), transparent 100%); }
+.landing-page .hero-phone { max-height: calc(100% - 86px); overflow: hidden; mask-image: linear-gradient(#000 calc(100% - 64px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 64px), transparent 100%); }
+.landing-page .hero-phone-screen { position: absolute; top: 1%; left: 2.4%; width: 95.2%; aspect-ratio: 720 / 1566; overflow: hidden; border-radius: 14% 14% 0 0 / 6.44% 6.44% 0 0; background: #000; }
+.landing-page .hero-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
+.landing-page .hero-demo.is-playing { opacity: 1; }
 .landing-page .workflow-band { background: #0e1025; }
 .landing-page .workflow { position: relative; }
 .landing-page .hero-video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; pointer-events: none; opacity: 0; }
@@ -50,6 +53,21 @@
 .landing-page .connect { color: #b3e6da; }
 .landing-page .share { color: #d7c5ff; }
 .landing-page .workflow-steps p { margin-top: 14px; max-width: 340px; }
+
+/* One quiet, real product example for the simplified launch page. */
+.landing-page .result-proof { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 48px; border: 1px solid var(--line); border-radius: 28px; padding: 40px 64px; background: #141a30; }
+.landing-page .result-art { display: grid; justify-items: center; gap: 16px; }
+.landing-page .result-art img { width: 100%; }
+.landing-page .result-art figcaption { font-size: 12px; line-height: 1.5; color: var(--soft); text-align: center; }
+.landing-page .result-copy .eyebrow { margin-bottom: 16px; }
+.landing-page .result-copy h2 { font-size: var(--type-card); }
+.landing-page .result-copy > p { margin-top: 20px; color: var(--muted); font-size: 16px; }
+.landing-page .result-copy .text-link { margin-top: 20px; }
+@media (max-width: 1100px) and (min-width: 761px) { .landing-page .result-proof { grid-template-columns: .9fr 1.1fr; gap: 32px; padding: 32px; } }
+@media (max-width: 760px) {
+ .landing-page .result-proof { grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; border-radius: 22px; }
+ .landing-page .result-copy { grid-row: 1; }
+}
 
 /* Feature chapters: close-up product details and concise, specific benefits. */
 .landing-page .product-story { --card-gap: 24px; padding: 72px 0 80px; background: #0e1025; }
@@ -246,7 +264,7 @@
  .landing-page .hero .eyebrow { margin-bottom: 16px; }
  .landing-page .hero .lead { margin-top: 20px; }
  .landing-page .actions { margin-top: 24px; gap: 8px 20px; }
- .landing-page .hero-phone { top: auto; right: auto; margin-top: 32px; width: min(78%, 300px); height: 450px; max-height: none; mask-image: linear-gradient(#000 calc(100% - 140px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 140px), transparent 100%); }
+ .landing-page .hero-phone { top: auto; right: auto; margin-top: 32px; width: min(78%, 300px); height: 450px; max-height: none; mask-image: linear-gradient(#000 calc(100% - 56px), transparent 100%); -webkit-mask-image: linear-gradient(#000 calc(100% - 56px), transparent 100%); }
  .landing-page .workflow { padding-block: 40px 48px; }
  .landing-page .workflow-steps { gap: 0; }
  .landing-page .workflow-steps li { padding: 24px 0 24px 40px; }

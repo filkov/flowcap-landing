@@ -1,37 +1,41 @@
 (() => {
   const scene = document.querySelector('.hero-scene');
-  const backgroundVideo = document.querySelector('.hero-video');
-  if (scene && backgroundVideo) {
+  const setupLoop = (video, target) => {
+    if (!video || !target) return;
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     let inView = true;
-    const syncBackground = () => {
+    const syncPlayback = () => {
       if (motionPreference.matches || navigator.connection?.saveData) {
-        backgroundVideo.pause();
-        backgroundVideo.classList.remove('is-playing');
+        video.pause();
+        video.classList.remove('is-playing');
         return;
       }
       if (!inView || document.hidden) {
-        backgroundVideo.pause();
+        video.pause();
         return;
       }
-      if (!backgroundVideo.getAttribute('src')) backgroundVideo.src = backgroundVideo.dataset.src;
-      backgroundVideo.play()?.catch(() => backgroundVideo.classList.remove('is-playing'));
+      if (!video.getAttribute('src')) video.src = video.dataset.src;
+      video.play()?.catch(() => video.classList.remove('is-playing'));
     };
-    backgroundVideo.addEventListener('playing', () => {
-      if (!motionPreference.matches) backgroundVideo.classList.add('is-playing');
+    video.addEventListener('playing', () => {
+      if (!motionPreference.matches && !navigator.connection?.saveData && inView && !document.hidden) video.classList.add('is-playing');
+      else syncPlayback();
     });
-    backgroundVideo.addEventListener('error', () => backgroundVideo.classList.remove('is-playing'));
-    document.addEventListener('visibilitychange', syncBackground);
-    motionPreference.addEventListener('change', syncBackground);
+    video.addEventListener('error', () => video.classList.remove('is-playing'));
+    document.addEventListener('visibilitychange', syncPlayback);
+    motionPreference.addEventListener('change', syncPlayback);
+    navigator.connection?.addEventListener?.('change', syncPlayback);
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(([entry]) => {
         inView = entry.isIntersecting;
-        syncBackground();
+        syncPlayback();
       });
-      observer.observe(scene);
+      observer.observe(target);
     }
-    syncBackground();
-  }
+    syncPlayback();
+  };
+  setupLoop(document.querySelector('.hero-video'), scene);
+  setupLoop(document.querySelector('.hero-demo'), document.querySelector('.hero-phone'));
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   // A small scroll-only background offset; foreground content stays in place.
   const landscape = document.querySelector('.hero-landscape');
