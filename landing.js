@@ -1,9 +1,9 @@
 (() => {
   const scene = document.querySelector('.hero-scene');
-  const setupLoop = (video, target, onFirstFrame) => {
+  const setupLoop = (video, target, onFirstFrame, deferUntilVisible = false) => {
     if (!video || !target) return;
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let inView = true;
+    let inView = !deferUntilVisible || !('IntersectionObserver' in window);
     let framePending = false;
     let framePresented = false;
     const revealFrame = () => {
@@ -74,6 +74,10 @@
       startBackgroundWhenBuffered();
     });
   } else setupLoop(background, scene);
+  // Feature demos load only as their cards enter the viewport.
+  document.querySelectorAll('.product-demo').forEach(video => {
+    setupLoop(video, video.closest('figure'), undefined, true);
+  });
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   // A small scroll-only background offset; foreground content stays in place.
   const landscape = document.querySelector('.hero-landscape');

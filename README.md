@@ -21,7 +21,10 @@ The owner-approved [Figma redesign](https://www.figma.com/design/CKtXJzKMNosC5uY
 is implemented in semantic HTML and scoped `homepage.css`: lake hero with the real
 app demo, four white feature chapters, navy handoff, native FAQ, and centered
 App Store closing action. Text, grid and spacing adapt to narrow screens.
-New approved artwork exports and provenance are in
+The five feature cards now use the owner-supplied screen recordings inside the
+approved phone frame. They load on viewport entry and pause offscreen; see
+[`assets/demos/README.md`](assets/demos/README.md) for mapping and provenance.
+Initial approved artwork exports and provenance are in
 [`assets/design-20261020/README.md`](assets/design-20261020/README.md).
 Both App Store badges use the same transparent 180 × 60 asset. Existing demo
 startup, reduced-motion/data-saving fallbacks and fixed-camera lake loop remain.
