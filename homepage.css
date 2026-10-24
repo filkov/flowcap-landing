@@ -43,7 +43,7 @@
 .landing-page .hero-video { pointer-events: none; opacity: 0; }
 .landing-page .hero-video.is-playing { opacity: 1; }
 .landing-page .hero-scene::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: #04071833; }
-.landing-page .hero { display: grid; grid-template-columns: minmax(0, 720fr) minmax(0, 460fr); align-items: center; gap: 100px; min-height: 0; height: 788px; padding: 0; }
+.landing-page .hero { display: grid; grid-template-columns: minmax(0, 720fr) minmax(0, 460fr); align-items: center; gap: 100px; min-height: 0; height: 960px; padding: 0; }
 .landing-page .hero-copy { padding: 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; color: #fff; }
 .landing-page .hero-copy h1 { font-size: 72px; line-height: 78px; text-wrap: initial; text-shadow: 0 5px 20px #0307184d; }
 .landing-page .hero-copy .eyebrow { color: #8fb0ff; }
@@ -153,7 +153,7 @@
 }
 @media (max-width: 1000px) and (min-width: 761px) {
  .landing-page .container { width: calc(100% - 64px); }
- .landing-page .hero { gap: 32px; height: 720px; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+ .landing-page .hero { gap: 32px; height: 840px; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
  .landing-page .hero-copy h1 { font-size: 48px; line-height: 54px; }
  .landing-page .hero-copy .lead { font-size: 18px; line-height: 29px; }
  .landing-page .hero-device-slot { height: auto; }
@@ -177,7 +177,7 @@
  .landing-page .nav-links a { font-size: 13px; min-width: 0; white-space: nowrap; }
  .landing-page .hero-scene { margin-top: -96px; padding-top: 96px; }
  .landing-page .hero-landscape { inset: -18px 0; }
- .landing-page .hero { display: flex; flex-direction: column; align-items: stretch; gap: 40px; height: auto; padding: 44px 0 40px; }
+ .landing-page .hero { display: flex; flex-direction: column; align-items: stretch; gap: 40px; height: auto; padding: 76px 0 72px; }
  .landing-page .hero-copy { gap: 24px; }
  .landing-page .hero-copy h1 { font-size: clamp(38px, 8.8vw, 58px); line-height: 1.08; }
  .landing-page .hero-copy .lead { font-size: 18px; line-height: 29px; }
