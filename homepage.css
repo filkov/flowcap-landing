@@ -127,6 +127,7 @@
 .landing-page .faq-item[open] .faq-close-icon { display: block; }
 .landing-page .closing-area { padding-bottom: 64px; background: #fff; }
 .landing-page .closing { padding: 48px; border: 0; border-radius: 32px; background: var(--web-navy); color: #fff; text-align: center; }
+.landing-page .closing-app-icon { display: block; width: 80px; height: 80px; margin: 0 auto 28px; }
 .landing-page .closing h2 { font-size: 52px; line-height: 58px; }
 .landing-page .closing p { color: var(--web-on-dark); margin: 24px 0; font-size: 16px; line-height: 24px; }
 .landing-page .closing .actions { justify-content: center; margin: 0; }
@@ -209,6 +210,7 @@
  .landing-page .faq-item summary { font-size: 16px; line-height: 24px; min-height: 72px; gap: 16px; }
  .landing-page .closing-area { padding-bottom: 32px; }
  .landing-page .closing { padding: 40px 24px; border-radius: 24px; }
+ .landing-page .closing-app-icon { width: 64px; height: 64px; margin-bottom: 24px; }
  .landing-page .closing h2 { font-size: 32px; line-height: 38px; }
  .landing-page .footer { gap: 20px; padding-block: 24px 32px; }
  .landing-page .footer nav { gap: 6px 20px; }
