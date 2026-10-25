@@ -1,17 +1,19 @@
 # Current feature demo replacements · 25 October 2026
 
 Owner-supplied files from `Flow-Capture-Landing-Latest 2/Master` replace Comments
-and Handoff on the homepage. Both are silent 1080 × 2348 H.264 at 60 fps;
-Comments lasts 5.55 s and Handoff 6 s. Runtime files retain the compressed streams
-exactly, remuxed only for fast start. Packet SHA-256 comparison passed for both.
+and Handoff on the homepage. Versions is supplied separately from
+`Flow-Capture-Landing-Latest 3/Master`. All three are silent 1080 × 2348 H.264 at 60 fps;
+Comments lasts 5.55 s, Handoff 6 s and Versions 5.15 s. Runtime files retain the compressed streams
+exactly, remuxed only for fast start. Packet SHA-256 comparison passed for all three.
 Posters are the first frame, encoded to quality-88 WebP at full source resolution.
 
 | Supplied file | Current runtime MP4 | Supplied SHA-256 |
 | --- | --- | --- |
 | 02-Comments.mp4 | comments-20261025.mp4 | 33fe0601d16180f61d0fd4c15102c88571c634cc1c3e60565499139e52229199 |
 | 05-Handoff.mp4 | handoff-20261025.mp4 | 3a4f43180f356ad053e4bb5764eba30ef2e10a31887a9d2cd033ad4191cd07e5 |
+| 04-Versions.mp4 | versions-20261025.mp4 | 2e6b7e9b80b37b74d5c94fb6d4b2d0e3b7d57a9f2c240ef2291ba091f4f55012 |
 
-Comments keeps the existing white card. Handoff now plays in the same approved
+Comments and Versions keep the existing white cards. Handoff now plays in the same approved
 full-phone frame, with a fixed −7° tilt; the phone itself has no autonomous motion.
 This supersedes the earlier static Handoff choice at the owner's new request.
 Playback uses the existing lazy loader, muted inline loop, viewport pause and
@@ -23,7 +25,7 @@ Versioned filenames avoid stale browser caches and preserve the earlier assets.
 # Original feature demos · 20 October 2026
 
 Original 20 October usage: four clips in the white chapters, with a static Handoff
-phone. The Comments/Handoff usage below is superseded by the 25 October files.
+phone. The Comments/Handoff/Versions usage below is superseded by the 25 October files.
 The earlier MP4s, posters and floating-phone artwork remain archived unchanged.
 
 The owner supplied five screen recordings for the homepage cards. All are silent
