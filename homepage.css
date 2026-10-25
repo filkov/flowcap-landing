@@ -96,8 +96,8 @@
 .landing-page .handoff-copy .feature-description { color: var(--web-on-dark); }
 .landing-page .handoff-copy .btn { width: 276px; max-width: 100%; }
 .landing-page .handoff-note { color: var(--web-on-dark); font-size: 16px; line-height: 24px; max-width: 500px; }
-.landing-page .handoff-art { max-width: none; position: relative; aspect-ratio: 640 / 700; width: 100%; overflow: hidden; border-radius: 32px; }
-.landing-page .handoff-art img { position: absolute; width: 135%; height: 135%; max-width: none; left: -17.5%; top: -17.5%; object-fit: cover; }
+.landing-page .handoff-art { display: flex; align-items: center; justify-content: center; max-width: none; position: relative; aspect-ratio: 640 / 700; width: 100%; overflow: hidden; border-radius: 32px; }
+.landing-page .handoff-art .product-device { transform: rotate(-7deg); filter: drop-shadow(0 24px 32px #02040a44); }
 .landing-page .handoff-benefits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; list-style: none; padding: 0; margin: 48px 0 0; }
 .landing-page .handoff-benefits li { min-width: 0; display: flex; align-items: flex-start; gap: 16px; border-top: 1px solid #b7c4e02b; padding-top: 24px; }
 .landing-page .handoff-destination-copy { min-width: 0; }
