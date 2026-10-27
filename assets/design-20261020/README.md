@@ -11,7 +11,8 @@ artwork. No app interface or device was generated or reconstructed.
 | map.webp | 1758:10929 | 624 × 1276, 2× transparent phone; same outer screen clipping as Figma |
 | versions.webp | 1758:11020 | 574 × 674, rendered export includes original shadows |
 | handoff.webp | 1761:10561 | 1536 × 1152, approved underlying image from 4000 × 3000 original |
-| logo.webp | 1758:10448 header brand | 64 × 64, existing white brand icon |
+| logo.webp | 1758:10450 header brand (inside 1758:10448 navigation) | 64 × 64, existing white brand icon |
+| app-icon-light-320.webp | 1758:10450, re-exported 27 Oct | 320 × 320 lossless WebP from the original 1024 × 1024 image fill; closing banner at 80/64 CSS px |
 | benefit.svg | capture chapter benefit icon | Native 20 × 20 Figma vector export |
 | plus.svg / minus.svg | 1761:10575 FAQ | Native 20 × 20 Figma vector exports |
 
