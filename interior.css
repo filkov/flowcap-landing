@@ -14,19 +14,21 @@ html { scroll-padding-top: 0; }
 .interior-page .lead { max-width: 640px; margin-top: 24px; color: var(--muted); font-size: 18px; line-height: 30px; }
 .interior-page .availability, .interior-page .small-note, .interior-page .article-meta { color: var(--muted); font-size: 14px; line-height: 24px; }
 .interior-page strong { color: var(--text); font-weight: 600; }
-.interior-page .nav-wrap { position: relative; inset: auto; padding: 32px 0 0; background: #fff; border: 0; backdrop-filter: none; }
-.interior-page .nav { width: min(var(--wrap), calc(100% - 96px)); max-width: none; min-height: 72px; margin: 0 auto; padding: 12px 20px; border: 1px solid var(--line); border-radius: 36px; background: #f7f9fc; gap: 24px; }
+.interior-page .nav-wrap { position: sticky; top: 0; z-index: 40; padding: 0; background: #fff; border: 0; border-bottom: 1px solid #e8edf5; backdrop-filter: none; }
+.interior-page .nav { width: min(var(--wrap), calc(100% - 96px)); max-width: none; min-height: 80px; margin: 0 auto; padding: 0; border: 0; border-radius: 0; background: transparent; gap: 32px; }
 .interior-page .nav-brand { color: var(--text); font-size: 18px; line-height: 26px; font-weight: 500; letter-spacing: 0; gap: 12px; }
 .interior-page .nav-brand img { width: 32px; height: 32px; border-radius: 9px; }
 .interior-page .nav-links { display: flex; gap: 32px; }
-.interior-page .nav-links a { min-height: 44px; color: var(--muted); font-size: 16px; font-weight: 400; line-height: 24px; white-space: nowrap; }
+.interior-page .nav-links a { position: relative; min-height: 44px; color: var(--muted); font-size: 16px; font-weight: 400; line-height: 24px; white-space: nowrap; }
 .interior-page .nav-links a:hover, .interior-page .nav-links [aria-current='page'] { color: var(--violet); }
-.interior-page .nav-links [aria-current='page'] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
-/* Keep the guide navigation and its entire upper gutter opaque while reading. */
-html:has(.guides-page), html:has(.guide-article-page) { --guide-header-height: 104px; --guide-header-cover: 120px; scroll-padding-top: var(--guide-header-cover); }
-.interior-page:is(.guides-page, .guide-article-page) .nav-wrap { position: sticky; top: 0; z-index: 40; background: #fff; }
-.interior-page:is(.guides-page, .guide-article-page) .nav-wrap::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: calc(var(--guide-header-cover) - var(--guide-header-height)); background: #fff; pointer-events: none; }
-.guide-article-page .reading-rail { top: calc(var(--guide-header-cover) + 16px); max-height: calc(100dvh - var(--guide-header-cover) - 48px); }
+.interior-page .nav-links [aria-current='page'] { text-decoration: none; }
+.interior-page .nav-links [aria-current='page']::after { content: ''; position: absolute; inset-inline: 0; bottom: -18px; height: 2px; border-radius: 2px; background: var(--violet); }
+.interior-page .language-switcher summary { background: #f4f6fa; box-shadow: inset 0 0 0 1px #e8edf5; }
+.interior-page .language-switcher summary:hover, .interior-page .language-switcher[open] summary { background: #edf3ff; }
+/* A single opaque bar covers scrolling content on every interior route. */
+html:has(.interior-page) { --guide-header-height: 80px; --guide-header-cover: 96px; scroll-padding-top: var(--guide-header-cover); }
+.interior-page .nav-wrap::after { content: none; }
+.interior-page .reading-rail { top: var(--guide-header-cover); max-height: calc(100dvh - var(--guide-header-cover) - 32px); }
 .interior-page .btn { min-height: 56px; padding: 14px 24px; font-size: 18px; line-height: 26px; font-weight: 500; box-shadow: none; }
 .interior-page .btn-primary { color: #fff; background: #6257d5; }
 .interior-page .btn-primary:hover { background: #5146c3; }
@@ -219,10 +221,11 @@ html:has(.guides-page), html:has(.guide-article-page) { --guide-header-height: 1
  .interior-page .start-card .btn { padding-inline: 18px; font-size: 16px; }
 }
 @media (max-width: 760px) {
- html:has(.guides-page), html:has(.guide-article-page) { --guide-header-height: 80px; --guide-header-cover: 92px; }
+ html:has(.interior-page) { --guide-header-height: 64px; --guide-header-cover: 80px; }
  .interior-page .container, .interior-page .nav { width: calc(100% - 40px); }
- .interior-page .nav-wrap { padding-top: 20px; }
- .interior-page .nav { min-height: 60px; padding: 8px 16px; border-radius: 30px; gap: 12px; }
+ .interior-page .nav-wrap { padding-top: 0; }
+ .interior-page .nav { min-height: 64px; padding: 0; border-radius: 0; gap: 12px; }
+ .interior-page .nav-links [aria-current='page']::after { bottom: -10px; }
  .interior-page .nav-brand { font-size: 16px; gap: 8px; }
  .interior-page .nav-brand img { width: 28px; height: 28px; }
  .interior-page .nav-links { gap: 18px; }

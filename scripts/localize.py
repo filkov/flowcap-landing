@@ -158,7 +158,7 @@ def enhance_english(text,p):
   match=re.search(r'<div class="nav-links">[\s\S]*?</div>',text)
   assert match,p
   text=text[:match.end()]+control+text[match.end():]
- head='<!-- locale-head --><link rel="stylesheet" href="/locales/languages.css?v=20261027-5"><script src="/locales/languages.js?v=20261027-1" defer></script>'+alternates(path)+'<!-- /locale-head -->'
+ head='<!-- locale-head --><link rel="stylesheet" href="/locales/languages.css?v=20261027-6"><script src="/locales/languages.js?v=20261027-1" defer></script>'+alternates(path)+'<!-- /locale-head -->'
  text=text.replace('</head>',head+'</head>')
  text=compact_nav(text)
  return text
@@ -230,7 +230,7 @@ def translate_page(text,p,lang,catalog):
  if p in ('privacy/index.html','terms/index.html'):
   notice='<p class="translation-notice"><a href="'+path+'" lang="en">'+LABELS[lang][2]+'</a></p>'
   out=out.replace('<div class="article-body">',notice+'<div class="article-body">',1)
- head='<link rel="stylesheet" href="/locales/languages.css?v=20261027-5"><script src="/locales/runtime/'+lang+'.js?v=20261027-1" defer></script><script src="/locales/languages.js?v=20261027-1" defer></script>'+alternates(path)
+ head='<link rel="stylesheet" href="/locales/languages.css?v=20261027-6"><script src="/locales/runtime/'+lang+'.js?v=20261027-1" defer></script><script src="/locales/languages.js?v=20261027-1" defer></script>'+alternates(path)
  out=out.replace('</head>',head+'</head>')
  out=compact_nav(out)
  return out
