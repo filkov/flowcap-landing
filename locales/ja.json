@@ -377,5 +377,6 @@
   "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "ガイドを見る<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>",
   "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "iPhoneアプリのユーザーフローを記録。画面、つながり、コメントをひとつに整理し、UX分析やチームでの検討、ClaudeやFigmaでの作業に活用できます。",
   "Flow Capture on iPhone": "iPhoneのFlow Capture",
-  "Flow Capture home screen with saved app collections.": "保存したアプリのコレクションが並ぶFlow Captureのホーム画面。"
+  "Flow Capture home screen with saved app collections.": "保存したアプリのコレクションが並ぶFlow Captureのホーム画面。",
+  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>引き継ぎ"
 }

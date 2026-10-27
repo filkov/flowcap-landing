@@ -377,5 +377,6 @@
   "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "Consulter les guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>",
   "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "Enregistrez des parcours utilisateur dans les apps iPhone. Regroupez écrans, liens et commentaires pour l’analyse UX, les échanges en équipe et la suite du travail dans Claude ou Figma.",
   "Flow Capture on iPhone": "Flow Capture sur iPhone",
-  "Flow Capture home screen with saved app collections.": "Écran d’accueil de Flow Capture avec les collections d’apps enregistrées."
+  "Flow Capture home screen with saved app collections.": "Écran d’accueil de Flow Capture avec les collections d’apps enregistrées.",
+  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Transmettre"
 }
