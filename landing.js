@@ -5,12 +5,13 @@
     let navigationFrame = 0;
     const syncNavigation = () => {
       navigationFrame = 0;
-      navigation.classList.toggle('is-at-top', window.scrollY <= 32);
+      navigation.classList.toggle('is-floating', !!scene && scene.getBoundingClientRect().bottom <= 0);
     };
     window.addEventListener('scroll', () => {
       if (!navigationFrame) navigationFrame = requestAnimationFrame(syncNavigation);
     }, { passive: true });
     window.addEventListener('pageshow', syncNavigation);
+    window.addEventListener('resize', syncNavigation);
     syncNavigation();
   }
   const setupLoop = (video, target, onFirstFrame, deferUntilVisible = false) => {

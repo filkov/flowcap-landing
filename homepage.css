@@ -29,17 +29,17 @@
 .landing-page .btn-primary { color: #fff; background: #6257d5; }
 .landing-page .btn-primary:hover { background: #6b5cdd; }
 .landing-page a:focus-visible, .landing-page summary:focus-visible { outline-color: var(--web-accent); }
-/* The hero navigation settles into a floating bar as the page scrolls. */
-.landing-page .nav-wrap { height: 112px; padding-top: 40px; position: sticky; top: -24px; z-index: 40; background: none; border: 0; backdrop-filter: none; pointer-events: none; }
+/* Wide static navigation in the hero; light floating navigation after it. */
+.landing-page .nav-wrap { height: 112px; padding-top: 40px; position: relative; z-index: 40; background: none; border: 0; backdrop-filter: none; pointer-events: none; }
 .landing-page .nav { width: min(var(--wrap), calc(100% - 96px)); min-height: 72px; height: 72px; padding: 20px; gap: 24px; border: 1px solid transparent; border-radius: 36px; background: transparent; -webkit-backdrop-filter: saturate(1) blur(0); backdrop-filter: saturate(1) blur(0); pointer-events: auto; transition: width .28s ease, background-color .24s ease, border-color .24s ease, box-shadow .24s ease, backdrop-filter .24s ease, -webkit-backdrop-filter .24s ease; }
-.landing-page .nav-wrap:not(.is-at-top) .nav { width: min(1040px, calc(100% - 96px)); background: #ffffffb8; border-color: #ffffffd9; box-shadow: inset 0 1px 1px #ffffffb3, 0 10px 32px #0f172a14; -webkit-backdrop-filter: saturate(1.8) blur(24px); backdrop-filter: saturate(1.8) blur(24px); }
+.landing-page .nav-wrap.is-floating .nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); width: min(1040px, calc(100% - 96px)); background: #ffffffb8; border-color: #ffffffd9; box-shadow: inset 0 1px 1px #ffffffb3, 0 10px 32px #0f172a14; -webkit-backdrop-filter: saturate(1.8) blur(24px); backdrop-filter: saturate(1.8) blur(24px); }
 .landing-page .nav-brand, .landing-page .nav-links a, .landing-page .nav .language-switcher { transition: color .24s ease; }
-.landing-page .nav-wrap:not(.is-at-top) .nav-brand { color: var(--web-ink); }
-.landing-page .nav-wrap:not(.is-at-top) .nav-links a { color: #424a59; }
-.landing-page .nav-wrap:not(.is-at-top) .nav-links a:hover { color: var(--web-accent); }
-.landing-page .nav-wrap:not(.is-at-top) .language-switcher { color: #424a59; }
+.landing-page .nav-wrap.is-floating .nav-brand { color: var(--web-ink); }
+.landing-page .nav-wrap.is-floating .nav-links a { color: #424a59; }
+.landing-page .nav-wrap.is-floating .nav-links a:hover { color: var(--web-accent); }
+.landing-page .nav-wrap.is-floating .language-switcher { color: #424a59; }
 @supports not (backdrop-filter: blur(1px)) {
- .landing-page .nav-wrap:not(.is-at-top) .nav { background: #f5f7fb; }
+ .landing-page .nav-wrap.is-floating .nav { background: #f5f7fb; }
 }
 .landing-page .nav-brand { color: #fff; font-size: 18px; line-height: 26px; font-weight: 500; letter-spacing: 0; gap: 12px; }
 .landing-page .nav-brand img { width: 32px; height: 32px; border-radius: 9px; }
@@ -179,9 +179,9 @@
  .landing-page { font-size: 18px; }
  .landing-page .container { width: calc(100% - 40px); }
  .landing-page h2 { font-size: 38px; line-height: 44px; }
- .landing-page .nav-wrap { height: 96px; padding-top: 20px; top: -8px; }
+ .landing-page .nav-wrap { height: 96px; padding-top: 20px; }
  .landing-page .nav { height: 60px; min-height: 60px; padding: 12px 16px; gap: 12px; border-radius: 30px; }
- .landing-page .nav-wrap:not(.is-at-top) .nav { width: calc(100% - 40px); }
+ .landing-page .nav-wrap.is-floating .nav { top: 12px; width: calc(100% - 40px); }
  .landing-page .nav-brand { font-size: 16px; gap: 8px; }
  .landing-page .nav-brand img { width: 28px; height: 28px; }
  .landing-page .nav-links { gap: 18px; }
