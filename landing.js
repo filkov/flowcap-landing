@@ -1,5 +1,18 @@
 (() => {
   const scene = document.querySelector('.hero-scene');
+  const navigation = document.querySelector('.landing-page .nav-wrap');
+  if (navigation) {
+    let navigationFrame = 0;
+    const syncNavigation = () => {
+      navigationFrame = 0;
+      navigation.classList.toggle('is-at-top', window.scrollY <= 32);
+    };
+    window.addEventListener('scroll', () => {
+      if (!navigationFrame) navigationFrame = requestAnimationFrame(syncNavigation);
+    }, { passive: true });
+    window.addEventListener('pageshow', syncNavigation);
+    syncNavigation();
+  }
   const setupLoop = (video, target, onFirstFrame, deferUntilVisible = false) => {
     if (!video || !target) return;
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
