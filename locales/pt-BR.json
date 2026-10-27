@@ -7,7 +7,6 @@
   "Guides": "Guias",
   "Primary": "Primário",
   "Capture the journey.<br>Keep the context.": "Capture a jornada.<br>Preserve o contexto.",
-  "Turn an iPhone recording into ordered screens, contextual feedback, and a handoff your designer or coding agent can use.": "Transforme uma gravação do iPhone em telas organizadas com comentários em contexto, prontas para seu designer ou agente de programação continuar o trabalho.",
   "Download Flow Capture on the App Store": "Baixe Flow Capture no App Store",
   "Flow Capture demo: recording an iPhone journey, reviewing its screens, and preparing an AI handoff.": "Demonstração Flow Capture: gravando um fluxo de usuário do iPhone, revisando suas telas e preparando uma transferência de IA.",
   "Flow Capture demo on iPhone": "Demonstração Flow Capture no iPhone",
@@ -375,5 +374,6 @@
   "Users can permanently delete their Flow Capture cloud account and associated cloud data in <strong>Settings › Account › Delete Account</strong>. Local projects and recordings are not removed by account deletion. Deleting a Flow Capture account does not cancel an Apple subscription; subscriptions can be managed in the App Store account settings.": "Os usuários podem excluir permanentemente sua conta na nuvem Flow Capture e os dados da nuvem associados em <strong>Settings › Account › Delete Account</strong>. Projetos e gravações locais não são removidos pela exclusão da conta. Excluir uma conta Flow Capture não cancela uma assinatura da Apple; as assinaturas podem ser gerenciadas nas configurações da conta App Store.",
   "Our <a href=\"/privacy/\">Privacy Policy</a> explains local storage, optional cloud features, retention and account deletion. You can delete your cloud account in <strong>Settings → Account → Delete Account</strong>. Local projects are managed separately on your iPhone.": "Nossa <a href=\"/privacy/\">Política de Privacidade</a> explica o armazenamento local, recursos opcionais de nuvem, retenção e exclusão de conta. Você pode excluir sua conta na nuvem em <strong>Settings → Account → Delete Account</strong>. Os projetos locais são gerenciados separadamente no seu iPhone.",
   "Open Flow Capture on your iPhone, then go to <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.": "Abra Flow Capture no seu iPhone e vá para <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.",
-  "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "Explore os guias<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>"
+  "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "Explore os guias<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>",
+  "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "Grave jornadas de usuário em apps do iPhone. Reúna telas, conexões e comentários para análise de UX, discussões com a equipe e a continuidade do trabalho no Claude ou no Figma."
 }

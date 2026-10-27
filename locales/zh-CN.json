@@ -7,7 +7,6 @@
   "Guides": "使用指南",
   "Primary": "基本的",
   "Capture the journey.<br>Keep the context.": "记录操作过程。<br>保留完整上下文。",
-  "Turn an iPhone recording into ordered screens, contextual feedback, and a handoff your designer or coding agent can use.": "将 iPhone 录屏整理为有序的页面和关联评论，让设计师或编程智能体接手时，掌握所需的完整背景。",
   "Download Flow Capture on the App Store": "在 App Store 上下载 Flow Capture",
   "Flow Capture demo: recording an iPhone journey, reviewing its screens, and preparing an AI handoff.": "Flow Capture 演示：记录 iPhone 用户流程、检查其屏幕并准备 AI 切换。",
   "Flow Capture demo on iPhone": "iPhone 上的 Flow Capture 演示",
@@ -375,5 +374,6 @@
   "Users can permanently delete their Flow Capture cloud account and associated cloud data in <strong>Settings › Account › Delete Account</strong>. Local projects and recordings are not removed by account deletion. Deleting a Flow Capture account does not cancel an Apple subscription; subscriptions can be managed in the App Store account settings.": "用户可以永久删除其Flow Capture云帐户以及<strong>Settings › Account › Delete Account</strong>中关联的云数据。删除帐户不会删除本地项目和录音。删除 Flow Capture 帐户并不会取消 Apple 订阅；订阅可以在 App Store 帐户设置中进行管理。",
   "Our <a href=\"/privacy/\">Privacy Policy</a> explains local storage, optional cloud features, retention and account deletion. You can delete your cloud account in <strong>Settings → Account → Delete Account</strong>. Local projects are managed separately on your iPhone.": "我们的<a href=\"/privacy/\">隐私政策</a>解释了本地存储、可选云功能、保留和帐户删除。您可以删除<strong>Settings → Account → Delete Account</strong>中的云帐户。本地项目在您的 iPhone 上单独管理。",
   "Open Flow Capture on your iPhone, then go to <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.": "在 iPhone 上打开 Flow Capture，然后转到 <strong>Settings → Codex &amp; Claude → Add a Computer</strong>。",
-  "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "查看使用指南<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>"
+  "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "查看使用指南<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>",
+  "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "记录 iPhone 应用中的用户操作流程。将页面、连接关系和评论整理为完整资料，用于 UX 分析、团队讨论，以及在 Claude 或 Figma 中继续工作。"
 }
