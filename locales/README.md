@@ -37,3 +37,19 @@ the English legal body and published downloads remain unchanged.
 The initial translation pass used Google's translation endpoint on public website
 copy, followed by terminology and copy edits in the committed catalogues. There
 is no translation API credential, endpoint or dependency in the published runtime.
+
+## Editorial conventions
+
+Use clear, task-based instructions. Translate common nouns and feature descriptions
+(including microphone and voice comments); do not preserve English merely because
+it resembles an interface label. Keep exact app menu commands only where readers
+need to locate the matching control, and explain their purpose in the local language.
+Preserve product names, file names (especially START_HERE.txt and Screens), code,
+links, limits and release-state facts. In Russian, use «сценарий», «расшифровка»,
+«подключение» and «передача материалов» consistently. Handoff never means transfer
+of control; transcription never means recording new audio.
+
+27 October editorial pass: revised Russian copy across every route, corrected
+common-noun localization and mistranslations in the other six catalogues, restored
+exact app command/file names where translations had obscured them, and simplified
+the English microphone instructions. English legal source text is unchanged.
