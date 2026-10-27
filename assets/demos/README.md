@@ -1,3 +1,12 @@
+# Static recording-guide illustration · 27 October 2026
+
+`capture-guide-screen.webp` is the unmodified 3.6 s frame of the existing
+`capture.mp4`, encoded as quality-90 WebP at its native 720 × 1566 resolution.
+The recording article places it inside the same approved full-phone frame used
+on the homepage. This removes the old baked-in screenshot's lower black gap;
+no app screen, phone frame or product state was invented. Other demo files stay
+unchanged. The guide illustration remains static.
+
 # Current feature demo replacements · 25 October 2026
 
 Owner-supplied files from `Flow-Capture-Landing-Latest 2/Master` replace Comments

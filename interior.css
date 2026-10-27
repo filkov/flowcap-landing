@@ -94,11 +94,16 @@ html:has(.interior-page) { --guide-header-height: 80px; --guide-header-cover: 96
 .interior-page .article-body a:hover, .interior-page .setup-steps a:hover { text-decoration-color: currentColor; }
 .article-note { background: #edf3ff; border-left: 2px solid #0a5cff; padding: 24px 28px; margin-block: 32px; border-radius: 0 16px 16px 0; }
 .interior-page .article-note p { margin: 8px 0 0; }
-.reading-visual { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 32px; margin: 32px 0; background: var(--surface); border-radius: 24px; overflow: hidden; }
-.reading-visual > div { display: flex; align-items: center; justify-content: center; height: 458px; overflow: hidden; padding: 24px; }
-.reading-visual img { height: 410px; width: auto; max-width: none; object-fit: contain; }
-.reading-visual figcaption { font-size: 22px; line-height: 30px; color: var(--text); padding: 28px 32px 28px 0; }
-.reading-visual.is-handoff img { height: 580px; }
+.reading-visual { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 32px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
+.reading-visual > div { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 0; padding: 32px 32px 24px; }
+.reading-visual img { display: block; height: 360px; width: auto; max-width: 100%; object-fit: contain; }
+.reading-visual figcaption { width: 100%; max-width: 640px; margin: 0; font-size: 16px; font-weight: 400; line-height: 26px; color: var(--muted); text-align: center; padding: 0 32px 28px; }
+.reading-visual.is-handoff img { width: min(100%, 520px); height: auto; }
+.reading-visual .guide-device { position: relative; flex: 0 0 auto; width: 176px; max-width: 100%; }
+.reading-visual .guide-device-frame { width: 100%; height: auto; }
+.reading-visual .guide-device-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; border-radius: 15% / 6.9%; overflow: hidden; background: #000; }
+.reading-visual .guide-device-screen img { width: 100%; height: 100%; object-fit: contain; }
+
 .related-guides { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 32px; }
 .interior-page .related-guides h2 { font-size: 28px; margin-bottom: 16px; }
 .related-guides a { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); font-size: 18px; line-height: 28px; color: var(--text); }
@@ -196,8 +201,8 @@ html:has(.interior-page) { --guide-header-height: 80px; --guide-header-cover: 96
  .connect-banner { padding: 32px; gap: 20px; }
  .connect-banner > img { display: none; }
  .interior-page .connect-banner h2 { font-size: 24px; }
- .reading-visual { gap: 20px; }
- .reading-visual figcaption { font-size: 20px; line-height: 28px; padding-right: 24px; }
+ .reading-visual { gap: 0; }
+ .reading-visual figcaption { padding-inline: 24px; }
  .step-content { padding-left: 0; }
  .server-block { grid-template-columns: minmax(0, 1fr); }
  .server-block .btn { justify-self: start; }
@@ -263,11 +268,14 @@ html:has(.interior-page) { --guide-header-height: 80px; --guide-header-cover: 96
  .interior-page .article-body h2 { font-size: 28px; line-height: 34px; }
  .reading-section { padding-top: 20px; margin-top: 12px; }
  .article-note { padding: 20px 24px; }
- .reading-visual { grid-template-columns: minmax(0, 1fr); gap: 0; margin-block: 24px; }
- .reading-visual > div { height: 396px; padding: 24px; }
- .reading-visual img { height: 348px; }
- .reading-visual figcaption { font-size: 18px; line-height: 28px; padding: 0 24px 24px; }
- .reading-visual.is-handoff img { height: 490px; }
+ .reading-visual { gap: 0; margin-block: 24px; }
+ .reading-visual > div { height: auto; padding: 28px 20px 20px; }
+ .reading-visual img { height: 320px; }
+ .reading-visual .guide-device { width: 156px; }
+ .reading-visual .guide-device-frame { height: auto; }
+ .reading-visual .guide-device-screen img { height: 100%; }
+ .reading-visual figcaption { font-size: 15px; line-height: 24px; padding: 0 20px 24px; }
+ .reading-visual.is-handoff img { width: min(100%, 520px); height: auto; }
  .related-guides a { font-size: 16px; line-height: 26px; }
  .contact-card, .start-card { padding: 28px 24px; margin-top: 28px; }
  .contact-email { font-size: 20px; line-height: 28px; }
