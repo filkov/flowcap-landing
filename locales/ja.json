@@ -375,5 +375,7 @@
   "Our <a href=\"/privacy/\">Privacy Policy</a> explains local storage, optional cloud features, retention and account deletion. You can delete your cloud account in <strong>Settings → Account → Delete Account</strong>. Local projects are managed separately on your iPhone.": "弊社の<a href=\"/privacy/\">プライバシー ポリシー</a>では、ローカル ストレージ、オプションのクラウド機能、保持、アカウントの削除について説明しています。クラウド アカウントは <strong>Settings → Account → Delete Account</strong> で削除できます。ローカル プロジェクトは iPhone 上で個別に管理されます。",
   "Open Flow Capture on your iPhone, then go to <strong>Settings → Codex &amp; Claude → Add a Computer</strong>.": "iPhone で Flow Capture を開き、<strong>Settings → Codex &amp; Claude → Add a Computer</strong> に移動します。",
   "Explore the guides<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>": "ガイドを見る<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-arrow\"/></svg>",
-  "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "iPhoneアプリのユーザーフローを記録。画面、つながり、コメントをひとつに整理し、UX分析やチームでの検討、ClaudeやFigmaでの作業に活用できます。"
+  "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "iPhoneアプリのユーザーフローを記録。画面、つながり、コメントをひとつに整理し、UX分析やチームでの検討、ClaudeやFigmaでの作業に活用できます。",
+  "Flow Capture on iPhone": "iPhoneのFlow Capture",
+  "Flow Capture home screen with saved app collections.": "保存したアプリのコレクションが並ぶFlow Captureのホーム画面。"
 }
