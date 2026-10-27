@@ -1,6 +1,6 @@
 /* Shared, native disclosure. All language pages and links work without JS. */
 .nav .language-switcher { position: relative; flex: 0 0 auto; margin-left: 0; color: inherit; z-index: 60; }
-.language-switcher summary { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 8px; border: 0; border-radius: 12px; font: inherit; font-size: 13px; line-height: 20px; font-weight: 500; cursor: pointer; list-style: none; white-space: nowrap; }
+.language-switcher summary { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 8px 0; border: 0; border-radius: 12px; font: inherit; font-size: 13px; line-height: 20px; font-weight: 500; cursor: pointer; list-style: none; white-space: nowrap; }
 .language-switcher summary::-webkit-details-marker { display: none; }
 .language-switcher summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .language-switcher summary .language-chevron { width: 14px; height: 14px; transition: transform .15s ease; }
@@ -13,7 +13,9 @@
 .language-options a:hover { color: #0a5cff; background: #f2f5fb; }
 .language-options a[aria-current] { color: #0a5cff; background: #edf3ff; font-weight: 500; }
 .language-options a[aria-current]::after { content: '✓'; margin-left: auto; padding-left: 12px; }
-.nav .nav-links a { white-space: nowrap; }
+.landing-page .nav, .interior-page .nav { gap: 32px; }
+.landing-page .nav-links, .interior-page .nav-links { gap: 32px; }
+.nav .nav-links a { min-width: 0; white-space: nowrap; }
 .nav-label-short { display: none; }
 .translation-notice { margin: 0 0 28px; color: var(--muted, #5f687d); font-size: 14px; line-height: 22px; }
 .translation-notice a { text-decoration: underline; text-underline-offset: 3px; }
@@ -26,7 +28,7 @@
 body > .language-switcher { position: absolute; right: 24px; top: 20px; z-index: 10; }
 @media (max-width: 1100px) {
  .nav .language-switcher { margin-left: 0; }
- .landing-page .nav, .interior-page .nav { gap: 16px; }
+ .landing-page .nav, .interior-page .nav { gap: 20px; }
  .landing-page .nav-links, .interior-page .nav-links { gap: 20px; }
 }
 @media (max-width: 760px) {
@@ -34,7 +36,7 @@ body > .language-switcher { position: absolute; right: 24px; top: 20px; z-index:
  .landing-page .nav-links, .interior-page .nav-links { gap: 12px; }
  .nav-label-full { display: none; }
  .nav-label-short { display: inline; }
- .language-switcher summary { gap: 4px; padding: 6px 2px; font-size: 12px; }
+ .language-switcher summary { gap: 4px; padding: 6px 0; font-size: 12px; }
  .language-switcher summary svg { width: 16px; height: 16px; }
  .language-switcher summary .language-chevron { width: 10px; height: 10px; }
  .language-options { top: calc(100% + 8px); width: 208px; max-height: calc(100dvh - 120px); overflow-y: auto; }
