@@ -50,6 +50,16 @@
 .landing-page .nav-brand img { width: 32px; height: 32px; border-radius: 9px; }
 .landing-page .nav-links { gap: 32px; }
 .landing-page .nav-links a { color: #fff; font-size: 16px; font-weight: 400; line-height: 24px; min-width: 104px; }
+.landing-page .nav-download { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; border-radius: 24px; background: #ffffffdf; color: var(--web-ink); font-size: 16px; line-height: 24px; font-weight: 600; white-space: nowrap; transition: background-color .2s ease; }
+.landing-page .nav-wrap.is-floating .nav-download { background: #151b320d; }
+.landing-page .nav-download:hover, .landing-page .nav-wrap.is-floating .nav-download:hover { background: #dde3ed; }
+.landing-page .nav-download-icon { display: none; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 760px) {
+ .landing-page .nav-wrap .nav { padding-inline: 8px; gap: 8px; }
+ .landing-page .nav-download { width: 40px; min-height: 40px; padding: 10px; }
+ .landing-page .nav-download-label { display: none; }
+ .landing-page .nav-download-icon { display: block; }
+}
 /* Original landscape, fixed camera loop and a small scroll-only parallax. */
 .landing-page .hero-scene { isolation: isolate; position: relative; margin-top: -112px; padding-top: 112px; padding-bottom: 0; margin-bottom: 0; overflow: hidden; background: var(--web-navy); }
 .landing-page .hero-landscape { position: absolute; inset: -32px 0; z-index: -2; transform: translate3d(0, var(--hero-parallax, 0px), 0); }
@@ -122,7 +132,7 @@
 .landing-page .feature-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #edf3ff; font-size: 14px; line-height: 22px; }
 .landing-page .feature-label .icon { width: 18px; height: 18px; }
 /* One dimensional chapter marker; supporting icons stay quiet and unboxed. */
-.landing-page :is(#capture, .flow-step-capture) { --chip-rgb: 53 199 89; --chip-ink: #238342; }
+.landing-page :is(#capture, .flow-step-capture) { --chip-rgb: 236 87 151; --chip-ink: #ae326c; }
 .landing-page :is(#voice, .flow-step-comment) { --chip-rgb: 0 192 232; --chip-ink: #007b98; }
 .landing-page :is(#map, .flow-step-connect) { --chip-rgb: 98 108 250; --chip-ink: #5058cf; }
 .landing-page :is(#versions, .flow-step-compare) { --chip-rgb: 255 141 40; --chip-ink: #a4550e; }
