@@ -73,7 +73,7 @@
 .landing-page .hero-demo.is-playing { opacity: 1; }
 /* Compact portrait stages balance the larger editorial feature copy. */
 /* A compact, looping overview of the product workflow. */
-.landing-page .flow-ribbon { background: #fff; padding-block: 24px 0; }
+.landing-page .flow-ribbon { background: #fff; padding-block: 56px 32px; }
 .landing-page .flow-ribbon-scroll { overflow-x: auto; scrollbar-width: thin; scrollbar-color: #dfe5f0 transparent; }
 .landing-page .flow-ribbon-scroll:focus-visible { outline: 2px solid var(--web-accent); outline-offset: -4px; }
 .landing-page .flow-ribbon-track { position: relative; height: 260px; min-width: 1000px; }
@@ -81,7 +81,7 @@
 .landing-page .flow-ribbon-line path { animation: flow-ribbon-dashes 24s linear infinite; }
 .landing-page .flow-ribbon-steps { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; height: 100%; margin: 0; padding: 0; list-style: none; }
 .landing-page .flow-ribbon-steps li { display: flex; justify-content: center; align-items: flex-start; min-width: 0; padding-top: var(--step-top); }
-.landing-page .flow-ribbon .feature-label { position: relative; gap: 10px; padding: 12px 18px; border-radius: 18px; color: var(--web-accent); font-size: 18px; line-height: 28px; font-weight: 400; white-space: nowrap; box-shadow: 0 0 0 8px #fff; }
+.landing-page .flow-ribbon .feature-label { position: relative; gap: 10px; padding: 12px 18px; border-radius: 18px; color: var(--web-accent); font-size: 18px; line-height: 28px; font-weight: 400; white-space: nowrap; box-shadow: none; }
 .landing-page .flow-ribbon .icon { width: 20px; height: 20px; flex: 0 0 20px; }
 .flow-step-capture { --step-top: 78px; }
 .flow-step-comment { --step-top: 145px; }
@@ -90,7 +90,7 @@
 .flow-step-handoff { --step-top: 88px; }
 @keyframes flow-ribbon-dashes { to { stroke-dashoffset: -120; } }
 @media (max-width: 760px) {
- .landing-page .flow-ribbon { padding-top: 8px; }
+ .landing-page .flow-ribbon { padding-block: 32px 24px; }
  .landing-page .flow-ribbon-track { height: 220px; width: 1000px; margin-inline: 24px; }
  .landing-page .flow-ribbon .feature-label { font-size: 16px; line-height: 24px; padding: 10px 16px; }
  .flow-step-capture { --step-top: 66px; }
@@ -120,12 +120,15 @@
 .landing-page .feature-copy .feature-description { max-width: 580px; }
 .landing-page .feature-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #edf3ff; font-size: 14px; line-height: 22px; }
 .landing-page .feature-label .icon { width: 18px; height: 18px; }
+/* One dimensional chapter marker; supporting icons stay quiet and unboxed. */
+.landing-page .feature-copy .feature-label { padding: 9px 14px; border: 1px solid #fff; border-radius: 13px; background: linear-gradient(160deg, #edf3ff, #dce7ff); box-shadow: inset 0 1px 1px #ffffffb3, 0 4px 12px #314e8b0b; transform: rotate(-2deg); transform-origin: left center; }
+
 .landing-page .feature-label .icon, .landing-page .benefit-icon .icon { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .landing-page .feature-description { max-width: 516px; color: var(--web-muted); font-size: 20px; line-height: 32px; }
-.landing-page .feature-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; padding: 8px 0 0; margin: 0; list-style: none; width: 100%; max-width: 580px; }
-.landing-page .feature-benefits li { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; line-height: 24px; min-width: 0; }
-.landing-page .benefit-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex: 0 0 36px; border-radius: 11px; color: var(--web-accent); background: #edf3ff; }
-.landing-page .benefit-icon .icon { width: 20px; height: 20px; }
+.landing-page .feature-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; padding: 8px 0 0; margin: 0; list-style: none; width: 100%; max-width: 580px; }
+.landing-page .feature-benefits li { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: var(--web-muted); font-size: 16px; font-weight: 400; line-height: 24px; min-width: 0; }
+.landing-page .benefit-icon { display: flex; align-items: center; justify-content: flex-start; width: 28px; height: 28px; flex: 0 0 28px; color: #7b8495; background: none; }
+.landing-page .benefit-icon .icon { width: 26px; height: 26px; stroke-width: 1.6; }
 /* Two type levels per chapter: the heading and one shared supporting style. */
 .landing-page .feature-copy :is(.feature-label, .feature-description, .feature-benefits li, .text-link) { font-size: var(--feature-text-size); font-weight: 400; line-height: var(--feature-text-leading); letter-spacing: 0; }
 .landing-page .text-link .icon { width: 22px; height: 22px; flex: 0 0 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
