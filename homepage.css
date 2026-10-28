@@ -51,12 +51,17 @@
 .landing-page .nav-brand img { width: 32px; height: 32px; border-radius: 9px; }
 .landing-page .nav-links { gap: 32px; }
 .landing-page .nav-links a { color: #fff; font-size: 16px; font-weight: 400; line-height: 24px; min-width: 104px; }
+.landing-page .nav-wrap :is(.nav, .nav-links) { column-gap: 24px; }
 .landing-page .nav .language-switcher { margin-inline: -12px; }
 .landing-page .nav-download { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; border-radius: 24px; background: #ffffffdf; color: var(--web-ink); font-size: 16px; line-height: 24px; font-weight: 600; white-space: nowrap; transition: background-color .2s ease; }
 .landing-page .nav-wrap.is-floating .nav-download { min-height: 56px; padding-block: 16px; border-radius: 28px; background: #151b320d; }
 .landing-page .nav-download:hover, .landing-page .nav-wrap.is-floating .nav-download:hover { background: #dde3ed; }
 .landing-page .nav-download-icon { display: none; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 1100px) {
+ .landing-page .nav-wrap :is(.nav, .nav-links) { column-gap: 16px; }
+}
 @media (max-width: 760px) {
+ .landing-page .nav-wrap :is(.nav, .nav-links) { column-gap: 8px; }
  .landing-page .nav-wrap .nav { padding-inline: 8px; gap: 8px; }
  .landing-page .nav .language-switcher { margin-inline: -8px; }
  .landing-page .nav-download { width: 40px; min-height: 40px; padding: 10px; }
