@@ -159,17 +159,14 @@
   "Guides.": "Справка.",
   "Practical guides to recording a journey, keeping feedback in context, and sharing your next flow.": "Как записать сценарий, сохранить комментарии в контексте и передать результат для дальнейшей работы.",
   "A saved Flow Capture journey with ordered iPhone screenshots.": "Сохранённый сценарий Flow Capture с последовательностью экранов iPhone.",
-  "Recording<span>4 min read</span>": "Запись<span>4 минуты на чтение</span>",
   "Record a clear app journey.": "Запишите понятный сценарий.",
   "Capture one task, review its screens, and keep the moments that matter.": "Запишите выполнение одной задачи, просмотрите экраны и оставьте важные моменты.",
   "Read the recording guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "Как записать сценарий<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
   "Screen-linked comments in Flow Capture.": "Комментарии, связанные с экраном, в Flow Capture.",
-  "Voice comments<span>4 min read</span>": "Голосовые комментарии<span>4 минуты на чтение</span>",
   "Keep feedback in context.": "Обратная связь — в контексте.",
   "Add voice or text comments beside the screens they explain.": "Добавляйте голосовые или текстовые комментарии рядом с экранами, которые они объясняют.",
   "Read the comments guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "Как работать с комментариями<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
   "Flow Capture’s approved Review Complete screen on an angled iPhone.": "Экран Review Complete в Flow Capture на iPhone.",
-  "AI handoff<span>4 min read</span>": "Передача в ИИ<span>4 минуты на чтение</span>",
   "Continue in Claude.": "Продолжите работу в Claude.",
   "Prepare selected screens and comments for a focused AI review.": "Отберите экраны и комментарии для анализа конкретной задачи с помощью ИИ.",
   "Read the handoff guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "Как передать материалы в ИИ<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
@@ -378,5 +375,8 @@
   "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "Записывайте пользовательские сценарии в приложениях на iPhone. Объединяйте экраны, связи и комментарии в материал для UX-анализа, обсуждения с командой и работы с Claude или Figma.",
   "Flow Capture on iPhone": "Flow Capture на iPhone",
   "Flow Capture home screen with saved app collections.": "Главный экран Flow Capture с сохранёнными коллекциями приложений.",
-  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Передача"
+  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Передача",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>Recording</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>Запись</span><span class=\"story-read-time\">4 минуты на чтение</span>",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M6 11v1a6 6 0 0 0 12 0v-1M12 18v3m-3 0h6\"/></svg>Voice comments</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M6 11v1a6 6 0 0 0 12 0v-1M12 18v3m-3 0h6\"/></svg>Голосовые комментарии</span><span class=\"story-read-time\">4 минуты на чтение</span>",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7\"/></svg>AI handoff</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7\"/></svg>Передача в ИИ</span><span class=\"story-read-time\">4 минуты на чтение</span>"
 }

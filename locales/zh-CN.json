@@ -159,17 +159,14 @@
   "Guides.": "使用指南。",
   "Practical guides to recording a journey, keeping feedback in context, and sharing your next flow.": "了解如何录制操作过程、为页面添加关联评论，并分享整理好的流程。",
   "A saved Flow Capture journey with ordered iPhone screenshots.": "已保存的 Flow Capture 用户流程以及订购的 iPhone 屏幕截图。",
-  "Recording<span>4 min read</span>": "录音<span>4 分钟阅读</span>",
   "Record a clear app journey.": "录制清晰的操作流程。",
   "Capture one task, review its screens, and keep the moments that matter.": "记录一项任务，检查页面，保留重要时刻。",
   "Read the recording guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "阅读录音指南<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
   "Screen-linked comments in Flow Capture.": "Flow Capture 中的屏幕链接评论。",
-  "Voice comments<span>4 min read</span>": "语音评论<span>阅读 4 分钟</span>",
   "Keep feedback in context.": "让反馈始终对应具体页面。",
   "Add voice or text comments beside the screens they explain.": "在他们解释的屏幕旁边添加语音或文字评论。",
   "Read the comments guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "阅读评论指南<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
   "Flow Capture’s approved Review Complete screen on an angled iPhone.": "iPhone 上的 Flow Capture Review Complete 界面。",
-  "AI handoff<span>4 min read</span>": "AI 交接<span>4 分钟阅读</span>",
   "Continue in Claude.": "在 Claude 中继续工作。",
   "Prepare selected screens and comments for a focused AI review.": "选好需要的页面和评论，让 AI 分析更有针对性。",
   "Read the handoff guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "查看交接指南<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
@@ -378,5 +375,8 @@
   "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "记录 iPhone 应用中的用户操作流程。将页面、连接关系和评论整理为完整资料，用于 UX 分析、团队讨论，以及在 Claude 或 Figma 中继续工作。",
   "Flow Capture on iPhone": "iPhone 上的 Flow Capture",
   "Flow Capture home screen with saved app collections.": "Flow Capture 主界面，显示已保存的应用收藏集。",
-  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>交接"
+  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>交接",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>Recording</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>录音</span><span class=\"story-read-time\">4 分钟阅读</span>",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M6 11v1a6 6 0 0 0 12 0v-1M12 18v3m-3 0h6\"/></svg>Voice comments</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M6 11v1a6 6 0 0 0 12 0v-1M12 18v3m-3 0h6\"/></svg>语音评论</span><span class=\"story-read-time\">阅读 4 分钟</span>",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7\"/></svg>AI handoff</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7\"/></svg>AI 交接</span><span class=\"story-read-time\">4 分钟阅读</span>"
 }

@@ -159,17 +159,14 @@
   "Guides.": "Anleitungen.",
   "Practical guides to recording a journey, keeping feedback in context, and sharing your next flow.": "So nimmst du Abläufe auf, behältst Feedback im Kontext und teilst die relevanten Screens.",
   "A saved Flow Capture journey with ordered iPhone screenshots.": "Ein gespeicherter Flow Capture-Benutzerfluss mit bestellten iPhone-Screenshots.",
-  "Recording<span>4 min read</span>": "Aufzeichnung<span>4 Min. Lesung</span>",
   "Record a clear app journey.": "Einen klaren Ablauf aufnehmen.",
   "Capture one task, review its screens, and keep the moments that matter.": "Halte eine Aufgabe fest, prüfe die Screens und behalte die wichtigen Momente.",
   "Read the recording guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "Lesen Sie die Aufnahmeanleitung<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
   "Screen-linked comments in Flow Capture.": "Mit dem Bildschirm verknüpfte Kommentare in Flow Capture.",
-  "Voice comments<span>4 min read</span>": "Sprachkommentare<span>4 Minuten Lesezeit</span>",
   "Keep feedback in context.": "Feedback im richtigen Kontext.",
   "Add voice or text comments beside the screens they explain.": "Fügen Sie neben den erklärten Bildschirmen Sprach- oder Textkommentare hinzu.",
   "Read the comments guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "Lesen Sie den Kommentarführer<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
   "Flow Capture’s approved Review Complete screen on an angled iPhone.": "Der Bildschirm Review Complete in Flow Capture auf einem geneigten iPhone.",
-  "AI handoff<span>4 min read</span>": "KI-Übergabe<span>4 Minuten Lesezeit</span>",
   "Continue in Claude.": "In Claude weiterarbeiten.",
   "Prepare selected screens and comments for a focused AI review.": "Bereite ausgewählte Screens und Kommentare für eine gezielte KI-Analyse vor.",
   "Read the handoff guide<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>": "Lesen Sie den Übergabeleitfaden<svg class=\"link-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>",
@@ -378,5 +375,8 @@
   "Record user flows in iPhone apps. Organize screens, connections, and comments for UX analysis, team reviews, and handoff to Claude or Figma.": "Zeichne Nutzerabläufe in iPhone-Apps auf. Bündle Screens, Verbindungen und Kommentare für UX-Analysen, die Abstimmung im Team und die Weiterarbeit in Claude oder Figma.",
   "Flow Capture on iPhone": "Flow Capture auf dem iPhone",
   "Flow Capture home screen with saved app collections.": "Startbildschirm von Flow Capture mit gespeicherten App-Sammlungen.",
-  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Weitergeben"
+  "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Handoff": "<svg class=\"icon\" aria-hidden=\"true\"><use href=\"#i-share\"/></svg>Weitergeben",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>Recording</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>Aufzeichnung</span><span class=\"story-read-time\">4 Min. Lesung</span>",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M6 11v1a6 6 0 0 0 12 0v-1M12 18v3m-3 0h6\"/></svg>Voice comments</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M6 11v1a6 6 0 0 0 12 0v-1M12 18v3m-3 0h6\"/></svg>Sprachkommentare</span><span class=\"story-read-time\">4 Minuten Lesezeit</span>",
+  "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7\"/></svg>AI handoff</span><span class=\"story-read-time\">4 min read</span>": "<span class=\"story-chip\"><svg class=\"story-chip-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7\"/></svg>KI-Übergabe</span><span class=\"story-read-time\">4 Minuten Lesezeit</span>"
 }
