@@ -1,6 +1,7 @@
 /* Shared, native disclosure. All language pages and links work without JS. */
 .nav .language-switcher { position: relative; flex: 0 0 auto; margin-left: -12px; color: inherit; z-index: 60; }
 .language-switcher summary { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 12px; font: inherit; font-size: 13px; line-height: 20px; font-weight: 500; cursor: pointer; list-style: none; white-space: nowrap; }
+.nav .language-switcher summary { font-family: inherit; font-size: 16px; line-height: 24px; font-weight: 400; letter-spacing: 0; }
 .language-switcher summary::-webkit-details-marker { display: none; }
 .language-switcher summary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .language-switcher summary .language-chevron { width: 14px; height: 14px; transition: transform .15s ease; }
@@ -40,6 +41,7 @@ body > .language-switcher { position: absolute; right: 24px; top: 20px; z-index:
  .nav-label-short { display: inline; }
  .nav .language-switcher { margin-left: -8px; }
  .language-switcher summary { gap: 4px; padding: 6px 8px; font-size: 12px; }
+ .nav .language-switcher summary { font-size: 13px; }
  .language-switcher summary svg { width: 16px; height: 16px; }
  .language-switcher summary .language-chevron { width: 10px; height: 10px; }
  .language-options { top: calc(100% + 8px); width: 208px; max-height: calc(100dvh - 120px); overflow-y: auto; }
