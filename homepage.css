@@ -4,7 +4,8 @@
  --web-ink: #151b32;
  --web-muted: #5f687d;
  --web-navy: #0e1025;
- --web-stage: #f2f5fb;
+ --web-paper: #f4f5f8;
+ --web-stage: #e9edf5;
  --web-line: #dfe5f0;
  --web-accent: #0a5cff;
  --web-on-dark: #b7c4e0;
@@ -13,7 +14,7 @@
  --line: var(--web-line);
  color-scheme: light;
  color: var(--web-ink);
- background: #fff;
+ background: var(--web-paper);
  font-size: 20px;
  line-height: 1.6;
  letter-spacing: 0;
@@ -36,7 +37,7 @@
 /* Overlapping masked blur layers soften the content behind the floating bar. */
 .landing-page .nav-wrap.is-floating::before, .landing-page .nav-wrap.is-floating::after { content: ''; position: fixed; inset: 0 0 auto; height: 160px; pointer-events: none; }
 .landing-page .nav-wrap.is-floating::before { z-index: 0; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); -webkit-mask-image: linear-gradient(#000 0%, #000b 32%, transparent 82%); mask-image: linear-gradient(#000 0%, #000b 32%, transparent 82%); }
-.landing-page .nav-wrap.is-floating::after { z-index: 1; background: linear-gradient(#ffffff80, #ffffff30 45%, #ffffff00); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); -webkit-mask-image: linear-gradient(#000 0%, #000c 48%, transparent 100%); mask-image: linear-gradient(#000 0%, #000c 48%, transparent 100%); }
+.landing-page .nav-wrap.is-floating::after { z-index: 1; background: linear-gradient(#f4f5f880, #f4f5f830 45%, #f4f5f800); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); -webkit-mask-image: linear-gradient(#000 0%, #000c 48%, transparent 100%); mask-image: linear-gradient(#000 0%, #000c 48%, transparent 100%); }
 .landing-page .nav-brand, .landing-page .nav-links a, .landing-page .nav .language-switcher { transition: color .24s ease; }
 .landing-page .nav-wrap.is-floating .nav-brand { color: var(--web-ink); }
 .landing-page .nav-wrap.is-floating .nav-links a { color: #424a59; }
@@ -73,7 +74,7 @@
 .landing-page .hero-demo.is-playing { opacity: 1; }
 /* Compact portrait stages balance the larger editorial feature copy. */
 /* A compact, looping overview of the product workflow. */
-.landing-page .flow-ribbon { background: #fff; padding-block: 56px 32px; }
+.landing-page .flow-ribbon { background: var(--web-paper); padding-block: 56px 32px; }
 .landing-page .flow-ribbon-scroll { overflow-x: auto; scrollbar-width: thin; scrollbar-color: #dfe5f0 transparent; }
 .landing-page .flow-ribbon-scroll:focus-visible { outline: 2px solid var(--web-accent); outline-offset: -4px; }
 .landing-page .flow-ribbon-track { position: relative; height: 260px; min-width: 1000px; }
@@ -100,14 +101,14 @@
  .flow-step-handoff { --step-top: 74px; }
 }
 @media (prefers-reduced-motion: reduce) { .landing-page .flow-ribbon-line path { animation: none; } }
-.landing-page .product-features { padding-block: 72px; background: #fff; }
+.landing-page .product-features { padding-block: 72px; background: var(--web-paper); }
 .landing-page .feature-chapter { display: grid; grid-template-columns: 480px minmax(0, 1fr); align-items: center; gap: 128px; padding-block: 64px; }
 .landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 1fr) 480px; }
 .landing-page .feature-art { min-width: 0; width: 100%; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; border-radius: 32px; overflow: hidden; background: var(--web-stage); }
 .landing-page .feature-art .product-device { width: 50%; filter: drop-shadow(0 14px 16px #14233b14); }
-.landing-page .art-voice { background: #f0f5fa; }
-.landing-page .art-map { background: #eff4fc; }
-.landing-page .art-versions { background: #f4f2fb; }
+.landing-page .art-voice { background: #eaf0f4; }
+.landing-page .art-map { background: #e8edf7; }
+.landing-page .art-versions { background: #eeebf5; }
 .landing-page .product-device { position: relative; flex: 0 0 auto; width: 48.75%; max-width: none; }
 .landing-page .product-device-frame { display: block; width: 100%; height: auto; }
 .landing-page .product-device-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; overflow: hidden; border-radius: 15% / 6.9%; background: #000; }
@@ -163,7 +164,7 @@
 .landing-page .handoff-benefits h3 { margin-bottom: 8px; font-size: 36px; font-weight: 600; line-height: 42px; letter-spacing: -.02em; }
 .landing-page .handoff-benefits p { color: var(--web-on-dark); font-size: 16px; line-height: 24px; }
 /* Native details keep every answer readable without scripting. */
-.landing-page .faq { background: #fff; padding-block: 112px; }
+.landing-page .faq { background: var(--web-paper); padding-block: 112px; }
 .landing-page .faq-grid { display: grid; grid-template-columns: minmax(0, 384fr) minmax(0, 832fr); gap: 64px; align-items: start; }
 .landing-page .faq-side { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
 .landing-page .faq-side h2 { max-width: none; margin: 0; }
@@ -178,13 +179,13 @@
 .landing-page .faq-close-icon { display: none; }
 .landing-page .faq-item[open] .faq-open-icon { display: none; }
 .landing-page .faq-item[open] .faq-close-icon { display: block; }
-.landing-page .closing-area { padding-bottom: 64px; background: #fff; }
+.landing-page .closing-area { padding-bottom: 64px; background: var(--web-paper); }
 .landing-page .closing { padding: 48px; border: 0; border-radius: 32px; background: var(--web-navy); color: #fff; text-align: center; }
 .landing-page .closing-app-icon { display: block; width: 80px; height: 80px; margin: 0 auto 28px; }
 .landing-page .closing h2 { font-size: 52px; line-height: 58px; }
 .landing-page .closing p { color: var(--web-on-dark); margin: 24px 0; font-size: 16px; line-height: 24px; }
 .landing-page .closing .actions { justify-content: center; margin: 0; }
-.landing-page .footer { padding-block: 32px 40px; margin-top: 0; gap: 24px 40px; border: 0; background: #fff; }
+.landing-page .footer { padding-block: 32px 40px; margin-top: 0; gap: 24px 40px; border: 0; background: var(--web-paper); }
 .landing-page .footer-brand { display: flex; align-items: center; gap: 16px; min-width: 0; }
 .landing-page .footer .nav-brand { color: var(--web-ink); font-size: 18px; line-height: 26px; }
 .landing-page .footer nav { gap: 12px 28px; }
