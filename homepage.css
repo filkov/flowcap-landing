@@ -78,7 +78,7 @@
 .landing-page .hero-device-slot { min-width: 0; display: flex; align-items: center; justify-content: center; height: 720px; }
 .landing-page .hero-phone { position: relative; top: auto; right: auto; width: 346px; max-width: 100%; height: auto; max-height: none; margin: 0; transform: none; filter: none; mask-image: none; -webkit-mask-image: none; }
 .landing-page .hero-phone > img { width: 100%; height: auto; }
-.landing-page .hero-phone-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; overflow: hidden; border-radius: 15% / 6.9%; background: #000; }
+.landing-page .hero-phone-screen { position: absolute; top: 1.25%; bottom: 2.03%; left: 4.15%; width: 91.7%; aspect-ratio: auto; overflow: hidden; border-radius: 15% / 6.9%; background: #000; }
 .landing-page .hero-phone-screen > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .landing-page .hero-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .hero-demo.is-playing { opacity: 1; }
@@ -134,9 +134,9 @@
 /* One dimensional chapter marker; supporting icons stay quiet and unboxed. */
 .landing-page :is(#capture, .flow-step-capture) { --chip-rgb: 236 87 151; --chip-ink: #ae326c; }
 .landing-page :is(#voice, .flow-step-comment) { --chip-rgb: 0 192 232; --chip-ink: #007b98; }
-.landing-page :is(#map, .flow-step-connect) { --chip-rgb: 98 108 250; --chip-ink: #5058cf; }
+.landing-page :is(#map, .flow-step-connect) { --chip-rgb: 53 199 89; --chip-ink: #238342; }
 .landing-page :is(#versions, .flow-step-compare) { --chip-rgb: 255 141 40; --chip-ink: #a4550e; }
-.landing-page :is(.handoff-section, .flow-step-handoff) { --chip-rgb: 53 199 89; --chip-ink: #238342; }
+.landing-page :is(.handoff-section, .flow-step-handoff) { --chip-rgb: 98 108 250; --chip-ink: #5058cf; }
 .landing-page :is(.feature-copy, .flow-ribbon, .handoff-copy) .feature-label { color: var(--chip-ink); border: 2px solid #fffffff0; background: linear-gradient(180deg, #ffffff60, #ffffff00 58%), rgb(var(--chip-rgb) / .2); box-shadow: inset 0 1px 1px #ffffffa6, inset 0 -1px 2px rgb(var(--chip-rgb) / .12), 0 6px 18px rgb(var(--chip-rgb) / .09); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .landing-page :is(.feature-copy, .handoff-copy) .feature-label { padding: 10px 16px; gap: 10px; border-radius: 16px; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -.02em; transform: rotate(-3deg); transform-origin: left center; }
 .landing-page :is(.feature-copy, .handoff-copy) .feature-label .icon { width: 24px; height: 24px; }
@@ -155,7 +155,7 @@
 .landing-page .handoff-section { padding-block: 96px; background: var(--web-navy); color: #fff; }
 .landing-page .handoff-layout { display: grid; grid-template-columns: minmax(0, 544fr) minmax(0, 640fr); align-items: center; gap: 96px; }
 .landing-page .handoff-copy .eyebrow { color: #8fb0ff; }
-.landing-page .handoff-copy .feature-label { color: #226e3b; background: linear-gradient(180deg, #ffffff80, #ffffff00 58%), #c5ecd1; }
+.landing-page .handoff-copy .feature-label { color: #4147b2; background: linear-gradient(180deg, #ffffff80, #ffffff00 58%), #d4d6fa; }
 .landing-page .handoff-copy h2 { font-size: 64px; line-height: 68px; }
 .landing-page .handoff-copy .feature-description { color: var(--web-on-dark); }
 .landing-page .handoff-copy .btn { width: 276px; max-width: 100%; }
