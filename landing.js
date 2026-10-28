@@ -112,84 +112,100 @@
     document.fonts?.ready.then(measure);
     measure();
   }
-  const setupLoop = (video, target, onFirstFrame, deferUntilVisible = false) => {
-    if (!video || !target) return;
-    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let inView = !deferUntilVisible || !('IntersectionObserver' in window);
-    let framePending = false;
-    let framePresented = false;
-    const revealFrame = () => {
-      framePending = false;
-      if (video.paused || video.readyState < 2 || !inView || document.hidden || motionPreference.matches || navigator.connection?.saveData) return;
-      video.classList.add('is-playing');
-      if (!framePresented) {
-        framePresented = true;
-        onFirstFrame?.();
-      }
-    };
-    const syncPlayback = () => {
-      if (motionPreference.matches || navigator.connection?.saveData) {
-        video.pause();
-        video.classList.remove('is-playing');
-        return;
-      }
-      if (!inView || document.hidden) {
-        video.pause();
-        return;
-      }
-      if (!video.getAttribute('src')) {
-        video.src = window.innerWidth <= 760 && video.dataset.srcMobile ? video.dataset.srcMobile : video.dataset.src;
-      }
-      video.play()?.catch(() => video.classList.remove('is-playing'));
-    };
+  // One visible video plays at a time, including the decorative hero background.
+  const playbackPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mediaItems = [...document.querySelectorAll('.hero-video, .product-demo')].map(video => ({
+    video,
+    target: video.classList.contains('product-demo') ? video.closest('figure') : scene,
+    button: video.closest('figure')?.querySelector('.demo-restart'),
+    framePending: false,
+    playPending: false
+  })).filter(item => item.target);
+  let activeMedia = null, manualMedia = null, playbackFrame = 0;
+  const mayPlay = item => activeMedia === item && !document.hidden &&
+    (manualMedia === item || (!playbackPreference.matches && !navigator.connection?.saveData));
+  const revealVideo = item => {
+    item.framePending = false;
+    if (mayPlay(item) && !item.video.paused && item.video.readyState >= 2) item.video.classList.add('is-playing');
+  };
+  const applyPlayback = next => {
+    activeMedia = next;
+    mediaItems.forEach(item => {
+      item.target.classList.toggle('is-active-demo', mayPlay(item));
+      if (!mayPlay(item) && !item.video.paused) item.video.pause();
+    });
+    if (!next || !mayPlay(next)) return;
+    if (next.playPending) { next.resumePending = next.video.paused; return; }
+    if (!next.video.paused) return;
+    const { video } = next;
+    if (!video.getAttribute('src')) {
+      video.src = window.innerWidth <= 760 && video.dataset.srcMobile ? video.dataset.srcMobile : video.dataset.src;
+    }
+    next.playPending = true;
+    next.resumePending = false;
+    const attempt = video.play();
+    Promise.resolve(attempt).catch(() => {
+      if (activeMedia === next && video.readyState < 2) video.classList.remove('is-playing');
+    }).finally(() => {
+      next.playPending = false;
+      if (next.resumePending && mayPlay(next)) { next.resumePending = false; queuePlayback(); }
+    });
+  };
+  const selectVisibleMedia = () => {
+    playbackFrame = 0;
+    const top = navigation?.classList.contains('is-floating') ? (innerWidth <= 760 ? 84 : 104) : 0;
+    const height = Math.max(1, innerHeight - top), center = top + height / 2;
+    let best = null, bestScore = 0;
+    mediaItems.forEach(item => {
+      const rect = item.target.getBoundingClientRect();
+      const visible = Math.max(0, Math.min(rect.bottom, innerHeight) - Math.max(rect.top, top));
+      if (visible < Math.min(64, rect.height * .25) || rect.right <= 0 || rect.left >= innerWidth) return;
+      const score = visible / Math.min(rect.height, height) - Math.abs((rect.top + rect.bottom) / 2 - center) / height * .05;
+      if (score > bestScore) { bestScore = score; best = item; }
+    });
+    // A click may restart a visible card; scrolling restores automatic selection.
+    if (manualMedia && best !== manualMedia) manualMedia = null;
+    applyPlayback(best);
+  };
+  const queuePlayback = () => {
+    if (!playbackFrame) playbackFrame = requestAnimationFrame(selectVisibleMedia);
+  };
+  mediaItems.forEach(item => {
+    const { video, button } = item;
     video.addEventListener('playing', () => {
-      if (motionPreference.matches || navigator.connection?.saveData || !inView || document.hidden) {
-        syncPlayback();
-        return;
-      }
-      if (framePending) return;
-      framePending = true;
-      // Keep the complete poster visible until a decoded frame is presented.
-      if (video.requestVideoFrameCallback) video.requestVideoFrameCallback(revealFrame);
-      else requestAnimationFrame(() => requestAnimationFrame(revealFrame));
+      // Ignore a late play event from a card that was passed during rapid scrolling.
+      if (!mayPlay(item)) { video.pause(); return; }
+      if (item.framePending) return;
+      item.framePending = true;
+      if (video.requestVideoFrameCallback) video.requestVideoFrameCallback(() => revealVideo(item));
+      else requestAnimationFrame(() => revealVideo(item));
     });
     video.addEventListener('error', () => video.classList.remove('is-playing'));
-    document.addEventListener('visibilitychange', syncPlayback);
-    motionPreference.addEventListener('change', syncPlayback);
-    navigator.connection?.addEventListener?.('change', syncPlayback);
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(([entry]) => {
-        inView = entry.isIntersecting;
-        syncPlayback();
+    if (button) {
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        manualMedia = item;
+        try { video.currentTime = 0; } catch { /* An unloaded video already starts at zero. */ }
+        applyPlayback(item);
       });
-      observer.observe(target);
     }
-    syncPlayback();
-  };
-  const background = document.querySelector('.hero-video');
-  const demo = document.querySelector('.hero-demo');
-  if (demo) {
-    let firstFramePresented = false;
-    let backgroundScheduled = false;
-    const startBackgroundWhenBuffered = () => {
-      if (!firstFramePresented || backgroundScheduled || !demo.buffered.length) return;
-      const bufferedEnd = demo.buffered.end(demo.buffered.length - 1);
-      if (bufferedEnd - demo.currentTime < 8 && bufferedEnd < demo.duration - .1) return;
-      backgroundScheduled = true;
-      // Give the phone's useful content priority over the decorative lake loop.
-      window.setTimeout(() => setupLoop(background, scene), 1000);
-    };
-    demo.addEventListener('progress', startBackgroundWhenBuffered);
-    demo.addEventListener('canplaythrough', startBackgroundWhenBuffered);
-    setupLoop(demo, document.querySelector('.hero-phone'), () => {
-      firstFramePresented = true;
-      startBackgroundWhenBuffered();
-    });
-  } else setupLoop(background, scene);
-  // Feature demos load only as their cards enter the viewport.
-  document.querySelectorAll('.product-demo').forEach(video => {
-    setupLoop(video, video.closest('figure'), undefined, true);
   });
+  window.addEventListener('scroll', () => { manualMedia = null; queuePlayback(); }, { passive: true });
+  window.addEventListener('resize', queuePlayback);
+  window.addEventListener('pageshow', queuePlayback);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) applyPlayback(null);
+    else queuePlayback();
+  });
+  const resetPlaybackPreference = () => { manualMedia = null; queuePlayback(); };
+  playbackPreference.addEventListener('change', resetPlaybackPreference);
+  navigator.connection?.addEventListener?.('change', resetPlaybackPreference);
+  if ('ResizeObserver' in window) {
+    const mediaResize = new ResizeObserver(queuePlayback);
+    mediaItems.forEach(item => mediaResize.observe(item.target));
+  }
+  selectVisibleMedia();
+  // End exclusive video playback.
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   // A small scroll-only background offset; foreground content stays in place.
   const landscape = document.querySelector('.hero-landscape');

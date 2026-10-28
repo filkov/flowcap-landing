@@ -133,6 +133,16 @@
 .landing-page .product-device-screen > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .landing-page .product-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .product-demo.is-playing { opacity: 1; }
+.landing-page :is(.feature-art, .handoff-art) { position: relative; }
+.landing-page .demo-restart { position: absolute; z-index: 3; top: 16px; right: 16px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffffd9; border-radius: 50%; background: #ffffff99; color: var(--web-ink); box-shadow: inset 0 1px 1px #fff, 0 4px 16px #151b3214; -webkit-backdrop-filter: blur(14px) saturate(1.5); backdrop-filter: blur(14px) saturate(1.5); cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(4px); transition: opacity .18s ease, transform .18s ease, background-color .18s ease; }
+.landing-page .demo-restart[hidden] { display: none; }
+.landing-page .demo-restart svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.landing-page :is(.feature-art, .handoff-art):is(:hover, :focus-within) .demo-restart { opacity: 1; pointer-events: auto; transform: none; }
+.landing-page .demo-restart:hover { background: #ffffffe6; }
+.landing-page .demo-restart:focus-visible { outline: 2px solid var(--web-accent); outline-offset: 3px; }
+@media (hover: none), (max-width: 760px) { .landing-page .demo-restart { opacity: 1; pointer-events: auto; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .landing-page .demo-restart { transition: none; } }
+
 .landing-page .feature-copy, .landing-page .handoff-copy { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .landing-page .feature-copy { --feature-text-size: 20px; --feature-text-leading: 32px; }
 .landing-page .feature-copy h2 { font-size: 64px; line-height: 1.0625; letter-spacing: -.025em; }
@@ -299,7 +309,7 @@
  .landing-page .nav-links { gap: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
- .landing-page .hero-video, .landing-page .hero-demo, .landing-page .product-demo { display: none; }
+ .landing-page .hero-video, .landing-page .hero-demo { display: none; }
 }
 @media (forced-colors: active) {
  .landing-page .hero-landscape, .landing-page .hero-scene::after { display: none; }
