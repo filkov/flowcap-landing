@@ -103,6 +103,11 @@ html:has(.interior-page) { --guide-header-height: 80px; --guide-header-cover: 96
 .reading-visual .guide-device-frame { width: 100%; height: auto; }
 .reading-visual .guide-device-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; border-radius: 15% / 6.9%; overflow: hidden; background: #000; }
 .reading-visual .guide-device-screen img { width: 100%; height: 100%; object-fit: contain; }
+/* Guide cover uses the same complete, approved screen as the recording article. */
+.guide-cover .guide-device { position: relative; flex: 0 0 auto; width: 176px; max-width: 90%; filter: drop-shadow(0 8px 12px #151b3210); }
+.guide-cover .guide-device .guide-device-frame { width: 100%; height: auto; max-width: none; filter: none; }
+.guide-cover .guide-device-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; border-radius: 15% / 6.9%; overflow: hidden; background: #000; }
+.guide-cover .guide-device-screen img { width: 100%; height: 100%; max-width: none; object-fit: contain; filter: none; }
 
 .related-guides { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 32px; }
 .interior-page .related-guides h2 { font-size: 28px; margin-bottom: 16px; }
@@ -249,6 +254,7 @@ html:has(.interior-page) { --guide-header-height: 80px; --guide-header-cover: 96
  .guide-story, .guide-story.is-featured { display: flex; grid-column: auto; border-radius: 24px; }
  .guide-cover, .is-featured .guide-cover { height: 280px; }
  .guide-cover img, .is-featured .guide-cover img { height: 232px; }
+ .guide-cover .guide-device { width: 114px; }
  .guide-cover.is-handoff img { height: 338px; }
  .guide-story-copy, .is-featured .guide-story-copy { padding: 24px; }
  .is-featured h2 { font-size: 30px; line-height: 36px; }
