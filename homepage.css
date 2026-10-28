@@ -72,6 +72,34 @@
 .landing-page .hero-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .hero-demo.is-playing { opacity: 1; }
 /* Compact portrait stages balance the larger editorial feature copy. */
+/* A compact, looping overview of the product workflow. */
+.landing-page .flow-ribbon { background: #fff; padding-block: 24px 0; }
+.landing-page .flow-ribbon-scroll { overflow-x: auto; scrollbar-width: thin; scrollbar-color: #dfe5f0 transparent; }
+.landing-page .flow-ribbon-scroll:focus-visible { outline: 2px solid var(--web-accent); outline-offset: -4px; }
+.landing-page .flow-ribbon-track { position: relative; height: 260px; min-width: 1000px; }
+.landing-page .flow-ribbon-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: none; stroke: #a9c3f4; stroke-width: 1.6; stroke-dasharray: 5 7; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.landing-page .flow-ribbon-line path { animation: flow-ribbon-dashes 24s linear infinite; }
+.landing-page .flow-ribbon-steps { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; height: 100%; margin: 0; padding: 0; list-style: none; }
+.landing-page .flow-ribbon-steps li { display: flex; justify-content: center; align-items: flex-start; min-width: 0; padding-top: var(--step-top); }
+.landing-page .flow-ribbon .feature-label { position: relative; gap: 10px; padding: 12px 18px; border-radius: 18px; color: var(--web-accent); font-size: 18px; line-height: 28px; font-weight: 400; white-space: nowrap; box-shadow: 0 0 0 8px #fff; }
+.landing-page .flow-ribbon .icon { width: 20px; height: 20px; flex: 0 0 20px; }
+.flow-step-capture { --step-top: 78px; }
+.flow-step-comment { --step-top: 145px; }
+.flow-step-connect { --step-top: 58px; }
+.flow-step-compare { --step-top: 135px; }
+.flow-step-handoff { --step-top: 88px; }
+@keyframes flow-ribbon-dashes { to { stroke-dashoffset: -120; } }
+@media (max-width: 760px) {
+ .landing-page .flow-ribbon { padding-top: 8px; }
+ .landing-page .flow-ribbon-track { height: 220px; width: 1000px; margin-inline: 24px; }
+ .landing-page .flow-ribbon .feature-label { font-size: 16px; line-height: 24px; padding: 10px 16px; }
+ .flow-step-capture { --step-top: 66px; }
+ .flow-step-comment { --step-top: 120px; }
+ .flow-step-connect { --step-top: 48px; }
+ .flow-step-compare { --step-top: 110px; }
+ .flow-step-handoff { --step-top: 74px; }
+}
+@media (prefers-reduced-motion: reduce) { .landing-page .flow-ribbon-line path { animation: none; } }
 .landing-page .product-features { padding-block: 72px; background: #fff; }
 .landing-page .feature-chapter { display: grid; grid-template-columns: 480px minmax(0, 1fr); align-items: center; gap: 128px; padding-block: 64px; }
 .landing-page .feature-chapter.is-reversed { grid-template-columns: minmax(0, 1fr) 480px; }
