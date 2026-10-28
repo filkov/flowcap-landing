@@ -24,7 +24,7 @@
     line.replaceChildren(...paths);
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
-    let frame = 0, lastTime = 0;
+    let frame = 0, lastTime = 0, dashRate = 1, dashTarget = 1;
     const draw = () => {
       paths.forEach((path, i) => {
         const a = chips[i], b = chips[i + 1];
@@ -54,7 +54,11 @@
     const tick = time => {
       const dt = Math.min((time - lastTime) / 1000 || 1 / 60, 1 / 30);
       lastTime = time;
-      let moving = false;
+      dashRate += (dashTarget - dashRate) * (1 - Math.exp(-7 * dt));
+      if (Math.abs(dashTarget - dashRate) < .005) dashRate = dashTarget;
+      // Change playback rate without restarting the dash phase.
+      paths.forEach(path => path.getAnimations().forEach(animation => animation.updatePlaybackRate(dashRate)));
+      let moving = dashRate !== dashTarget;
       chips.forEach(chip => {
         chip.vx += ((chip.tx - chip.x) * 110 - chip.vx * 20) * dt;
         chip.vy += ((chip.ty - chip.y) * 110 - chip.vy * 20) * dt;
@@ -70,16 +74,23 @@
     const start = () => {
       if (!frame) { lastTime = performance.now(); frame = requestAnimationFrame(tick); }
     };
-    const release = () => { chips.forEach(chip => { chip.tx = chip.ty = 0; }); start(); };
+    const release = () => { dashTarget = 1; chips.forEach(chip => { chip.tx = chip.ty = 0; }); start(); };
+    chips.forEach(({ element }) => {
+      element.addEventListener('pointerenter', event => {
+        if (reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
+        dashTarget = 4; start();
+      });
+      element.addEventListener('pointerleave', () => { dashTarget = 1; start(); });
+    });
     ribbon.addEventListener('pointermove', event => {
       if (reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
       const rect = ribbon.getBoundingClientRect();
       chips.forEach(chip => {
         const dx = event.clientX - rect.left - chip.left - chip.width / 2;
         const dy = event.clientY - rect.top - chip.top - chip.height / 2;
-        const attraction = Math.pow(Math.max(0, 1 - Math.hypot(dx, dy) / 180), 2) * .2;
-        chip.tx = Math.max(-9, Math.min(9, dx * attraction));
-        chip.ty = Math.max(-9, Math.min(9, dy * attraction));
+        const attraction = Math.pow(Math.max(0, 1 - Math.hypot(dx, dy) / 200), 2) * .55;
+        chip.tx = Math.max(-22, Math.min(22, dx * attraction));
+        chip.ty = Math.max(-22, Math.min(22, dy * attraction));
       });
       start();
     }, { passive: true });
@@ -89,6 +100,8 @@
     reduced.addEventListener('change', () => {
       if (!reduced.matches) return;
       cancelAnimationFrame(frame); frame = 0;
+      dashRate = dashTarget = 1;
+      paths.forEach(path => path.getAnimations().forEach(animation => animation.updatePlaybackRate(1)));
       chips.forEach(chip => {
         chip.x = chip.y = chip.vx = chip.vy = chip.tx = chip.ty = 0;
         chip.element.style.transform = '';

@@ -81,7 +81,7 @@
 .landing-page .flow-ribbon-line path { animation: flow-ribbon-dashes 24s linear infinite; }
 .landing-page .flow-ribbon-steps { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; height: 100%; margin: 0; padding: 0; list-style: none; }
 .landing-page .flow-ribbon-steps li { display: flex; justify-content: center; align-items: flex-start; min-width: 0; padding-top: var(--step-top); }
-.landing-page .flow-ribbon .feature-label { position: relative; gap: 10px; padding: 12px 18px; border-radius: 18px; color: var(--web-accent); font-size: 18px; line-height: 28px; font-weight: 400; white-space: nowrap; box-shadow: none; }
+.landing-page .flow-ribbon .feature-label { position: relative; gap: 10px; padding: 12px 18px; border-radius: 18px; color: var(--web-accent); font-size: 20px; line-height: 28px; font-weight: 600; white-space: nowrap; }
 .landing-page .flow-ribbon .icon { width: 20px; height: 20px; flex: 0 0 20px; }
 .flow-step-capture { --step-top: 78px; }
 .flow-step-comment { --step-top: 145px; }
@@ -121,7 +121,15 @@
 .landing-page .feature-label { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #edf3ff; font-size: 14px; line-height: 22px; }
 .landing-page .feature-label .icon { width: 18px; height: 18px; }
 /* One dimensional chapter marker; supporting icons stay quiet and unboxed. */
-.landing-page .feature-copy .feature-label { padding: 9px 14px; border: 1px solid #fff; border-radius: 13px; background: linear-gradient(160deg, #edf3ff, #dce7ff); box-shadow: inset 0 1px 1px #ffffffb3, 0 4px 12px #314e8b0b; transform: rotate(-2deg); transform-origin: left center; }
+.landing-page :is(#capture, .flow-step-capture) { --chip-rgb: 53 199 89; --chip-ink: #238342; }
+.landing-page :is(#voice, .flow-step-comment) { --chip-rgb: 0 192 232; --chip-ink: #007b98; }
+.landing-page :is(#map, .flow-step-connect) { --chip-rgb: 98 108 250; --chip-ink: #5058cf; }
+.landing-page :is(#versions, .flow-step-compare) { --chip-rgb: 255 141 40; --chip-ink: #a4550e; }
+.landing-page :is(.handoff-section, .flow-step-handoff) { --chip-rgb: 224 90 160; --chip-ink: #a43572; }
+.landing-page :is(.feature-copy, .flow-ribbon, .handoff-copy) .feature-label { color: var(--chip-ink); border: 2px solid #fffffff0; background: linear-gradient(180deg, #ffffff60, #ffffff00 58%), rgb(var(--chip-rgb) / .2); box-shadow: inset 0 1px 1px #ffffffa6, inset 0 -1px 2px rgb(var(--chip-rgb) / .12), 0 6px 18px rgb(var(--chip-rgb) / .09); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.landing-page :is(.feature-copy, .handoff-copy) .feature-label { padding: 10px 16px; gap: 10px; border-radius: 16px; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -.02em; transform: rotate(-3deg); transform-origin: left center; }
+.landing-page :is(.feature-copy, .handoff-copy) .feature-label .icon { width: 24px; height: 24px; }
+
 
 .landing-page .feature-label .icon, .landing-page .benefit-icon .icon { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .landing-page .feature-description { max-width: 516px; color: var(--web-muted); font-size: 20px; line-height: 32px; }
@@ -130,13 +138,13 @@
 .landing-page .benefit-icon { display: flex; align-items: center; justify-content: flex-start; width: 28px; height: 28px; flex: 0 0 28px; color: #7b8495; background: none; }
 .landing-page .benefit-icon .icon { width: 26px; height: 26px; stroke-width: 1.6; }
 /* Two type levels per chapter: the heading and one shared supporting style. */
-.landing-page .feature-copy :is(.feature-label, .feature-description, .feature-benefits li, .text-link) { font-size: var(--feature-text-size); font-weight: 400; line-height: var(--feature-text-leading); letter-spacing: 0; }
+.landing-page .feature-copy :is(.feature-description, .feature-benefits li, .text-link) { font-size: var(--feature-text-size); font-weight: 400; line-height: var(--feature-text-leading); letter-spacing: 0; }
 .landing-page .text-link .icon { width: 22px; height: 22px; flex: 0 0 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 /* Handoff keeps the original approved artwork and the homepage's navy palette. */
 .landing-page .handoff-section { padding-block: 96px; background: var(--web-navy); color: #fff; }
 .landing-page .handoff-layout { display: grid; grid-template-columns: minmax(0, 544fr) minmax(0, 640fr); align-items: center; gap: 96px; }
 .landing-page .handoff-copy .eyebrow { color: #8fb0ff; }
-.landing-page .handoff-copy .feature-label { color: #abc3ff; background: #8fb0ff1a; font-size: 18px; line-height: 28px; font-weight: 400; }
+.landing-page .handoff-copy .feature-label { color: #90265f; background: linear-gradient(180deg, #ffffff80, #ffffff00 58%), #efc4df; }
 .landing-page .handoff-copy h2 { font-size: 64px; line-height: 68px; }
 .landing-page .handoff-copy .feature-description { color: var(--web-on-dark); }
 .landing-page .handoff-copy .btn { width: 276px; max-width: 100%; }
@@ -245,7 +253,8 @@
  .landing-page .handoff-section { padding-block: 64px; }
  .landing-page .handoff-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
  .landing-page .handoff-copy { gap: 20px; }
- .landing-page .handoff-copy .feature-label { font-size: 16px; line-height: 26px; }
+ .landing-page :is(.feature-copy, .handoff-copy) .feature-label { font-size: 20px; line-height: 26px; padding: 9px 14px; }
+ .landing-page :is(.feature-copy, .handoff-copy) .feature-label .icon { width: 22px; height: 22px; }
  .landing-page .handoff-copy h2 { font-size: 40px; line-height: 44px; }
  .landing-page .handoff-art { max-width: 540px; justify-self: center; }
  .landing-page .handoff-benefits { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 32px; }
