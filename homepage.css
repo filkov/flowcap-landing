@@ -151,6 +151,10 @@
 .landing-page :is(.feature-art, .handoff-art):is(:hover, :focus-within) .demo-restart { opacity: 1; pointer-events: auto; transform: none; }
 .landing-page .demo-restart:hover { background: #ffffffe6; }
 .landing-page .demo-restart:focus-visible { outline: 2px solid var(--web-accent); outline-offset: 3px; }
+.landing-page .handoff-art .demo-restart { background: #ffffff08; border-color: #ffffff18; color: #aab4c8; box-shadow: inset 0 1px 1px #ffffff0d; }
+.landing-page .handoff-art .demo-restart:hover { background: #ffffff12; border-color: #ffffff26; color: #d5deee; }
+.landing-page .handoff-art .demo-restart:focus-visible { outline-color: #8fa1bf; }
+
 @media (hover: none), (max-width: 760px) { .landing-page .demo-restart { opacity: 1; pointer-events: auto; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .landing-page .demo-restart { transition: none; } }
 
