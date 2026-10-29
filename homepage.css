@@ -49,6 +49,17 @@
 }
 .landing-page .nav-brand { color: #fff; font-size: 18px; line-height: 26px; font-weight: 500; letter-spacing: 0; gap: 12px; }
 .landing-page .nav-brand img { width: 32px; height: 32px; border-radius: 9px; }
+.landing-page .nav-wrap:not(.is-floating) .nav-brand { font-size: 24px; line-height: 30px; gap: 14px; }
+.landing-page .nav-wrap:not(.is-floating) .nav-brand img { width: 44px; height: 44px; border-radius: 12px; }
+@media (max-width: 1100px) {
+ .landing-page .nav-wrap:not(.is-floating) .nav-brand { font-size: 20px; line-height: 28px; gap: 12px; }
+ .landing-page .nav-wrap:not(.is-floating) .nav-brand img { width: 36px; height: 36px; border-radius: 10px; }
+}
+@media (max-width: 760px) {
+ .landing-page .nav-wrap:not(.is-floating) .nav-brand { font-size: 18px; line-height: 26px; gap: 10px; }
+ .landing-page .nav-wrap:not(.is-floating) .nav-brand img { width: 34px; height: 34px; }
+}
+
 .landing-page .nav-links { gap: 32px; }
 .landing-page .nav-links a { color: #fff; font-size: 16px; font-weight: 400; line-height: 24px; min-width: 104px; }
 .landing-page .nav-wrap :is(.nav, .nav-links) { column-gap: 24px; }
