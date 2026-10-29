@@ -40,11 +40,11 @@
 .next-page .next-detail .feature-label { transform:rotate(3deg); }
 .next-page .next-map .feature-label { transform:rotate(-3deg); }
 .next-page .voice-detail { margin:52px -26px 26px; width:calc(100% + 52px); }
-.next-page .voice-detail img { width:100%; }
-.next-page .voice-detail figcaption,.next-page .detail-caption { font-size:14px; line-height:22px; color:var(--web-muted); }
-.next-page .voice-detail figcaption { padding-left:26px; margin-top:-26px; }
+.next-page .voice-detail img { width:100%; mask-image:linear-gradient(#000 62%,transparent 72%); }
+.next-page .voice-detail figcaption,.next-page .detail-caption { width:100%; text-align:center; font-size:14px; line-height:22px; color:var(--web-muted); }
+.next-page .voice-detail figcaption { position:relative; padding-inline:26px; margin-top:calc(-22.1% + 28px); }
 .next-page .next-voice>.text-link { margin-top:auto; }
-.next-page .map-detail { display:flex; justify-content:center; width:100%; height:380px; overflow:hidden; margin:36px 0 20px; }
+.next-page .map-detail { display:flex; justify-content:center; width:100%; height:380px; overflow:hidden; margin:36px 0 10px; }
 .next-page .map-detail img { width:142px; height:auto; max-width:none; align-self:flex-start; }
 .next-page .next-versions { display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:64px; padding:56px 64px; margin-bottom:96px; border-radius:36px; background:#eee7df; }
 .next-page .next-versions figure { display:flex; justify-content:center; height:530px; }
@@ -123,7 +123,6 @@
  .next-page .next-detail h2 { font-size:32px; line-height:1.08; }
  .next-page .next-detail .feature-description { font-size:17px; line-height:26px; }
  .next-page .voice-detail { margin-block:28px 20px; }
- .next-page .voice-detail figcaption { margin-top:-14px; }
  .next-page .map-detail { height:352px; margin:28px 0 10px; }
  .next-page .map-detail img { width:132px; }
  .next-page .next-versions { grid-template-columns:1fr; gap:24px; padding:30px 24px; margin-bottom:56px; border-radius:26px; }
