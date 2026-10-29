@@ -1,5 +1,5 @@
 /* Alternate editorial direction. Only /next/ loads this stylesheet. */
-.next-page { --web-paper:#f1f3f6; --web-ink:#20242c; --web-muted:#6c727c; }
+.next-page { --web-paper:#f1f3f6; --web-ink:#20242c; --web-muted:#5f6570; }
 .next-page h1,.next-page h2 { font-weight:800; letter-spacing:-.045em; text-wrap:balance; }
 .next-page .hero { display:flex; flex-direction:column; gap:48px; height:auto; padding:88px 0 0; text-align:center; }
 .next-page .hero-copy { align-items:center; gap:22px; }
@@ -7,9 +7,9 @@
 .next-page .hero-copy .lead { max-width:550px; font-size:22px; line-height:1.45; }
 .next-page .next-kicker { font-size:13px; line-height:20px; letter-spacing:.13em; text-transform:uppercase; color:#e4eaff; }
 .next-page .release-note { font-size:13px; color:#d8e0f1; margin-top:-8px; }
-.next-page .hero-device-slot { height:430px; overflow:hidden; width:100%; align-items:flex-start; }
-.next-page .hero-phone { width:286px; align-self:flex-start; }
-.next-page .hero-scene::after { pointer-events:none; }
+.next-page .hero-device-slot { height:auto; padding-bottom:48px; overflow:visible; width:100%; align-items:flex-start; }
+.next-page .hero-phone { width:246px; align-self:flex-start; }
+.next-page .hero-scene::after { pointer-events:none; background:linear-gradient(180deg,#04071833,#04071866 50%,#0e102599); }
 .next-page .compare-original { color:#fff; font-size:14px; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; gap:4px; }
 .next-page .is-floating .compare-original { color:#626975; }
 .next-page .section-index { font-size:12px; line-height:20px; text-transform:uppercase; letter-spacing:.12em; color:var(--web-muted); }
@@ -18,7 +18,7 @@
 .next-page .next-intro>p:not(.section-index) { max-width:610px; font-size:20px; line-height:1.5; color:var(--web-muted); }
 .next-page .next-steps { list-style:none; display:flex; padding:28px 0 0; margin:32px 0 0; border-top:1px solid #d9dee5; gap:64px; }
 .next-page .next-steps li { display:flex; align-items:center; gap:12px; font-size:17px; font-weight:600; }
-.next-page .next-steps span { font-size:12px; color:#89909e; font-variant-numeric:tabular-nums; }
+.next-page .next-steps span { font-size:12px; color:var(--web-muted); font-variant-numeric:tabular-nums; }
 .next-page .feature-copy { gap:24px; --feature-text-size:20px; --feature-text-leading:30px; }
 .next-page .feature-copy h2 { font-size:clamp(40px,4.4vw,64px); line-height:1.02; }
 .next-page .feature-copy .feature-label { font-size:20px; line-height:26px; padding:8px 13px; border-radius:14px; font-weight:700; }
@@ -44,7 +44,7 @@
 .next-page .voice-detail figcaption,.next-page .detail-caption { font-size:14px; line-height:22px; color:var(--web-muted); }
 .next-page .voice-detail figcaption { padding-left:26px; margin-top:-26px; }
 .next-page .next-voice>.text-link { margin-top:auto; }
-.next-page .map-detail { display:flex; justify-content:center; width:100%; height:430px; overflow:hidden; margin:36px 0 20px; mask-image:linear-gradient(#000 85%,transparent); }
+.next-page .map-detail { display:flex; justify-content:center; width:100%; height:380px; overflow:hidden; margin:36px 0 20px; }
 .next-page .map-detail img { width:142px; height:auto; max-width:none; align-self:flex-start; }
 .next-page .next-versions { display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:100px; padding-block:0 96px; }
 .next-page .next-versions figure { display:flex; justify-content:center; height:530px; }
@@ -55,7 +55,7 @@
 .next-page .handoff-copy h2 { font-size:clamp(40px,4.5vw,64px); line-height:1.02; }
 .next-page .handoff-copy .feature-description { max-width:470px; font-size:20px; line-height:30px; }
 .next-page .handoff-art { background:#171a32; aspect-ratio:4/5; }
-.next-page .handoff-art .product-device { width:61%; }
+.next-page .handoff-art .product-device { width:54%; }
 .next-page .review-prompt { padding:24px; border:1px solid #ffffff1f; border-radius:20px; background:#ffffff05; max-width:510px; }
 .next-page .prompt-label { display:flex; gap:10px; align-items:center; font-size:13px; color:#c4cada; }
 .next-page .review-prompt blockquote { margin:18px 0; font-size:24px; line-height:1.35; letter-spacing:-.015em; font-weight:500; }
@@ -93,20 +93,21 @@
 }
 @media(max-width:760px) {
  .next-page .compare-original { font-size:12px; }
+ .next-page .nav-download { width:44px; min-height:44px; }
  .next-page .nav-links a { min-width:0; }
  .next-page .hero { padding:52px 0 0; gap:32px; }
  .next-page .hero-copy { gap:20px; }
  .next-page .hero-copy h1 { font-size:clamp(44px,12vw,72px); line-height:1; }
  .next-page .hero-copy .lead { font-size:18px; line-height:26px; max-width:350px; }
  .next-page .next-kicker { font-size:10px; letter-spacing:.1em; }
- .next-page .hero-device-slot { height:300px; }
- .next-page .hero-phone { width:215px; }
+ .next-page .hero-device-slot { height:auto; padding-bottom:32px; }
+ .next-page .hero-phone { width:200px; }
  .next-page .next-intro { padding-block:56px 36px; }
  .next-page .next-intro h2 { font-size:34px; line-height:1.08; margin:18px 0; }
  .next-page .next-intro>p:not(.section-index) { font-size:17px; line-height:26px; }
- .next-page .next-steps { gap:14px; justify-content:space-between; margin-top:24px; padding-top:20px; }
- .next-page .next-steps li { font-size:12px; gap:5px; }
- .next-page .next-steps span { font-size:10px; }
+ .next-page .next-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:24px; padding-top:20px; }
+ .next-page .next-steps li { flex-direction:column; align-items:flex-start; font-size:14px; line-height:20px; gap:4px; }
+ .next-page .next-steps span { font-size:11px; }
  .next-page .next-capture { grid-template-columns:1fr; padding:30px 24px 0; gap:28px; border-radius:26px; }
  .next-page .next-capture .feature-copy { padding-bottom:0; }
  .next-page .feature-copy { gap:18px; --feature-text-size:17px; --feature-text-leading:26px; }
@@ -114,7 +115,7 @@
  .next-page .feature-copy .feature-label { font-size:18px; line-height:24px; padding:7px 11px; }
  .next-page .next-mini-list { font-size:13px; gap:5px 12px; }
  .next-page .text-link { font-size:16px; line-height:24px; }
- .next-page .next-capture .feature-art { height:440px; grid-row:auto; max-width:none; }
+ .next-page .next-capture .feature-art { height:auto; padding-block:52px 28px; grid-row:auto; max-width:none; }
  .next-page .next-capture .product-device { width:215px; }
  .next-page .next-capture .demo-restart { right:-8px; top:0; }
  .next-page .next-duo { grid-template-columns:1fr; gap:20px; padding-block:20px 48px; }
@@ -123,7 +124,7 @@
  .next-page .next-detail .feature-description { font-size:17px; line-height:26px; }
  .next-page .voice-detail { margin-block:28px 20px; }
  .next-page .voice-detail figcaption { margin-top:-14px; }
- .next-page .map-detail { height:400px; margin:28px 0 10px; }
+ .next-page .map-detail { height:352px; margin:28px 0 10px; }
  .next-page .map-detail img { width:132px; }
  .next-page .next-versions { grid-template-columns:1fr; gap:24px; padding-block:0 56px; }
  .next-page .next-versions .feature-copy { grid-row:1; }
@@ -135,8 +136,8 @@
  .next-page .handoff-copy .feature-description { font-size:17px; line-height:26px; }
  .next-page .review-prompt { padding:20px; }
  .next-page .review-prompt blockquote { font-size:21px; }
- .next-page .handoff-art { aspect-ratio:1; border-radius:26px; }
- .next-page .handoff-art .product-device { width:43%; }
+ .next-page .handoff-art { aspect-ratio:4/5; border-radius:26px; }
+ .next-page .handoff-art .product-device { width:54%; }
  .next-page .handoff-benefits { grid-template-columns:1fr 1fr; gap:24px 20px; }
  .next-page .handoff-benefits li { flex-direction:column; gap:10px; padding-top:18px; }
  .next-page .handoff-benefits h3 { font-size:20px; line-height:26px; margin-bottom:4px; }
@@ -156,7 +157,7 @@
 @media(max-width:370px) {
  .next-page .nav-links { gap:6px; }
  .next-page .nav-wrap :is(.nav,.nav-links) { column-gap:6px; }
- .next-page .compare-original { font-size:11px; }
+ .next-page .compare-original { font-size:12px; }
  .next-page .nav-links a { font-size:12px; }
  .next-page .feature-copy h2 { font-size:34px; }
  .next-page .next-detail h2 { font-size:29px; }

@@ -16,3 +16,8 @@ qualifications are preserved.
 
 Reviewed at 320, 390, 768 and 1440 px. Links and assets resolve from the root.
 Use the Original links in the header/footer to compare with the homepage.
+
+29 October visual audit: full hero phone, stronger background/text contrast,
+clearer mobile steps, capture control clearance and bottom padding, sharp map,
+and balanced Handoff device padding. Reviewed 320/360/390/768/1024/1440 px;
+next.css cache 20261029-2.
