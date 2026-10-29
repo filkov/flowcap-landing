@@ -140,7 +140,7 @@
 .landing-page .art-versions { background: #eeebf5; }
 .landing-page .product-device { position: relative; flex: 0 0 auto; width: 48.75%; max-width: none; }
 .landing-page .product-device-frame { display: block; width: 100%; height: auto; }
-.landing-page .product-device-screen { position: absolute; top: 1.25%; left: 4.15%; width: 91.7%; aspect-ratio: 720 / 1566; overflow: hidden; border-radius: 15% / 6.9%; background: #000; }
+.landing-page .product-device-screen { position: absolute; top: 1.25%; bottom: 2.03%; left: 4.15%; width: 91.7%; aspect-ratio: auto; overflow: hidden; border-radius: 14% / 6.5%; background: #000; }
 .landing-page .product-device-screen > img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .landing-page .product-demo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
 .landing-page .product-demo.is-playing { opacity: 1; }
@@ -263,6 +263,9 @@
  .landing-page .feature-benefits { gap: 20px 16px; }
  .landing-page .feature-benefits li { flex-direction: column; align-items: flex-start; gap: 6px; }
  .landing-page .handoff-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .landing-page .faq-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+ .landing-page .faq-side h2 { font-size: 44px; line-height: 48px; }
+ .landing-page .faq-intro { max-width: 540px; }
 }
 @media (max-width: 760px) {
  .landing-page { font-size: 18px; }
