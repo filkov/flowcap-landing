@@ -157,6 +157,7 @@
 .landing-page :is(.handoff-section, .flow-step-handoff) { --chip-rgb: 98 108 250; --chip-ink: #5058cf; }
 .landing-page :is(.feature-copy, .flow-ribbon, .handoff-copy) .feature-label { color: var(--chip-ink); border: 2px solid #fffffff0; background: linear-gradient(180deg, #ffffff60, #ffffff00 58%), rgb(var(--chip-rgb) / .2); box-shadow: inset 0 1px 1px #ffffffa6, inset 0 -1px 2px rgb(var(--chip-rgb) / .12), 0 6px 18px rgb(var(--chip-rgb) / .09); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .landing-page :is(.feature-copy, .handoff-copy) .feature-label { padding: 10px 16px; gap: 10px; border-radius: 16px; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -.02em; transform: rotate(-3deg); transform-origin: left center; }
+.landing-page .feature-chapter:nth-child(even) .feature-label { transform: rotate(3deg); }
 .landing-page :is(.feature-copy, .handoff-copy) .feature-label .icon { width: 24px; height: 24px; }
 
 
