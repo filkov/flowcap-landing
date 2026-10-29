@@ -76,7 +76,7 @@
 .next-page .faq-intro { font-size:18px; line-height:28px; }
 .next-page .faq-item p { font-size:17px; line-height:27px; }
 .next-page .closing { background:transparent; color:var(--web-ink); text-align:center; align-items:center; padding-block:64px; border-radius:0; }
-.next-page .closing h2 { font-size:72px; line-height:1.02; max-width:850px; }
+.next-page .closing h2 { font-size:72px; line-height:1.02; max-width:850px; margin-inline:auto; }
 .next-page .closing p { color:var(--web-muted); }
 .next-page .closing .app-store-link { border-radius:11px; background:var(--web-navy); }
 .next-page .footer { border-top:1px solid #d9dee5; }
